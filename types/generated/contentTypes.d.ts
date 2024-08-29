@@ -978,6 +978,42 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
   };
 }
 
+export interface ApiTestPageTestPage extends Schema.SingleType {
+  collectionName: 'test_pages';
+  info: {
+    singularName: 'test-page';
+    pluralName: 'test-pages';
+    displayName: 'Test Page';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    HeroSection: Attribute.Component<'shared.hero-section'>;
+    WhyPersonalInvest: Attribute.Component<'shared.why-personal-invest'>;
+    WhyPersonalInvestItems: Attribute.Component<
+      'shared.why-personal-invest-item',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::test-page.test-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::test-page.test-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1001,6 +1037,7 @@ declare module '@strapi/types' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
+      'api::test-page.test-page': ApiTestPageTestPage;
     }
   }
 }

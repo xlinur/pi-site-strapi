@@ -1,5 +1,17 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface SharedHeroSection extends Schema.Component {
+  collectionName: 'components_shared_hero_sections';
+  info: {
+    displayName: 'Hero Section';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    subTitle: Attribute.Text;
+  };
+}
+
 export interface SharedMedia extends Schema.Component {
   collectionName: 'components_shared_media';
   info: {
@@ -72,15 +84,39 @@ export interface SharedTestShared extends Schema.Component {
   };
 }
 
+export interface SharedWhyPersonalInvestItem extends Schema.Component {
+  collectionName: 'components_shared_why_personal_invest_items';
+  info: {
+    displayName: 'Why Personal Invest Item';
+  };
+  attributes: {
+    title: Attribute.String;
+    subTitle: Attribute.Text;
+  };
+}
+
+export interface SharedWhyPersonalInvest extends Schema.Component {
+  collectionName: 'components_shared_why_personal_invests';
+  info: {
+    displayName: 'Why Personal Invest';
+  };
+  attributes: {
+    title: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'shared.hero-section': SharedHeroSection;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
       'shared.test-shared': SharedTestShared;
+      'shared.why-personal-invest-item': SharedWhyPersonalInvestItem;
+      'shared.why-personal-invest': SharedWhyPersonalInvest;
     }
   }
 }
