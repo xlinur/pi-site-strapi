@@ -802,7 +802,7 @@ export interface ApiAboutAbout extends Schema.SingleType {
   attributes: {
     title: Attribute.String;
     blocks: Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
+      ['shared.media', 'shared.rich-text', 'shared.slider']
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -851,7 +851,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'api::category.category'
     >;
     blocks: Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
+      ['shared.media', 'shared.rich-text', 'shared.slider']
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
