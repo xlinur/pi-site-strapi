@@ -8,7 +8,7 @@ export interface SharedHeroSection extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    subTitle: Attribute.Text;
+    subTitle: Attribute.RichText;
   };
 }
 

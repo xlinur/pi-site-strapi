@@ -10,7 +10,7 @@
       "type": "string"
     },
     "subTitle": {
-      "type": "text"
+      "type": "richtext"
     }
   }
 }
