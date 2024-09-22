@@ -215,6 +215,16 @@ export interface SharedWhyPersonalInvest extends Schema.Component {
   };
 }
 
+export interface Shared2Test2 extends Schema.Component {
+  collectionName: 'components_shared2_test2s';
+  info: {
+    displayName: 'Test2';
+  };
+  attributes: {
+    title: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -236,6 +246,7 @@ declare module '@strapi/types' {
       'shared.trusted-map': SharedTrustedMap;
       'shared.why-personal-invest-item': SharedWhyPersonalInvestItem;
       'shared.why-personal-invest': SharedWhyPersonalInvest;
+      'shared2.test2': Shared2Test2;
     }
   }
 }
