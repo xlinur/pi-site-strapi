@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_sections_why_info_sections",
+  "info": {
+    "displayName": "Why info section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "withBackground": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "buttonLink": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button-link"
+    },
+    "reasons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "molecules.title-with-description",
+      "required": true
+    }
+  }
+}

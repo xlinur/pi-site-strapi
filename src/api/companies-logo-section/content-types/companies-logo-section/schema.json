@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "companies_logo_sections",
+  "info": {
+    "singularName": "companies-logo-section",
+    "pluralName": "companies-logo-sections",
+    "displayName": "[Shared] Companies logo section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logos": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "addLogoBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.button-link"
+    }
+  }
+}

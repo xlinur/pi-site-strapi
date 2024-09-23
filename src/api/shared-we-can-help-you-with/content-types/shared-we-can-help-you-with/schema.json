@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "shared_we_can_help_you_withs",
+  "info": {
+    "singularName": "shared-we-can-help-you-with",
+    "pluralName": "shared-we-can-help-you-withs",
+    "displayName": "[Shared] We can help you with"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

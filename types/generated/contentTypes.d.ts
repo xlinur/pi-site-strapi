@@ -788,82 +788,32 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiAboutAbout extends Schema.SingleType {
-  collectionName: 'abouts';
+export interface ApiCompaniesLogoSectionCompaniesLogoSection
+  extends Schema.SingleType {
+  collectionName: 'companies_logo_sections';
   info: {
-    singularName: 'about';
-    pluralName: 'abouts';
-    displayName: 'About';
-    description: 'Write about yourself and the content you create';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    title: Attribute.String;
-    blocks: Attribute.DynamicZone<
-      ['shared.media', 'shared.rich-text', 'shared.slider']
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::about.about',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::about.about',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiArticleArticle extends Schema.CollectionType {
-  collectionName: 'articles';
-  info: {
-    singularName: 'article';
-    pluralName: 'articles';
-    displayName: 'Article';
-    description: 'Create your blog content';
+    singularName: 'companies-logo-section';
+    pluralName: 'companies-logo-sections';
+    displayName: '[Shared] Companies logo section';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    description: Attribute.Text &
-      Attribute.SetMinMaxLength<{
-        maxLength: 80;
-      }>;
-    slug: Attribute.UID<'api::article.article', 'title'>;
-    cover: Attribute.Media;
-    author: Attribute.Relation<
-      'api::article.article',
-      'manyToOne',
-      'api::author.author'
-    >;
-    category: Attribute.Relation<
-      'api::article.article',
-      'manyToOne',
-      'api::category.category'
-    >;
-    blocks: Attribute.DynamicZone<
-      ['shared.media', 'shared.rich-text', 'shared.slider']
-    >;
+    logos: Attribute.Media & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    addLogoBtn: Attribute.Component<'shared.button-link'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::article.article',
+      'api::companies-logo-section.companies-logo-section',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::article.article',
+      'api::companies-logo-section.companies-logo-section',
       'oneToOne',
       'admin::user'
     > &
@@ -871,73 +821,30 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   };
 }
 
-export interface ApiAuthorAuthor extends Schema.CollectionType {
-  collectionName: 'authors';
+export interface ApiCustomerFeedbacksDataCustomerFeedbacksData
+  extends Schema.SingleType {
+  collectionName: 'customer_feedbacks_datas';
   info: {
-    singularName: 'author';
-    pluralName: 'authors';
-    displayName: 'Author';
-    description: 'Create authors for your content';
+    singularName: 'customer-feedbacks-data';
+    pluralName: 'customer-feedbacks-datas';
+    displayName: '[Shared] Customer feedbacks data';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String;
-    avatar: Attribute.Media;
-    email: Attribute.String;
-    articles: Attribute.Relation<
-      'api::author.author',
-      'oneToMany',
-      'api::article.article'
-    >;
+    customerFeedbacks: Attribute.Component<'organisms.customer-feedback', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::author.author',
+      'api::customer-feedbacks-data.customer-feedbacks-data',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::author.author',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCategoryCategory extends Schema.CollectionType {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'Category';
-    description: 'Organize your content into categories';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    name: Attribute.String;
-    slug: Attribute.UID;
-    articles: Attribute.Relation<
-      'api::category.category',
-      'oneToMany',
-      'api::article.article'
-    >;
-    description: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::category.category',
+      'api::customer-feedbacks-data.customer-feedbacks-data',
       'oneToOne',
       'admin::user'
     > &
@@ -950,7 +857,7 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
   info: {
     singularName: 'global';
     pluralName: 'globals';
-    displayName: 'Global';
+    displayName: '[Global] Settings';
     description: 'Define global settings';
   };
   options: {
@@ -960,7 +867,6 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
     siteName: Attribute.String & Attribute.Required;
     favicon: Attribute.Media;
     siteDescription: Attribute.Text & Attribute.Required;
-    defaultSeo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -971,6 +877,107 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::global.global',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPageHomePageHome extends Schema.SingleType {
+  collectionName: 'page_homes';
+  info: {
+    singularName: 'page-home';
+    pluralName: 'page-homes';
+    displayName: '[Page] Home';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    HeroSection: Attribute.Component<'shared.hero-main'> & Attribute.Required;
+    SectionWithIndustriesImage: Attribute.Component<'sections.section-with-industries-image'> &
+      Attribute.Required;
+    TrustedMap: Attribute.Component<'sections.trusted-map'> &
+      Attribute.Required;
+    WhyInfoSection: Attribute.Component<'sections.why-info-section'> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-home.page-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-home.page-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSharedWeCanHelpYouWithSharedWeCanHelpYouWith
+  extends Schema.SingleType {
+  collectionName: 'shared_we_can_help_you_withs';
+  info: {
+    singularName: 'shared-we-can-help-you-with';
+    pluralName: 'shared-we-can-help-you-withs';
+    displayName: '[Shared] We can help you with';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::shared-we-can-help-you-with.shared-we-can-help-you-with',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::shared-we-can-help-you-with.shared-we-can-help-you-with',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSphereSphere extends Schema.CollectionType {
+  collectionName: 'spheres';
+  info: {
+    singularName: 'sphere';
+    pluralName: 'spheres';
+    displayName: 'Sphere';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    HeroSection: Attribute.Component<'shared.hero-section'> &
+      Attribute.Required;
+    slug: Attribute.UID & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::sphere.sphere',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::sphere.sphere',
       'oneToOne',
       'admin::user'
     > &
@@ -1032,11 +1039,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::about.about': ApiAboutAbout;
-      'api::article.article': ApiArticleArticle;
-      'api::author.author': ApiAuthorAuthor;
-      'api::category.category': ApiCategoryCategory;
+      'api::companies-logo-section.companies-logo-section': ApiCompaniesLogoSectionCompaniesLogoSection;
+      'api::customer-feedbacks-data.customer-feedbacks-data': ApiCustomerFeedbacksDataCustomerFeedbacksData;
       'api::global.global': ApiGlobalGlobal;
+      'api::page-home.page-home': ApiPageHomePageHome;
+      'api::shared-we-can-help-you-with.shared-we-can-help-you-with': ApiSharedWeCanHelpYouWithSharedWeCanHelpYouWith;
+      'api::sphere.sphere': ApiSphereSphere;
       'api::test-page.test-page': ApiTestPageTestPage;
     }
   }

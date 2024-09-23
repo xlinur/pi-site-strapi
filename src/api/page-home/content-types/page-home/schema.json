@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_homes",
+  "info": {
+    "singularName": "page-home",
+    "pluralName": "page-homes",
+    "displayName": "[Page] Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "HeroSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.hero-main",
+      "required": true
+    },
+    "SectionWithIndustriesImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.section-with-industries-image",
+      "required": true
+    },
+    "TrustedMap": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.trusted-map",
+      "required": true
+    },
+    "WhyInfoSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.why-info-section",
+      "required": true
+    }
+  }
+}

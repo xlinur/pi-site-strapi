@@ -6,11 +6,18 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
     "subTitle": {
       "type": "richtext"
+    },
+    "title": {
+      "type": "richtext",
+      "required": true
+    },
+    "actions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.button-link",
+      "max": 2
     }
   }
 }

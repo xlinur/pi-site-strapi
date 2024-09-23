@@ -1,12 +1,33 @@
 {
   "collectionName": "components_shared_buttons",
   "info": {
-    "displayName": "Button"
+    "displayName": "Button",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "text": {
-      "type": "string"
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "withIcon": {
+      "type": "boolean",
+      "default": false
+    },
+    "iconRight": {
+      "type": "boolean",
+      "default": false
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "default",
+        "text"
+      ],
+      "default": "primary",
+      "required": true
     }
   }
 }
