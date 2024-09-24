@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "section_trusted_maps",
+  "info": {
+    "singularName": "section-trusted-map",
+    "pluralName": "section-trusted-maps",
+    "displayName": "[Section] Trusted map"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button-link",
+      "required": true
+    }
+  }
+}

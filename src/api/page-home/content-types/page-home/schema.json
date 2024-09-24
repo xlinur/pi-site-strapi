@@ -24,19 +24,13 @@
       "component": "sections.section-with-industries-image",
       "required": true
     },
-    "TrustedMap": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sections.trusted-map",
-      "required": true
-    },
     "WhyInfoSection": {
       "type": "component",
       "repeatable": false,
       "component": "sections.why-info-section",
       "required": true
     },
-    "exclusiveProcess": {
+    "ExclusiveProcess": {
       "type": "component",
       "repeatable": false,
       "component": "sections.exclusive-process",

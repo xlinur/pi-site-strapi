@@ -853,6 +853,45 @@ export interface ApiCustomerFeedbacksDataCustomerFeedbacksData
   };
 }
 
+export interface ApiFeedbackFeedback extends Schema.CollectionType {
+  collectionName: 'feedbacks';
+  info: {
+    singularName: 'feedback';
+    pluralName: 'feedbacks';
+    displayName: 'Feedback';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    essence: Attribute.String & Attribute.Required;
+    content: Attribute.RichText & Attribute.Required;
+    company: Attribute.String;
+    authorName: Attribute.String & Attribute.Required;
+    authorPosition: Attribute.String & Attribute.Required;
+    tags: Attribute.Relation<
+      'api::feedback.feedback',
+      'manyToMany',
+      'api::sphere.sphere'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::feedback.feedback',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::feedback.feedback',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Schema.SingleType {
   collectionName: 'globals';
   info: {
@@ -930,11 +969,9 @@ export interface ApiPageHomePageHome extends Schema.SingleType {
     HeroSection: Attribute.Component<'sections.hero-main'> & Attribute.Required;
     SectionWithIndustriesImage: Attribute.Component<'sections.section-with-industries-image'> &
       Attribute.Required;
-    TrustedMap: Attribute.Component<'sections.trusted-map'> &
-      Attribute.Required;
     WhyInfoSection: Attribute.Component<'sections.why-info-section'> &
       Attribute.Required;
-    exclusiveProcess: Attribute.Component<'sections.exclusive-process'> &
+    ExclusiveProcess: Attribute.Component<'sections.exclusive-process'> &
       Attribute.Required;
     MeetOurTeam: Attribute.Component<'sections.meet-our-team'> &
       Attribute.Required;
@@ -949,6 +986,38 @@ export interface ApiPageHomePageHome extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::page-home.page-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSectionTrustedMapSectionTrustedMap
+  extends Schema.SingleType {
+  collectionName: 'section_trusted_maps';
+  info: {
+    singularName: 'section-trusted-map';
+    pluralName: 'section-trusted-maps';
+    displayName: '[Section] Trusted map';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    button: Attribute.Component<'atoms.button-link'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::section-trusted-map.section-trusted-map',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::section-trusted-map.section-trusted-map',
       'oneToOne',
       'admin::user'
     > &
@@ -1010,6 +1079,11 @@ export interface ApiSphereSphere extends Schema.CollectionType {
     HeroSection: Attribute.Component<'shared.hero-section'> &
       Attribute.Required;
     slug: Attribute.UID & Attribute.Required;
+    feedbacks: Attribute.Relation<
+      'api::sphere.sphere',
+      'manyToMany',
+      'api::feedback.feedback'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1048,9 +1122,11 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::companies-logo-section.companies-logo-section': ApiCompaniesLogoSectionCompaniesLogoSection;
       'api::customer-feedbacks-data.customer-feedbacks-data': ApiCustomerFeedbacksDataCustomerFeedbacksData;
+      'api::feedback.feedback': ApiFeedbackFeedback;
       'api::global.global': ApiGlobalGlobal;
       'api::page-contact-us.page-contact-us': ApiPageContactUsPageContactUs;
       'api::page-home.page-home': ApiPageHomePageHome;
+      'api::section-trusted-map.section-trusted-map': ApiSectionTrustedMapSectionTrustedMap;
       'api::shared-we-can-help-you-with.shared-we-can-help-you-with': ApiSharedWeCanHelpYouWithSharedWeCanHelpYouWith;
       'api::sphere.sphere': ApiSphereSphere;
     }

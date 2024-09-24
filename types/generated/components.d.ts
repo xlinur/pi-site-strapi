@@ -143,18 +143,6 @@ export interface SectionsStartConversationForm extends Schema.Component {
   };
 }
 
-export interface SectionsTrustedMap extends Schema.Component {
-  collectionName: 'components_shared_trusted_maps';
-  info: {
-    displayName: 'Trusted map';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    variant: Attribute.Enumeration<['bigMap', 'smallMap']>;
-  };
-}
-
 export interface SectionsWhyInfoSection extends Schema.Component {
   collectionName: 'components_sections_why_info_sections';
   info: {
@@ -258,7 +246,6 @@ declare module '@strapi/types' {
       'sections.meet-our-team': SectionsMeetOurTeam;
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;
       'sections.start-conversation-form': SectionsStartConversationForm;
-      'sections.trusted-map': SectionsTrustedMap;
       'sections.why-info-section': SectionsWhyInfoSection;
       'shared.contact-label-item': SharedContactLabelItem;
       'shared.footer': SharedFooter;

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feedbacks",
+  "info": {
+    "singularName": "feedback",
+    "pluralName": "feedbacks",
+    "displayName": "Feedback"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "essence": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "company": {
+      "type": "string"
+    },
+    "authorName": {
+      "type": "string",
+      "required": true
+    },
+    "authorPosition": {
+      "type": "string",
+      "required": true
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sphere.sphere",
+      "inversedBy": "feedbacks"
+    }
+  }
+}

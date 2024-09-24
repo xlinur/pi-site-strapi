@@ -21,6 +21,12 @@
     "slug": {
       "type": "uid",
       "required": true
+    },
+    "feedbacks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::feedback.feedback",
+      "mappedBy": "tags"
     }
   }
 }
