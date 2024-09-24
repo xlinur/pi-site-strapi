@@ -51,14 +51,10 @@ export interface SectionsAdvantages extends Schema.Component {
   collectionName: 'components_sections_advantages';
   info: {
     displayName: 'Advantages';
+    description: '';
   };
   attributes: {
-    advantage: Attribute.RichText &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 4;
-        maxLength: 4;
-      }>;
+    advantage: Attribute.RichText & Attribute.Required;
   };
 }
 
@@ -92,7 +88,15 @@ export interface SectionsHeroMain extends Schema.Component {
         },
         number
       >;
-    advantages: Attribute.Component<'sections.advantages'> & Attribute.Required;
+    advantages: Attribute.Component<'sections.advantages', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 4;
+          max: 4;
+        },
+        number
+      >;
   };
 }
 

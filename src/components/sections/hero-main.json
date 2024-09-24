@@ -23,9 +23,11 @@
     },
     "advantages": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "sections.advantages",
-      "required": true
+      "required": true,
+      "max": 4,
+      "min": 4
     }
   }
 }

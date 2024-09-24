@@ -1,14 +1,13 @@
 {
   "collectionName": "components_sections_advantages",
   "info": {
-    "displayName": "Advantages"
+    "displayName": "Advantages",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "advantage": {
       "type": "richtext",
-      "minLength": 4,
-      "maxLength": 4,
       "required": true
     }
   }
