@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_contact_uses",
+  "info": {
+    "singularName": "page-contact-us",
+    "pluralName": "page-contact-uses",
+    "displayName": "[Page] Contact us"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

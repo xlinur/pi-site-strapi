@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_exclusive_processes",
+  "info": {
+    "displayName": "Exclusive process"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "processes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "molecules.title-with-description"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button-link"
+    }
+  }
+}

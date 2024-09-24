@@ -35,6 +35,18 @@
       "repeatable": false,
       "component": "sections.why-info-section",
       "required": true
+    },
+    "exclusiveProcess": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.exclusive-process",
+      "required": true
+    },
+    "MeetOurTeam": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.meet-our-team",
+      "required": true
     }
   }
 }

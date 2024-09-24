@@ -47,6 +47,34 @@ export interface OrganismsCustomerFeedback extends Schema.Component {
   };
 }
 
+export interface SectionsAdvantages extends Schema.Component {
+  collectionName: 'components_sections_advantages';
+  info: {
+    displayName: 'Advantages';
+  };
+  attributes: {
+    advantage: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 4;
+        maxLength: 4;
+      }>;
+  };
+}
+
+export interface SectionsExclusiveProcess extends Schema.Component {
+  collectionName: 'components_sections_exclusive_processes';
+  info: {
+    displayName: 'Exclusive process';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    processes: Attribute.Component<'molecules.title-with-description', true>;
+    button: Attribute.Component<'atoms.button-link'>;
+  };
+}
+
 export interface SectionsHeroMain extends Schema.Component {
   collectionName: 'components_shared_hero_mains';
   info: {
@@ -57,7 +85,6 @@ export interface SectionsHeroMain extends Schema.Component {
     title: Attribute.RichText;
     description: Attribute.RichText;
     recorWord: Attribute.String;
-    advantages: Attribute.Component<'shared.advantage', true>;
     actions: Attribute.Component<'atoms.button-link', true> &
       Attribute.SetMinMax<
         {
@@ -65,6 +92,19 @@ export interface SectionsHeroMain extends Schema.Component {
         },
         number
       >;
+    advantages: Attribute.Component<'sections.advantages'> & Attribute.Required;
+  };
+}
+
+export interface SectionsMeetOurTeam extends Schema.Component {
+  collectionName: 'components_sections_meet_our_teams';
+  info: {
+    displayName: 'Meet our team';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    text: Attribute.Text & Attribute.Required;
   };
 }
 
@@ -124,16 +164,7 @@ export interface SectionsWhyInfoSection extends Schema.Component {
       Attribute.DefaultTo<true>;
     reasons: Attribute.Component<'molecules.title-with-description', true> &
       Attribute.Required;
-  };
-}
-
-export interface SharedAdvantage extends Schema.Component {
-  collectionName: 'components_shared_advantages';
-  info: {
-    displayName: 'advantage';
-  };
-  attributes: {
-    text: Attribute.RichText;
+    button: Attribute.Component<'atoms.button-link'> & Attribute.Required;
   };
 }
 
@@ -185,18 +216,6 @@ export interface SharedMedia extends Schema.Component {
   };
 }
 
-export interface SharedRichText extends Schema.Component {
-  collectionName: 'components_shared_rich_texts';
-  info: {
-    displayName: 'Rich text';
-    icon: 'align-justify';
-    description: '';
-  };
-  attributes: {
-    body: Attribute.RichText;
-  };
-}
-
 export interface SharedSeo extends Schema.Component {
   collectionName: 'components_shared_seos';
   info: {
@@ -223,59 +242,26 @@ export interface SharedSlider extends Schema.Component {
   };
 }
 
-export interface SharedTestShared extends Schema.Component {
-  collectionName: 'components_shared_test_shareds';
-  info: {
-    displayName: 'test shared';
-  };
-  attributes: {
-    title: Attribute.String;
-  };
-}
-
-export interface SharedWhyPersonalInvestItem extends Schema.Component {
-  collectionName: 'components_shared_why_personal_invest_items';
-  info: {
-    displayName: 'Why Personal Invest Item';
-  };
-  attributes: {
-    title: Attribute.String;
-    subTitle: Attribute.Text;
-  };
-}
-
-export interface SharedWhyPersonalInvest extends Schema.Component {
-  collectionName: 'components_shared_why_personal_invests';
-  info: {
-    displayName: 'Why Personal Invest';
-  };
-  attributes: {
-    title: Attribute.String;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'atoms.button-link': AtomsButtonLink;
       'molecules.title-with-description': MoleculesTitleWithDescription;
       'organisms.customer-feedback': OrganismsCustomerFeedback;
+      'sections.advantages': SectionsAdvantages;
+      'sections.exclusive-process': SectionsExclusiveProcess;
       'sections.hero-main': SectionsHeroMain;
+      'sections.meet-our-team': SectionsMeetOurTeam;
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;
       'sections.start-conversation-form': SectionsStartConversationForm;
       'sections.trusted-map': SectionsTrustedMap;
       'sections.why-info-section': SectionsWhyInfoSection;
-      'shared.advantage': SharedAdvantage;
       'shared.contact-label-item': SharedContactLabelItem;
       'shared.footer': SharedFooter;
       'shared.hero-section': SharedHeroSection;
       'shared.media': SharedMedia;
-      'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
-      'shared.test-shared': SharedTestShared;
-      'shared.why-personal-invest-item': SharedWhyPersonalInvestItem;
-      'shared.why-personal-invest': SharedWhyPersonalInvest;
     }
   }
 }

@@ -15,16 +15,17 @@
     "recorWord": {
       "type": "string"
     },
-    "advantages": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.advantage"
-    },
     "actions": {
       "type": "component",
       "repeatable": true,
       "component": "atoms.button-link",
       "max": 2
+    },
+    "advantages": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.advantages",
+      "required": true
     }
   }
 }

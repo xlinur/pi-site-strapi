@@ -885,6 +885,36 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
   };
 }
 
+export interface ApiPageContactUsPageContactUs extends Schema.SingleType {
+  collectionName: 'page_contact_uses';
+  info: {
+    singularName: 'page-contact-us';
+    pluralName: 'page-contact-uses';
+    displayName: '[Page] Contact us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-contact-us.page-contact-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-contact-us.page-contact-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPageHomePageHome extends Schema.SingleType {
   collectionName: 'page_homes';
   info: {
@@ -903,6 +933,10 @@ export interface ApiPageHomePageHome extends Schema.SingleType {
     TrustedMap: Attribute.Component<'sections.trusted-map'> &
       Attribute.Required;
     WhyInfoSection: Attribute.Component<'sections.why-info-section'> &
+      Attribute.Required;
+    exclusiveProcess: Attribute.Component<'sections.exclusive-process'> &
+      Attribute.Required;
+    MeetOurTeam: Attribute.Component<'sections.meet-our-team'> &
       Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1015,6 +1049,7 @@ declare module '@strapi/types' {
       'api::companies-logo-section.companies-logo-section': ApiCompaniesLogoSectionCompaniesLogoSection;
       'api::customer-feedbacks-data.customer-feedbacks-data': ApiCustomerFeedbacksDataCustomerFeedbacksData;
       'api::global.global': ApiGlobalGlobal;
+      'api::page-contact-us.page-contact-us': ApiPageContactUsPageContactUs;
       'api::page-home.page-home': ApiPageHomePageHome;
       'api::shared-we-can-help-you-with.shared-we-can-help-you-with': ApiSharedWeCanHelpYouWithSharedWeCanHelpYouWith;
       'api::sphere.sphere': ApiSphereSphere;
