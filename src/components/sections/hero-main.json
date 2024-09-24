@@ -12,7 +12,7 @@
     "description": {
       "type": "richtext"
     },
-    "recorWord": {
+    "recordWord": {
       "type": "string"
     },
     "actions": {

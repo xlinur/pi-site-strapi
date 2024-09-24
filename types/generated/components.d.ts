@@ -80,7 +80,7 @@ export interface SectionsHeroMain extends Schema.Component {
   attributes: {
     title: Attribute.RichText;
     description: Attribute.RichText;
-    recorWord: Attribute.String;
+    recordWord: Attribute.String;
     actions: Attribute.Component<'atoms.button-link', true> &
       Attribute.SetMinMax<
         {

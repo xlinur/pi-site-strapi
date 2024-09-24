@@ -859,6 +859,7 @@ export interface ApiFeedbackFeedback extends Schema.CollectionType {
     singularName: 'feedback';
     pluralName: 'feedbacks';
     displayName: 'Feedback';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -874,6 +875,7 @@ export interface ApiFeedbackFeedback extends Schema.CollectionType {
       'manyToMany',
       'api::sphere.sphere'
     >;
+    title: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -905,8 +907,8 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
   };
   attributes: {
     siteName: Attribute.String & Attribute.Required;
-    favicon: Attribute.Media;
     siteDescription: Attribute.Text & Attribute.Required;
+    address: Attribute.Text & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1025,6 +1027,38 @@ export interface ApiSectionTrustedMapSectionTrustedMap
   };
 }
 
+export interface ApiSectionWhatOurCliensSaySectionWhatOurCliensSay
+  extends Schema.SingleType {
+  collectionName: 'section_what_our_cliens_says';
+  info: {
+    singularName: 'section-what-our-cliens-say';
+    pluralName: 'section-what-our-cliens-says';
+    displayName: '[Section] What our cliens say';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    button: Attribute.Component<'atoms.button-link'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::section-what-our-cliens-say.section-what-our-cliens-say',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::section-what-our-cliens-say.section-what-our-cliens-say',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSharedWeCanHelpYouWithSharedWeCanHelpYouWith
   extends Schema.SingleType {
   collectionName: 'shared_we_can_help_you_withs';
@@ -1127,6 +1161,7 @@ declare module '@strapi/types' {
       'api::page-contact-us.page-contact-us': ApiPageContactUsPageContactUs;
       'api::page-home.page-home': ApiPageHomePageHome;
       'api::section-trusted-map.section-trusted-map': ApiSectionTrustedMapSectionTrustedMap;
+      'api::section-what-our-cliens-say.section-what-our-cliens-say': ApiSectionWhatOurCliensSaySectionWhatOurCliensSay;
       'api::shared-we-can-help-you-with.shared-we-can-help-you-with': ApiSharedWeCanHelpYouWithSharedWeCanHelpYouWith;
       'api::sphere.sphere': ApiSphereSphere;
     }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "feedback",
     "pluralName": "feedbacks",
-    "displayName": "Feedback"
+    "displayName": "Feedback",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -35,6 +36,10 @@
       "relation": "manyToMany",
       "target": "api::sphere.sphere",
       "inversedBy": "feedbacks"
+    },
+    "title": {
+      "type": "string",
+      "required": true
     }
   }
 }
