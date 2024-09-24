@@ -1,5 +1,26 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface AtomsButtonLink extends Schema.Component {
+  collectionName: 'components_atoms_button_links';
+  info: {
+    displayName: 'Button link';
+    icon: 'link';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    page: Attribute.Enumeration<['home', 'contacts']>;
+    withIcon: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    iconRight: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    theme: Attribute.Enumeration<['default', 'primary', 'secondary', 'text']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'default'>;
+  };
+}
+
 export interface MoleculesTitleWithDescription extends Schema.Component {
   collectionName: 'components_molecules_title_with_descriptions';
   info: {
@@ -26,6 +47,27 @@ export interface OrganismsCustomerFeedback extends Schema.Component {
   };
 }
 
+export interface SectionsHeroMain extends Schema.Component {
+  collectionName: 'components_shared_hero_mains';
+  info: {
+    displayName: 'Hero main';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.RichText;
+    description: Attribute.RichText;
+    recorWord: Attribute.String;
+    advantages: Attribute.Component<'shared.advantage', true>;
+    actions: Attribute.Component<'atoms.button-link', true> &
+      Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+  };
+}
+
 export interface SectionsSectionWithIndustriesImage extends Schema.Component {
   collectionName: 'components_sections_section_with_industries_images';
   info: {
@@ -35,7 +77,6 @@ export interface SectionsSectionWithIndustriesImage extends Schema.Component {
   attributes: {
     title: Attribute.RichText & Attribute.Required;
     description: Attribute.RichText & Attribute.Required;
-    moreInfo: Attribute.Component<'shared.button-link'>;
     reversedDirection: Attribute.Boolean;
   };
 }
@@ -55,7 +96,6 @@ export interface SectionsStartConversationForm extends Schema.Component {
     contacts: Attribute.Component<'shared.contact-label-item', true>;
     descriptionLabel: Attribute.String;
     legalCheckboxText: Attribute.String;
-    submitBtn: Attribute.Component<'shared.button'>;
   };
 }
 
@@ -68,7 +108,6 @@ export interface SectionsTrustedMap extends Schema.Component {
   attributes: {
     title: Attribute.String;
     variant: Attribute.Enumeration<['bigMap', 'smallMap']>;
-    connectBtn: Attribute.Component<'shared.button-link'>;
   };
 }
 
@@ -83,7 +122,6 @@ export interface SectionsWhyInfoSection extends Schema.Component {
     withBackground: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<true>;
-    buttonLink: Attribute.Component<'shared.button-link'>;
     reasons: Attribute.Component<'molecules.title-with-description', true> &
       Attribute.Required;
   };
@@ -96,33 +134,6 @@ export interface SharedAdvantage extends Schema.Component {
   };
   attributes: {
     text: Attribute.RichText;
-  };
-}
-
-export interface SharedButtonLink extends Schema.Component {
-  collectionName: 'components_shared_button_links';
-  info: {
-    displayName: 'ButtonLink';
-  };
-  attributes: {
-    text: Attribute.String;
-    url: Attribute.String;
-  };
-}
-
-export interface SharedButton extends Schema.Component {
-  collectionName: 'components_shared_buttons';
-  info: {
-    displayName: 'Button';
-    description: '';
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required;
-    withIcon: Attribute.Boolean & Attribute.DefaultTo<false>;
-    iconRight: Attribute.Boolean & Attribute.DefaultTo<false>;
-    theme: Attribute.Enumeration<['primary', 'secondary', 'default', 'text']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'primary'>;
   };
 }
 
@@ -151,22 +162,6 @@ export interface SharedFooter extends Schema.Component {
   };
 }
 
-export interface SharedHeroMain extends Schema.Component {
-  collectionName: 'components_shared_hero_mains';
-  info: {
-    displayName: 'HeroMain';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.RichText;
-    description: Attribute.RichText;
-    hereNowBtn: Attribute.Component<'shared.button-link'>;
-    candidateBtn: Attribute.Component<'shared.button-link'>;
-    recorWord: Attribute.String;
-    advantages: Attribute.Component<'shared.advantage', true>;
-  };
-}
-
 export interface SharedHeroSection extends Schema.Component {
   collectionName: 'components_shared_hero_sections';
   info: {
@@ -176,13 +171,6 @@ export interface SharedHeroSection extends Schema.Component {
   attributes: {
     subTitle: Attribute.RichText;
     title: Attribute.RichText & Attribute.Required;
-    actions: Attribute.Component<'shared.button-link', true> &
-      Attribute.SetMinMax<
-        {
-          max: 2;
-        },
-        number
-      >;
   };
 }
 
@@ -269,18 +257,17 @@ export interface SharedWhyPersonalInvest extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'atoms.button-link': AtomsButtonLink;
       'molecules.title-with-description': MoleculesTitleWithDescription;
       'organisms.customer-feedback': OrganismsCustomerFeedback;
+      'sections.hero-main': SectionsHeroMain;
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;
       'sections.start-conversation-form': SectionsStartConversationForm;
       'sections.trusted-map': SectionsTrustedMap;
       'sections.why-info-section': SectionsWhyInfoSection;
       'shared.advantage': SharedAdvantage;
-      'shared.button-link': SharedButtonLink;
-      'shared.button': SharedButton;
       'shared.contact-label-item': SharedContactLabelItem;
       'shared.footer': SharedFooter;
-      'shared.hero-main': SharedHeroMain;
       'shared.hero-section': SharedHeroSection;
       'shared.media': SharedMedia;
       'shared.rich-text': SharedRichText;

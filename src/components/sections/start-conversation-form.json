@@ -32,11 +32,6 @@
     },
     "legalCheckboxText": {
       "type": "string"
-    },
-    "submitBtn": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.button"
     }
   }
 }

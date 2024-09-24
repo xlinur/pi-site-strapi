@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_shared_buttons",
+  "collectionName": "components_atoms_button_links",
   "info": {
-    "displayName": "Button",
-    "description": ""
+    "displayName": "Button link",
+    "icon": "link"
   },
   "options": {},
   "attributes": {
@@ -10,23 +10,32 @@
       "type": "string",
       "required": true
     },
+    "page": {
+      "type": "enumeration",
+      "enum": [
+        "home",
+        "contacts"
+      ]
+    },
     "withIcon": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "required": true
     },
     "iconRight": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "required": true
     },
     "theme": {
       "type": "enumeration",
       "enum": [
+        "default",
         "primary",
         "secondary",
-        "default",
         "text"
       ],
-      "default": "primary",
+      "default": "default",
       "required": true
     }
   }

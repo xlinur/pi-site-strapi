@@ -795,6 +795,7 @@ export interface ApiCompaniesLogoSectionCompaniesLogoSection
     singularName: 'companies-logo-section';
     pluralName: 'companies-logo-sections';
     displayName: '[Shared] Companies logo section';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -802,7 +803,7 @@ export interface ApiCompaniesLogoSectionCompaniesLogoSection
   attributes: {
     logos: Attribute.Media & Attribute.Required;
     title: Attribute.String & Attribute.Required;
-    addLogoBtn: Attribute.Component<'shared.button-link'>;
+    button: Attribute.Component<'atoms.button-link'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -896,7 +897,7 @@ export interface ApiPageHomePageHome extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    HeroSection: Attribute.Component<'shared.hero-main'> & Attribute.Required;
+    HeroSection: Attribute.Component<'sections.hero-main'> & Attribute.Required;
     SectionWithIndustriesImage: Attribute.Component<'sections.section-with-industries-image'> &
       Attribute.Required;
     TrustedMap: Attribute.Component<'sections.trusted-map'> &
@@ -928,12 +929,20 @@ export interface ApiSharedWeCanHelpYouWithSharedWeCanHelpYouWith
     singularName: 'shared-we-can-help-you-with';
     pluralName: 'shared-we-can-help-you-withs';
     displayName: '[Shared] We can help you with';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
+    or: Attribute.String & Attribute.Required;
+    recruitment: Attribute.String & Attribute.Required;
+    buisnessConsulting: Attribute.String & Attribute.Required;
+    executiveSearch: Attribute.String & Attribute.Required;
+    marketResearchAndAnalytics: Attribute.String & Attribute.Required;
+    relocation: Attribute.String & Attribute.Required;
+    earnWithUs: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -985,42 +994,6 @@ export interface ApiSphereSphere extends Schema.CollectionType {
   };
 }
 
-export interface ApiTestPageTestPage extends Schema.SingleType {
-  collectionName: 'test_pages';
-  info: {
-    singularName: 'test-page';
-    pluralName: 'test-pages';
-    displayName: 'Test Page';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    HeroSection: Attribute.Component<'shared.hero-section'>;
-    WhyPersonalInvest: Attribute.Component<'shared.why-personal-invest'>;
-    WhyPersonalInvestItems: Attribute.Component<
-      'shared.why-personal-invest-item',
-      true
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::test-page.test-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::test-page.test-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1045,7 +1018,6 @@ declare module '@strapi/types' {
       'api::page-home.page-home': ApiPageHomePageHome;
       'api::shared-we-can-help-you-with.shared-we-can-help-you-with': ApiSharedWeCanHelpYouWithSharedWeCanHelpYouWith;
       'api::sphere.sphere': ApiSphereSphere;
-      'api::test-page.test-page': ApiTestPageTestPage;
     }
   }
 }

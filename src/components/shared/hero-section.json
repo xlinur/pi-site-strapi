@@ -12,12 +12,6 @@
     "title": {
       "type": "richtext",
       "required": true
-    },
-    "actions": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.button-link",
-      "max": 2
     }
   }
 }

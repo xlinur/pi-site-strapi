@@ -4,7 +4,8 @@
   "info": {
     "singularName": "shared-we-can-help-you-with",
     "pluralName": "shared-we-can-help-you-withs",
-    "displayName": "[Shared] We can help you with"
+    "displayName": "[Shared] We can help you with",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,6 +13,34 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
+      "type": "string",
+      "required": true
+    },
+    "or": {
+      "type": "string",
+      "required": true
+    },
+    "recruitment": {
+      "type": "string",
+      "required": true
+    },
+    "buisnessConsulting": {
+      "type": "string",
+      "required": true
+    },
+    "executiveSearch": {
+      "type": "string",
+      "required": true
+    },
+    "marketResearchAndAnalytics": {
+      "type": "string",
+      "required": true
+    },
+    "relocation": {
+      "type": "string",
+      "required": true
+    },
+    "earnWithUs": {
       "type": "string",
       "required": true
     }

@@ -15,7 +15,7 @@
     "HeroSection": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.hero-main",
+      "component": "sections.hero-main",
       "required": true
     },
     "SectionWithIndustriesImage": {

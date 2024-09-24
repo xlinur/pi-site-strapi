@@ -1,7 +1,7 @@
 {
   "collectionName": "components_shared_hero_mains",
   "info": {
-    "displayName": "HeroMain",
+    "displayName": "Hero main",
     "description": ""
   },
   "options": {},
@@ -12,16 +12,6 @@
     "description": {
       "type": "richtext"
     },
-    "hereNowBtn": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.button-link"
-    },
-    "candidateBtn": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.button-link"
-    },
     "recorWord": {
       "type": "string"
     },
@@ -29,6 +19,12 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.advantage"
+    },
+    "actions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atoms.button-link",
+      "max": 2
     }
   }
 }

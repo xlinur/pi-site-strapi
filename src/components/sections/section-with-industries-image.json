@@ -14,11 +14,6 @@
       "type": "richtext",
       "required": true
     },
-    "moreInfo": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.button-link"
-    },
     "reversedDirection": {
       "type": "boolean"
     }
