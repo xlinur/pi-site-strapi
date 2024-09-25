@@ -18,7 +18,7 @@
     "actions": {
       "type": "component",
       "repeatable": true,
-      "component": "atoms.button-link",
+      "component": "atoms.button",
       "max": 2
     },
     "advantages": {

@@ -27,7 +27,7 @@
     "button": {
       "type": "component",
       "repeatable": false,
-      "component": "atoms.button-link",
+      "component": "atoms.button",
       "required": true
     }
   }

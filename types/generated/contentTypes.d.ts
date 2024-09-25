@@ -803,7 +803,7 @@ export interface ApiCompaniesLogoSectionCompaniesLogoSection
   attributes: {
     logos: Attribute.Media & Attribute.Required;
     title: Attribute.String & Attribute.Required;
-    button: Attribute.Component<'atoms.button-link'> & Attribute.Required;
+    button: Attribute.Component<'atoms.button'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1039,7 +1039,7 @@ export interface ApiSectionTrustedMapSectionTrustedMap
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    button: Attribute.Component<'atoms.button-link'> & Attribute.Required;
+    button: Attribute.Component<'atoms.button'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1071,7 +1071,7 @@ export interface ApiSectionWhatOurCliensSaySectionWhatOurCliensSay
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    button: Attribute.Component<'atoms.button-link'> & Attribute.Required;
+    button: Attribute.Component<'atoms.button'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

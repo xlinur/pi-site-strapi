@@ -21,6 +21,16 @@ export interface AtomsButtonLink extends Schema.Component {
   };
 }
 
+export interface AtomsButton extends Schema.Component {
+  collectionName: 'components_atoms_buttons';
+  info: {
+    displayName: 'Button';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface MoleculesTitleWithDescription extends Schema.Component {
   collectionName: 'components_molecules_title_with_descriptions';
   info: {
@@ -238,6 +248,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'atoms.button-link': AtomsButtonLink;
+      'atoms.button': AtomsButton;
       'molecules.title-with-description': MoleculesTitleWithDescription;
       'organisms.customer-feedback': OrganismsCustomerFeedback;
       'sections.advantages': SectionsAdvantages;
