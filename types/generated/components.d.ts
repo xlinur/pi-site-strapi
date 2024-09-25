@@ -68,6 +68,19 @@ export interface SectionsAdvantages extends Schema.Component {
   };
 }
 
+export interface SectionsAnimatedHero extends Schema.Component {
+  collectionName: 'components_sections_animated_heroes';
+  info: {
+    displayName: 'Animated hero';
+  };
+  attributes: {
+    title: Attribute.RichText & Attribute.Required;
+    description: Attribute.RichText & Attribute.Required;
+    hireNowBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+    candidateBtn: Attribute.Component<'atoms.button'>;
+  };
+}
+
 export interface SectionsExclusiveProcess extends Schema.Component {
   collectionName: 'components_sections_exclusive_processes';
   info: {
@@ -77,7 +90,7 @@ export interface SectionsExclusiveProcess extends Schema.Component {
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
     processes: Attribute.Component<'molecules.title-with-description', true>;
-    button: Attribute.Component<'atoms.button-link'>;
+    button: Attribute.Component<'atoms.button'>;
   };
 }
 
@@ -90,14 +103,9 @@ export interface SectionsHeroMain extends Schema.Component {
   attributes: {
     title: Attribute.RichText;
     description: Attribute.RichText;
+    hireNowBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+    candidateBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
     recordWord: Attribute.String;
-    actions: Attribute.Component<'atoms.button-link', true> &
-      Attribute.SetMinMax<
-        {
-          max: 2;
-        },
-        number
-      >;
     advantages: Attribute.Component<'sections.advantages', true> &
       Attribute.Required &
       Attribute.SetMinMax<
@@ -131,7 +139,7 @@ export interface SectionsSectionWithIndustriesImage extends Schema.Component {
   attributes: {
     title: Attribute.RichText & Attribute.Required;
     description: Attribute.RichText & Attribute.Required;
-    reversedDirection: Attribute.Boolean;
+    moreInfo: Attribute.Component<'atoms.button'> & Attribute.Required;
   };
 }
 
@@ -166,7 +174,7 @@ export interface SectionsWhyInfoSection extends Schema.Component {
       Attribute.DefaultTo<true>;
     reasons: Attribute.Component<'molecules.title-with-description', true> &
       Attribute.Required;
-    button: Attribute.Component<'atoms.button-link'> & Attribute.Required;
+    button: Attribute.Component<'atoms.button'> & Attribute.Required;
   };
 }
 
@@ -192,18 +200,6 @@ export interface SharedFooter extends Schema.Component {
     ContactsTitle: Attribute.String;
     copywritig: Attribute.String;
     privacyAndPolicy: Attribute.String;
-  };
-}
-
-export interface SharedHeroSection extends Schema.Component {
-  collectionName: 'components_shared_hero_sections';
-  info: {
-    displayName: 'Hero Section';
-    description: '';
-  };
-  attributes: {
-    subTitle: Attribute.RichText;
-    title: Attribute.RichText & Attribute.Required;
   };
 }
 
@@ -252,6 +248,7 @@ declare module '@strapi/types' {
       'molecules.title-with-description': MoleculesTitleWithDescription;
       'organisms.customer-feedback': OrganismsCustomerFeedback;
       'sections.advantages': SectionsAdvantages;
+      'sections.animated-hero': SectionsAnimatedHero;
       'sections.exclusive-process': SectionsExclusiveProcess;
       'sections.hero-main': SectionsHeroMain;
       'sections.meet-our-team': SectionsMeetOurTeam;
@@ -260,7 +257,6 @@ declare module '@strapi/types' {
       'sections.why-info-section': SectionsWhyInfoSection;
       'shared.contact-label-item': SharedContactLabelItem;
       'shared.footer': SharedFooter;
-      'shared.hero-section': SharedHeroSection;
       'shared.media': SharedMedia;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;

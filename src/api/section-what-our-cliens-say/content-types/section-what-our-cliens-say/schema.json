@@ -4,7 +4,8 @@
   "info": {
     "singularName": "section-what-our-cliens-say",
     "pluralName": "section-what-our-cliens-says",
-    "displayName": "[Section] What our cliens say"
+    "displayName": "[Section] What our cliens say",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,10 +16,14 @@
       "type": "string",
       "required": true
     },
-    "button": {
+    "readMoreBtn": {
       "type": "component",
       "repeatable": false,
       "component": "atoms.button",
+      "required": true
+    },
+    "readAllBtn": {
+      "type": "string",
       "required": true
     }
   }

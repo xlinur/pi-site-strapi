@@ -12,14 +12,20 @@
     "description": {
       "type": "richtext"
     },
+    "hireNowBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
+    },
+    "candidateBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
+    },
     "recordWord": {
       "type": "string"
-    },
-    "actions": {
-      "type": "component",
-      "repeatable": true,
-      "component": "atoms.button",
-      "max": 2
     },
     "advantages": {
       "type": "component",

@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_sections_section_with_industries_images",
+  "collectionName": "components_sections_animated_heroes",
   "info": {
-    "displayName": "Section with industries image",
-    "description": ""
+    "displayName": "Animated hero"
   },
   "options": {},
   "attributes": {
@@ -14,11 +13,16 @@
       "type": "richtext",
       "required": true
     },
-    "moreInfo": {
+    "hireNowBtn": {
       "type": "component",
       "repeatable": false,
       "component": "atoms.button",
       "required": true
+    },
+    "candidateBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button"
     }
   }
 }

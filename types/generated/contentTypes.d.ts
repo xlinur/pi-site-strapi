@@ -1033,13 +1033,14 @@ export interface ApiSectionTrustedMapSectionTrustedMap
     singularName: 'section-trusted-map';
     pluralName: 'section-trusted-maps';
     displayName: '[Section] Trusted map';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    button: Attribute.Component<'atoms.button'> & Attribute.Required;
+    contactUsBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1065,13 +1066,15 @@ export interface ApiSectionWhatOurCliensSaySectionWhatOurCliensSay
     singularName: 'section-what-our-cliens-say';
     pluralName: 'section-what-our-cliens-says';
     displayName: '[Section] What our cliens say';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    button: Attribute.Component<'atoms.button'> & Attribute.Required;
+    readMoreBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+    readAllBtn: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1141,8 +1144,6 @@ export interface ApiSphereSphere extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    HeroSection: Attribute.Component<'shared.hero-section'> &
-      Attribute.Required;
     slug: Attribute.UID & Attribute.Required;
     feedbacks: Attribute.Relation<
       'api::sphere.sphere',

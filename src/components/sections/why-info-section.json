@@ -10,11 +10,6 @@
       "type": "string",
       "required": true
     },
-    "withBackground": {
-      "type": "boolean",
-      "default": true,
-      "required": true
-    },
     "reasons": {
       "type": "component",
       "repeatable": true,

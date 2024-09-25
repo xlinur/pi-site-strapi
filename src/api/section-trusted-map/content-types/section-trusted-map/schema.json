@@ -4,7 +4,8 @@
   "info": {
     "singularName": "section-trusted-map",
     "pluralName": "section-trusted-maps",
-    "displayName": "[Section] Trusted map"
+    "displayName": "[Section] Trusted map",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +16,7 @@
       "type": "string",
       "required": true
     },
-    "button": {
+    "contactUsBtn": {
       "type": "component",
       "repeatable": false,
       "component": "atoms.button",
