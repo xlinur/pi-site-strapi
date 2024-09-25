@@ -69,6 +69,20 @@ export interface OrganismsCustomerFeedback extends Schema.Component {
   };
 }
 
+export interface OrganismsRecruitmentType extends Schema.Component {
+  collectionName: 'components_organisms_recruitment_types';
+  info: {
+    displayName: 'Recruitment type';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    subtitle: Attribute.String & Attribute.Required;
+    description: Attribute.RichText & Attribute.Required;
+    hireNowBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+  };
+}
+
 export interface OrganismsTeamMember extends Schema.Component {
   collectionName: 'components_organisms_team_members';
   info: {
@@ -263,6 +277,26 @@ export interface SectionsTree extends Schema.Component {
   };
 }
 
+export interface SectionsTypesOfRecruitment extends Schema.Component {
+  collectionName: 'components_sections_types_of_recruitments';
+  info: {
+    displayName: 'Types of recruitment';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    types: Attribute.Component<'organisms.recruitment-type', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 2;
+        },
+        number
+      >;
+  };
+}
+
 export interface SectionsWhyInfoSection extends Schema.Component {
   collectionName: 'components_sections_why_info_sections';
   info: {
@@ -347,6 +381,7 @@ declare module '@strapi/types' {
       'molecules.count-with-description': MoleculesCountWithDescription;
       'molecules.title-with-description': MoleculesTitleWithDescription;
       'organisms.customer-feedback': OrganismsCustomerFeedback;
+      'organisms.recruitment-type': OrganismsRecruitmentType;
       'organisms.team-member': OrganismsTeamMember;
       'sections.advantages': SectionsAdvantages;
       'sections.animated-hero': SectionsAnimatedHero;
@@ -359,6 +394,7 @@ declare module '@strapi/types' {
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;
       'sections.start-conversation-form': SectionsStartConversationForm;
       'sections.tree': SectionsTree;
+      'sections.types-of-recruitment': SectionsTypesOfRecruitment;
       'sections.why-info-section': SectionsWhyInfoSection;
       'shared.contact-label-item': SharedContactLabelItem;
       'shared.footer': SharedFooter;

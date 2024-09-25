@@ -29,6 +29,13 @@
       "repeatable": false,
       "component": "sections.tree",
       "required": true
+    },
+    "TypesOfRecruitment": {
+      "displayName": "Types of recruitment",
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.types-of-recruitment",
+      "required": true
     }
   }
 }

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_types_of_recruitments",
+  "info": {
+    "displayName": "Types of recruitment",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "types": {
+      "displayName": "Recruitment type",
+      "type": "component",
+      "repeatable": true,
+      "component": "organisms.recruitment-type",
+      "required": true,
+      "max": 2,
+      "min": 1
+    }
+  }
+}

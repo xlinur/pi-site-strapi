@@ -1049,6 +1049,8 @@ export interface ApiPageRecruitmentPageRecruitment extends Schema.SingleType {
     InfoWithCards: Attribute.Component<'sections.info-with-cards'> &
       Attribute.Required;
     TreeSection: Attribute.Component<'sections.tree'> & Attribute.Required;
+    TypesOfRecruitment: Attribute.Component<'sections.types-of-recruitment'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
