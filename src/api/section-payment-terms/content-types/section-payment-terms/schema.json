@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "section_payment_termss",
+  "info": {
+    "singularName": "section-payment-terms",
+    "pluralName": "section-payment-termss",
+    "displayName": "[Section] Payment terms"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "molecules.title-with-description",
+      "required": true,
+      "max": 2,
+      "min": 2
+    },
+    "contactBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
+    }
+  }
+}

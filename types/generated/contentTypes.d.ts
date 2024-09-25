@@ -1156,6 +1156,47 @@ export interface ApiSectionAboutPersonalinvestSectionAboutPersonalinvest
   };
 }
 
+export interface ApiSectionPaymentTermsSectionPaymentTerms
+  extends Schema.SingleType {
+  collectionName: 'section_payment_termss';
+  info: {
+    singularName: 'section-payment-terms';
+    pluralName: 'section-payment-termss';
+    displayName: '[Section] Payment terms';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    items: Attribute.Component<'molecules.title-with-description', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 2;
+          max: 2;
+        },
+        number
+      >;
+    contactBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::section-payment-terms.section-payment-terms',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::section-payment-terms.section-payment-terms',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSectionTrustedMapSectionTrustedMap
   extends Schema.SingleType {
   collectionName: 'section_trusted_maps';
@@ -1326,6 +1367,7 @@ declare module '@strapi/types' {
       'api::page-home.page-home': ApiPageHomePageHome;
       'api::page-recruitment.page-recruitment': ApiPageRecruitmentPageRecruitment;
       'api::section-about-personalinvest.section-about-personalinvest': ApiSectionAboutPersonalinvestSectionAboutPersonalinvest;
+      'api::section-payment-terms.section-payment-terms': ApiSectionPaymentTermsSectionPaymentTerms;
       'api::section-trusted-map.section-trusted-map': ApiSectionTrustedMapSectionTrustedMap;
       'api::section-what-our-cliens-say.section-what-our-cliens-say': ApiSectionWhatOurCliensSaySectionWhatOurCliensSay;
       'api::shared-we-can-help-you-with.shared-we-can-help-you-with': ApiSharedWeCanHelpYouWithSharedWeCanHelpYouWith;
