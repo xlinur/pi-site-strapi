@@ -23,6 +23,13 @@
       "repeatable": false,
       "component": "sections.tree",
       "required": true
+    },
+    "OurFounder": {
+      "displayName": "Our founder",
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.our-founder",
+      "required": true
     }
   }
 }

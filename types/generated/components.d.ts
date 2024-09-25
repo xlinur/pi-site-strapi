@@ -142,6 +142,24 @@ export interface SectionsMeetOurTeam extends Schema.Component {
   };
 }
 
+export interface SectionsOurFounder extends Schema.Component {
+  collectionName: 'components_sections_our_founders';
+  info: {
+    displayName: 'Our founder';
+  };
+  attributes: {
+    photo: Attribute.Media & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    position: Attribute.String & Attribute.Required;
+    text: Attribute.RichText & Attribute.Required;
+    description: Attribute.RichText & Attribute.Required;
+    li: Attribute.String & Attribute.Required;
+    fb: Attribute.String & Attribute.Required;
+    email: Attribute.String & Attribute.Required;
+    titile: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface SectionsSectionWithIndustriesImage extends Schema.Component {
   collectionName: 'components_sections_section_with_industries_images';
   info: {
@@ -299,6 +317,7 @@ declare module '@strapi/types' {
       'sections.exclusive-process': SectionsExclusiveProcess;
       'sections.hero-main': SectionsHeroMain;
       'sections.meet-our-team': SectionsMeetOurTeam;
+      'sections.our-founder': SectionsOurFounder;
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;
       'sections.start-conversation-form': SectionsStartConversationForm;
       'sections.tree-section': SectionsTreeSection;

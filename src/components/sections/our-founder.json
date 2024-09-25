@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_sections_our_founders",
+  "info": {
+    "displayName": "Our founder"
+  },
+  "options": {},
+  "attributes": {
+    "photo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "position": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "richtext",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "li": {
+      "type": "string",
+      "required": true
+    },
+    "fb": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "titile": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -910,6 +910,8 @@ export interface ApiPageAboutUsPageAboutUs extends Schema.SingleType {
     AnimatedHero: Attribute.Component<'sections.animated-hero'> &
       Attribute.Required;
     HowWeWork: Attribute.Component<'sections.tree'> & Attribute.Required;
+    OurFounder: Attribute.Component<'sections.our-founder'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
