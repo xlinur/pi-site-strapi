@@ -4,7 +4,7 @@
   "info": {
     "singularName": "customer-feedbacks-data",
     "pluralName": "customer-feedbacks-datas",
-    "displayName": "[Shared] Customer feedbacks data"
+    "displayName": "[Section] Customer feedbacks data"
   },
   "options": {
     "draftAndPublish": true

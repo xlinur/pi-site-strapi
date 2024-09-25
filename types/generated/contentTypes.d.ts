@@ -794,7 +794,7 @@ export interface ApiCompaniesLogoSectionCompaniesLogoSection
   info: {
     singularName: 'companies-logo-section';
     pluralName: 'companies-logo-sections';
-    displayName: '[Shared] Companies logo section';
+    displayName: '[Section] Companies logo section';
     description: '';
   };
   options: {
@@ -828,7 +828,7 @@ export interface ApiCustomerFeedbacksDataCustomerFeedbacksData
   info: {
     singularName: 'customer-feedbacks-data';
     pluralName: 'customer-feedbacks-datas';
-    displayName: '[Shared] Customer feedbacks data';
+    displayName: '[Section] Customer feedbacks data';
   };
   options: {
     draftAndPublish: true;
@@ -956,6 +956,37 @@ export interface ApiPageContactUsPageContactUs extends Schema.SingleType {
   };
 }
 
+export interface ApiPageFeedbacksPageFeedbacks extends Schema.SingleType {
+  collectionName: 'page_feedbackss';
+  info: {
+    singularName: 'page-feedbacks';
+    pluralName: 'page-feedbackss';
+    displayName: '[Page] Feedbacks';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    moreReviewsBtn: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-feedbacks.page-feedbacks',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-feedbacks.page-feedbacks',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPageHomePageHome extends Schema.SingleType {
   collectionName: 'page_homes';
   info: {
@@ -1065,7 +1096,7 @@ export interface ApiSharedWeCanHelpYouWithSharedWeCanHelpYouWith
   info: {
     singularName: 'shared-we-can-help-you-with';
     pluralName: 'shared-we-can-help-you-withs';
-    displayName: '[Shared] We can help you with';
+    displayName: '[Section] We can help you with';
     description: '';
   };
   options: {
@@ -1159,6 +1190,7 @@ declare module '@strapi/types' {
       'api::feedback.feedback': ApiFeedbackFeedback;
       'api::global.global': ApiGlobalGlobal;
       'api::page-contact-us.page-contact-us': ApiPageContactUsPageContactUs;
+      'api::page-feedbacks.page-feedbacks': ApiPageFeedbacksPageFeedbacks;
       'api::page-home.page-home': ApiPageHomePageHome;
       'api::section-trusted-map.section-trusted-map': ApiSectionTrustedMapSectionTrustedMap;
       'api::section-what-our-cliens-say.section-what-our-cliens-say': ApiSectionWhatOurCliensSaySectionWhatOurCliensSay;

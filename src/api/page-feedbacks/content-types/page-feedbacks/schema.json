@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_feedbackss",
+  "info": {
+    "singularName": "page-feedbacks",
+    "pluralName": "page-feedbackss",
+    "displayName": "[Page] Feedbacks"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "moreReviewsBtn": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
