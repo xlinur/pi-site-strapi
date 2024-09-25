@@ -30,6 +30,13 @@
       "repeatable": false,
       "component": "sections.our-founder",
       "required": true
+    },
+    "OurTeam": {
+      "displayName": "Our team",
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.our-team",
+      "required": true
     }
   }
 }

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_sections_our_teams",
+  "info": {
+    "displayName": "Our team"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "members": {
+      "displayName": "Team member",
+      "type": "component",
+      "repeatable": true,
+      "component": "organisms.team-member",
+      "required": true,
+      "max": 6,
+      "min": 6
+    }
+  }
+}

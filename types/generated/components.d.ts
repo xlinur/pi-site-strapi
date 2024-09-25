@@ -69,6 +69,18 @@ export interface OrganismsCustomerFeedback extends Schema.Component {
   };
 }
 
+export interface OrganismsTeamMember extends Schema.Component {
+  collectionName: 'components_organisms_team_members';
+  info: {
+    displayName: 'Team member';
+  };
+  attributes: {
+    photo: Attribute.Media & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    position: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface SectionsAdvantages extends Schema.Component {
   collectionName: 'components_sections_advantages';
   info: {
@@ -157,6 +169,26 @@ export interface SectionsOurFounder extends Schema.Component {
     fb: Attribute.String & Attribute.Required;
     email: Attribute.String & Attribute.Required;
     titile: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface SectionsOurTeam extends Schema.Component {
+  collectionName: 'components_sections_our_teams';
+  info: {
+    displayName: 'Our team';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.RichText & Attribute.Required;
+    members: Attribute.Component<'organisms.team-member', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 6;
+          max: 6;
+        },
+        number
+      >;
   };
 }
 
@@ -312,12 +344,14 @@ declare module '@strapi/types' {
       'molecules.count-with-description': MoleculesCountWithDescription;
       'molecules.title-with-description': MoleculesTitleWithDescription;
       'organisms.customer-feedback': OrganismsCustomerFeedback;
+      'organisms.team-member': OrganismsTeamMember;
       'sections.advantages': SectionsAdvantages;
       'sections.animated-hero': SectionsAnimatedHero;
       'sections.exclusive-process': SectionsExclusiveProcess;
       'sections.hero-main': SectionsHeroMain;
       'sections.meet-our-team': SectionsMeetOurTeam;
       'sections.our-founder': SectionsOurFounder;
+      'sections.our-team': SectionsOurTeam;
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;
       'sections.start-conversation-form': SectionsStartConversationForm;
       'sections.tree-section': SectionsTreeSection;

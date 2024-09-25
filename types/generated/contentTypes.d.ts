@@ -912,6 +912,7 @@ export interface ApiPageAboutUsPageAboutUs extends Schema.SingleType {
     HowWeWork: Attribute.Component<'sections.tree'> & Attribute.Required;
     OurFounder: Attribute.Component<'sections.our-founder'> &
       Attribute.Required;
+    OurTeam: Attribute.Component<'sections.our-team'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
