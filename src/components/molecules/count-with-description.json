@@ -1,7 +1,8 @@
 {
   "collectionName": "components_molecules_count_with_descriptions",
   "info": {
-    "displayName": "Count with description"
+    "displayName": "Count with description",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,7 +11,8 @@
       "required": true
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "required": true
     }
   }
 }

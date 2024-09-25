@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_trees",
+  "info": {
+    "displayName": "Tree",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "molecules.title-with-description",
+      "required": true,
+      "min": 1
+    }
+  }
+}

@@ -901,6 +901,7 @@ export interface ApiPageAboutUsPageAboutUs extends Schema.SingleType {
     singularName: 'page-about-us';
     pluralName: 'page-about-uses';
     displayName: '[Page] About us';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -908,6 +909,7 @@ export interface ApiPageAboutUsPageAboutUs extends Schema.SingleType {
   attributes: {
     AnimatedHero: Attribute.Component<'sections.animated-hero'> &
       Attribute.Required;
+    HowWeWork: Attribute.Component<'sections.tree'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

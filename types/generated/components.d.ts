@@ -35,10 +35,11 @@ export interface MoleculesCountWithDescription extends Schema.Component {
   collectionName: 'components_molecules_count_with_descriptions';
   info: {
     displayName: 'Count with description';
+    description: '';
   };
   attributes: {
     count: Attribute.Integer & Attribute.Required;
-    description: Attribute.Text;
+    description: Attribute.Text & Attribute.Required;
   };
 }
 
@@ -172,6 +173,43 @@ export interface SectionsStartConversationForm extends Schema.Component {
   };
 }
 
+export interface SectionsTreeSection extends Schema.Component {
+  collectionName: 'components_sections_tree_sections';
+  info: {
+    displayName: 'Tree section';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    items: Attribute.Component<'molecules.title-with-description', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+  };
+}
+
+export interface SectionsTree extends Schema.Component {
+  collectionName: 'components_sections_trees';
+  info: {
+    displayName: 'Tree';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    items: Attribute.Component<'molecules.title-with-description', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+  };
+}
+
 export interface SectionsWhyInfoSection extends Schema.Component {
   collectionName: 'components_sections_why_info_sections';
   info: {
@@ -263,6 +301,8 @@ declare module '@strapi/types' {
       'sections.meet-our-team': SectionsMeetOurTeam;
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;
       'sections.start-conversation-form': SectionsStartConversationForm;
+      'sections.tree-section': SectionsTreeSection;
+      'sections.tree': SectionsTree;
       'sections.why-info-section': SectionsWhyInfoSection;
       'shared.contact-label-item': SharedContactLabelItem;
       'shared.footer': SharedFooter;
