@@ -895,6 +895,37 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
   };
 }
 
+export interface ApiPageAboutUsPageAboutUs extends Schema.SingleType {
+  collectionName: 'page_about_uses';
+  info: {
+    singularName: 'page-about-us';
+    pluralName: 'page-about-uses';
+    displayName: '[Page] About us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    AnimatedHero: Attribute.Component<'sections.animated-hero'> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-about-us.page-about-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-about-us.page-about-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPageContactUsPageContactUs extends Schema.SingleType {
   collectionName: 'page_contact_uses';
   info: {
@@ -989,6 +1020,56 @@ export interface ApiPageHomePageHome extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::page-home.page-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSectionAboutPersonalinvestSectionAboutPersonalinvest
+  extends Schema.SingleType {
+  collectionName: 'section_about_personalinvests';
+  info: {
+    singularName: 'section-about-personalinvest';
+    pluralName: 'section-about-personalinvests';
+    displayName: '[Section] About Personalinvest';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.Text & Attribute.Required;
+    info: Attribute.Component<'molecules.title-with-description', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 4;
+          max: 4;
+        },
+        number
+      >;
+    numbers: Attribute.Component<'molecules.count-with-description', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 3;
+          max: 3;
+        },
+        number
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::section-about-personalinvest.section-about-personalinvest',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::section-about-personalinvest.section-about-personalinvest',
       'oneToOne',
       'admin::user'
     > &
@@ -1159,9 +1240,11 @@ declare module '@strapi/types' {
       'api::companies-logo-section.companies-logo-section': ApiCompaniesLogoSectionCompaniesLogoSection;
       'api::feedback.feedback': ApiFeedbackFeedback;
       'api::global.global': ApiGlobalGlobal;
+      'api::page-about-us.page-about-us': ApiPageAboutUsPageAboutUs;
       'api::page-contact-us.page-contact-us': ApiPageContactUsPageContactUs;
       'api::page-feedbacks.page-feedbacks': ApiPageFeedbacksPageFeedbacks;
       'api::page-home.page-home': ApiPageHomePageHome;
+      'api::section-about-personalinvest.section-about-personalinvest': ApiSectionAboutPersonalinvestSectionAboutPersonalinvest;
       'api::section-trusted-map.section-trusted-map': ApiSectionTrustedMapSectionTrustedMap;
       'api::section-what-our-cliens-say.section-what-our-cliens-say': ApiSectionWhatOurCliensSaySectionWhatOurCliensSay;
       'api::shared-we-can-help-you-with.shared-we-can-help-you-with': ApiSharedWeCanHelpYouWithSharedWeCanHelpYouWith;

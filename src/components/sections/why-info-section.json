@@ -16,7 +16,7 @@
       "component": "molecules.title-with-description",
       "required": true
     },
-    "button": {
+    "findTalentBtn": {
       "type": "component",
       "repeatable": false,
       "component": "atoms.button",

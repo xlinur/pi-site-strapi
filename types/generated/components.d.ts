@@ -31,6 +31,17 @@ export interface AtomsButton extends Schema.Component {
   };
 }
 
+export interface MoleculesCountWithDescription extends Schema.Component {
+  collectionName: 'components_molecules_count_with_descriptions';
+  info: {
+    displayName: 'Count with description';
+  };
+  attributes: {
+    count: Attribute.Integer & Attribute.Required;
+    description: Attribute.Text;
+  };
+}
+
 export interface MoleculesTitleWithDescription extends Schema.Component {
   collectionName: 'components_molecules_title_with_descriptions';
   info: {
@@ -90,7 +101,7 @@ export interface SectionsExclusiveProcess extends Schema.Component {
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
     processes: Attribute.Component<'molecules.title-with-description', true>;
-    button: Attribute.Component<'atoms.button'>;
+    findTalentBtn: Attribute.Component<'atoms.button'>;
   };
 }
 
@@ -171,7 +182,7 @@ export interface SectionsWhyInfoSection extends Schema.Component {
     title: Attribute.String & Attribute.Required;
     reasons: Attribute.Component<'molecules.title-with-description', true> &
       Attribute.Required;
-    button: Attribute.Component<'atoms.button'> & Attribute.Required;
+    findTalentBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
   };
 }
 
@@ -242,6 +253,7 @@ declare module '@strapi/types' {
     export interface Components {
       'atoms.button-link': AtomsButtonLink;
       'atoms.button': AtomsButton;
+      'molecules.count-with-description': MoleculesCountWithDescription;
       'molecules.title-with-description': MoleculesTitleWithDescription;
       'organisms.customer-feedback': OrganismsCustomerFeedback;
       'sections.advantages': SectionsAdvantages;

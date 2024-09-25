@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "section_about_personalinvests",
+  "info": {
+    "singularName": "section-about-personalinvest",
+    "pluralName": "section-about-personalinvests",
+    "displayName": "[Section] About Personalinvest",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "info": {
+      "type": "component",
+      "repeatable": true,
+      "component": "molecules.title-with-description",
+      "required": true,
+      "max": 4,
+      "min": 4
+    },
+    "numbers": {
+      "displayName": "Count with description",
+      "type": "component",
+      "repeatable": true,
+      "component": "molecules.count-with-description",
+      "required": true,
+      "max": 3,
+      "min": 3
+    }
+  }
+}
