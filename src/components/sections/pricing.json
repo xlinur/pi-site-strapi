@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_pricings",
+  "info": {
+    "displayName": "Pricing"
+  },
+  "options": {},
+  "attributes": {
+    "feeSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "organisms.pricing-item",
+      "required": true
+    },
+    "splitRecruitment": {
+      "type": "component",
+      "repeatable": false,
+      "component": "organisms.pricing-item",
+      "required": true
+    },
+    "subscriptionModel": {
+      "type": "component",
+      "repeatable": false,
+      "component": "organisms.pricing-item",
+      "required": true
+    }
+  }
+}

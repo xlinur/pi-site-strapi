@@ -69,6 +69,18 @@ export interface OrganismsCustomerFeedback extends Schema.Component {
   };
 }
 
+export interface OrganismsPricingItem extends Schema.Component {
+  collectionName: 'components_organisms_pricing_items';
+  info: {
+    displayName: 'Pricing item';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    btnName: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface OrganismsRecruitmentType extends Schema.Component {
   collectionName: 'components_organisms_recruitment_types';
   info: {
@@ -189,6 +201,17 @@ export interface SectionsMeetOurTeam extends Schema.Component {
   };
 }
 
+export interface SectionsNeedHelp extends Schema.Component {
+  collectionName: 'components_sections_need_helps';
+  info: {
+    displayName: 'Need help';
+  };
+  attributes: {
+    helpText: Attribute.Text & Attribute.Required;
+    helpBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+  };
+}
+
 export interface SectionsOurFounder extends Schema.Component {
   collectionName: 'components_sections_our_founders';
   info: {
@@ -224,6 +247,21 @@ export interface SectionsOurTeam extends Schema.Component {
         },
         number
       >;
+  };
+}
+
+export interface SectionsPricing extends Schema.Component {
+  collectionName: 'components_sections_pricings';
+  info: {
+    displayName: 'Pricing';
+  };
+  attributes: {
+    feeSection: Attribute.Component<'organisms.pricing-item'> &
+      Attribute.Required;
+    splitRecruitment: Attribute.Component<'organisms.pricing-item'> &
+      Attribute.Required;
+    subscriptionModel: Attribute.Component<'organisms.pricing-item'> &
+      Attribute.Required;
   };
 }
 
@@ -381,6 +419,7 @@ declare module '@strapi/types' {
       'molecules.count-with-description': MoleculesCountWithDescription;
       'molecules.title-with-description': MoleculesTitleWithDescription;
       'organisms.customer-feedback': OrganismsCustomerFeedback;
+      'organisms.pricing-item': OrganismsPricingItem;
       'organisms.recruitment-type': OrganismsRecruitmentType;
       'organisms.team-member': OrganismsTeamMember;
       'sections.advantages': SectionsAdvantages;
@@ -389,8 +428,10 @@ declare module '@strapi/types' {
       'sections.hero-main': SectionsHeroMain;
       'sections.info-with-cards': SectionsInfoWithCards;
       'sections.meet-our-team': SectionsMeetOurTeam;
+      'sections.need-help': SectionsNeedHelp;
       'sections.our-founder': SectionsOurFounder;
       'sections.our-team': SectionsOurTeam;
+      'sections.pricing': SectionsPricing;
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;
       'sections.start-conversation-form': SectionsStartConversationForm;
       'sections.tree': SectionsTree;

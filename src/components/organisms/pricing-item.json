@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_organisms_pricing_items",
+  "info": {
+    "displayName": "Pricing item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "btnName": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

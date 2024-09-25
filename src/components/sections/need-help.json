@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_need_helps",
+  "info": {
+    "displayName": "Need help"
+  },
+  "options": {},
+  "attributes": {
+    "helpText": {
+      "type": "text",
+      "required": true
+    },
+    "helpBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
+    }
+  }
+}

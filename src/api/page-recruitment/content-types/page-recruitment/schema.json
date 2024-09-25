@@ -36,6 +36,24 @@
       "repeatable": false,
       "component": "sections.types-of-recruitment",
       "required": true
+    },
+    "NeedHelpSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.need-help",
+      "required": true
+    },
+    "Pricing": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.pricing",
+      "required": true
+    },
+    "SectionWithIndustriesImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.section-with-industries-image",
+      "required": true
     }
   }
 }
