@@ -909,7 +909,7 @@ export interface ApiPageAboutUsPageAboutUs extends Schema.SingleType {
   attributes: {
     AnimatedHero: Attribute.Component<'sections.animated-hero'> &
       Attribute.Required;
-    HowWeWork: Attribute.Component<'sections.tree'> & Attribute.Required;
+    TreeSection: Attribute.Component<'sections.tree'> & Attribute.Required;
     OurFounder: Attribute.Component<'sections.our-founder'> &
       Attribute.Required;
     OurTeam: Attribute.Component<'sections.our-team'> & Attribute.Required;
@@ -1025,6 +1025,41 @@ export interface ApiPageHomePageHome extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::page-home.page-home',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPageRecruitmentPageRecruitment extends Schema.SingleType {
+  collectionName: 'page_recruitments';
+  info: {
+    singularName: 'page-recruitment';
+    pluralName: 'page-recruitments';
+    displayName: '[Page] Recruitment';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    AnimatedHero: Attribute.Component<'sections.animated-hero'> &
+      Attribute.Required;
+    InfoWithCards: Attribute.Component<'sections.info-with-cards'> &
+      Attribute.Required;
+    TreeSection: Attribute.Component<'sections.tree'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-recruitment.page-recruitment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-recruitment.page-recruitment',
       'oneToOne',
       'admin::user'
     > &
@@ -1249,6 +1284,7 @@ declare module '@strapi/types' {
       'api::page-contact-us.page-contact-us': ApiPageContactUsPageContactUs;
       'api::page-feedbacks.page-feedbacks': ApiPageFeedbacksPageFeedbacks;
       'api::page-home.page-home': ApiPageHomePageHome;
+      'api::page-recruitment.page-recruitment': ApiPageRecruitmentPageRecruitment;
       'api::section-about-personalinvest.section-about-personalinvest': ApiSectionAboutPersonalinvestSectionAboutPersonalinvest;
       'api::section-trusted-map.section-trusted-map': ApiSectionTrustedMapSectionTrustedMap;
       'api::section-what-our-cliens-say.section-what-our-cliens-say': ApiSectionWhatOurCliensSaySectionWhatOurCliensSay;

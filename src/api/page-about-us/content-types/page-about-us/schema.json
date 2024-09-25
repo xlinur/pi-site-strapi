@@ -18,7 +18,7 @@
       "component": "sections.animated-hero",
       "required": true
     },
-    "HowWeWork": {
+    "TreeSection": {
       "type": "component",
       "repeatable": false,
       "component": "sections.tree",

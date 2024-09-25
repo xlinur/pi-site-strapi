@@ -142,6 +142,27 @@ export interface SectionsHeroMain extends Schema.Component {
   };
 }
 
+export interface SectionsInfoWithCards extends Schema.Component {
+  collectionName: 'components_sections_info_with_cards';
+  info: {
+    displayName: 'Info with cards';
+  };
+  attributes: {
+    text: Attribute.RichText & Attribute.Required;
+    contactRecrutmentBtn: Attribute.Component<'atoms.button'> &
+      Attribute.Required;
+    achivements: Attribute.Component<'molecules.title-with-description', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 4;
+        },
+        number
+      >;
+  };
+}
+
 export interface SectionsMeetOurTeam extends Schema.Component {
   collectionName: 'components_sections_meet_our_teams';
   info: {
@@ -220,24 +241,6 @@ export interface SectionsStartConversationForm extends Schema.Component {
     contacts: Attribute.Component<'shared.contact-label-item', true>;
     descriptionLabel: Attribute.String;
     legalCheckboxText: Attribute.String;
-  };
-}
-
-export interface SectionsTreeSection extends Schema.Component {
-  collectionName: 'components_sections_tree_sections';
-  info: {
-    displayName: 'Tree section';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    items: Attribute.Component<'molecules.title-with-description', true> &
-      Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-        },
-        number
-      >;
   };
 }
 
@@ -349,12 +352,12 @@ declare module '@strapi/types' {
       'sections.animated-hero': SectionsAnimatedHero;
       'sections.exclusive-process': SectionsExclusiveProcess;
       'sections.hero-main': SectionsHeroMain;
+      'sections.info-with-cards': SectionsInfoWithCards;
       'sections.meet-our-team': SectionsMeetOurTeam;
       'sections.our-founder': SectionsOurFounder;
       'sections.our-team': SectionsOurTeam;
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;
       'sections.start-conversation-form': SectionsStartConversationForm;
-      'sections.tree-section': SectionsTreeSection;
       'sections.tree': SectionsTree;
       'sections.why-info-section': SectionsWhyInfoSection;
       'shared.contact-label-item': SharedContactLabelItem;

@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_recruitments",
+  "info": {
+    "singularName": "page-recruitment",
+    "pluralName": "page-recruitments",
+    "displayName": "[Page] Recruitment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "AnimatedHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.animated-hero",
+      "required": true
+    },
+    "InfoWithCards": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.info-with-cards",
+      "required": true
+    },
+    "TreeSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.tree",
+      "required": true
+    }
+  }
+}

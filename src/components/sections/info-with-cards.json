@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_info_with_cards",
+  "info": {
+    "displayName": "Info with cards"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext",
+      "required": true
+    },
+    "contactRecrutmentBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
+    },
+    "achivements": {
+      "type": "component",
+      "repeatable": true,
+      "component": "molecules.title-with-description",
+      "required": true,
+      "max": 4,
+      "min": 1
+    }
+  }
+}
