@@ -24,7 +24,7 @@
       "type": "string",
       "required": true
     },
-    "button": {
+    "addLogoBtn": {
       "type": "component",
       "repeatable": false,
       "component": "atoms.button",

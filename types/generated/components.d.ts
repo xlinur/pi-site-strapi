@@ -169,9 +169,6 @@ export interface SectionsWhyInfoSection extends Schema.Component {
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    withBackground: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<true>;
     reasons: Attribute.Component<'molecules.title-with-description', true> &
       Attribute.Required;
     button: Attribute.Component<'atoms.button'> & Attribute.Required;

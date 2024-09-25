@@ -803,7 +803,7 @@ export interface ApiCompaniesLogoSectionCompaniesLogoSection
   attributes: {
     logos: Attribute.Media & Attribute.Required;
     title: Attribute.String & Attribute.Required;
-    button: Attribute.Component<'atoms.button'> & Attribute.Required;
+    addLogoBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -815,37 +815,6 @@ export interface ApiCompaniesLogoSectionCompaniesLogoSection
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::companies-logo-section.companies-logo-section',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCustomerFeedbacksDataCustomerFeedbacksData
-  extends Schema.SingleType {
-  collectionName: 'customer_feedbacks_datas';
-  info: {
-    singularName: 'customer-feedbacks-data';
-    pluralName: 'customer-feedbacks-datas';
-    displayName: '[Section] Customer feedbacks data';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    customerFeedbacks: Attribute.Component<'organisms.customer-feedback', true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::customer-feedbacks-data.customer-feedbacks-data',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::customer-feedbacks-data.customer-feedbacks-data',
       'oneToOne',
       'admin::user'
     > &
@@ -962,13 +931,14 @@ export interface ApiPageFeedbacksPageFeedbacks extends Schema.SingleType {
     singularName: 'page-feedbacks';
     pluralName: 'page-feedbackss';
     displayName: '[Page] Feedbacks';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    moreReviewsBtn: Attribute.String & Attribute.Required;
+    moreReviewsBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1187,7 +1157,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::companies-logo-section.companies-logo-section': ApiCompaniesLogoSectionCompaniesLogoSection;
-      'api::customer-feedbacks-data.customer-feedbacks-data': ApiCustomerFeedbacksDataCustomerFeedbacksData;
       'api::feedback.feedback': ApiFeedbackFeedback;
       'api::global.global': ApiGlobalGlobal;
       'api::page-contact-us.page-contact-us': ApiPageContactUsPageContactUs;

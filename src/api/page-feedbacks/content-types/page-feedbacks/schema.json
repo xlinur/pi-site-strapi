@@ -4,7 +4,8 @@
   "info": {
     "singularName": "page-feedbacks",
     "pluralName": "page-feedbackss",
-    "displayName": "[Page] Feedbacks"
+    "displayName": "[Page] Feedbacks",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,7 +17,9 @@
       "required": true
     },
     "moreReviewsBtn": {
-      "type": "string",
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
       "required": true
     }
   }
