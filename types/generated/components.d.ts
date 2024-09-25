@@ -50,7 +50,7 @@ export interface MoleculesTitleWithDescription extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
+    title: Attribute.String;
     description: Attribute.RichText & Attribute.Required;
   };
 }
@@ -227,6 +227,17 @@ export interface SectionsOurFounder extends Schema.Component {
     fb: Attribute.String & Attribute.Required;
     email: Attribute.String & Attribute.Required;
     titile: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface SectionsOurProcessOfInteraction extends Schema.Component {
+  collectionName: 'components_sections_our_process_of_interactions';
+  info: {
+    displayName: 'Our process of interaction';
+  };
+  attributes: {
+    treeSection: Attribute.Component<'sections.tree'> & Attribute.Required;
+    applyNowBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
   };
 }
 
@@ -430,6 +441,7 @@ declare module '@strapi/types' {
       'sections.meet-our-team': SectionsMeetOurTeam;
       'sections.need-help': SectionsNeedHelp;
       'sections.our-founder': SectionsOurFounder;
+      'sections.our-process-of-interaction': SectionsOurProcessOfInteraction;
       'sections.our-team': SectionsOurTeam;
       'sections.pricing': SectionsPricing;
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;

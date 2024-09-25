@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_earn_with_uses",
+  "info": {
+    "singularName": "page-earn-with-us",
+    "pluralName": "page-earn-with-uses",
+    "displayName": "[Page] Earn with us"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "AnimatedHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.animated-hero",
+      "required": true
+    },
+    "Advantages": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.advantages",
+      "required": true
+    }
+  }
+}

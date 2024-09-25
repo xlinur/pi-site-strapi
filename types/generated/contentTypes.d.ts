@@ -961,6 +961,38 @@ export interface ApiPageContactUsPageContactUs extends Schema.SingleType {
   };
 }
 
+export interface ApiPageEarnWithUsPageEarnWithUs extends Schema.SingleType {
+  collectionName: 'page_earn_with_uses';
+  info: {
+    singularName: 'page-earn-with-us';
+    pluralName: 'page-earn-with-uses';
+    displayName: '[Page] Earn with us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    AnimatedHero: Attribute.Component<'sections.animated-hero'> &
+      Attribute.Required;
+    Advantages: Attribute.Component<'sections.advantages'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-earn-with-us.page-earn-with-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-earn-with-us.page-earn-with-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPageFeedbacksPageFeedbacks extends Schema.SingleType {
   collectionName: 'page_feedbackss';
   info: {
@@ -1289,6 +1321,7 @@ declare module '@strapi/types' {
       'api::global.global': ApiGlobalGlobal;
       'api::page-about-us.page-about-us': ApiPageAboutUsPageAboutUs;
       'api::page-contact-us.page-contact-us': ApiPageContactUsPageContactUs;
+      'api::page-earn-with-us.page-earn-with-us': ApiPageEarnWithUsPageEarnWithUs;
       'api::page-feedbacks.page-feedbacks': ApiPageFeedbacksPageFeedbacks;
       'api::page-home.page-home': ApiPageHomePageHome;
       'api::page-recruitment.page-recruitment': ApiPageRecruitmentPageRecruitment;

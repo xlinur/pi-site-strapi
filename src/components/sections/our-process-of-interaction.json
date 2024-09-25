@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_our_process_of_interactions",
+  "info": {
+    "displayName": "Our process of interaction"
+  },
+  "options": {},
+  "attributes": {
+    "treeSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.tree",
+      "required": true
+    },
+    "applyNowBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
+    }
+  }
+}
