@@ -5,6 +5,10 @@
   },
   "options": {},
   "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
     "items": {
       "displayName": "Best practice item",
       "type": "component",

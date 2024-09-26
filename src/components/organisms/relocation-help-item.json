@@ -1,7 +1,8 @@
 {
   "collectionName": "components_organisms_relocation_help_items",
   "info": {
-    "displayName": "Relocation help item"
+    "displayName": "Features section item",
+    "description": ""
   },
   "options": {},
   "attributes": {

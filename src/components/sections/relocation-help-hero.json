@@ -1,23 +1,26 @@
 {
   "collectionName": "components_sections_relocation_help_heroes",
   "info": {
-    "displayName": "Relocation help hero",
+    "displayName": "Section with features",
     "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "description": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "items": {
       "type": "component",
       "repeatable": true,
       "component": "organisms.relocation-help-item",
       "min": 1,
-      "max": 5
+      "max": 5,
+      "required": true
     },
     "bottomText": {
       "type": "string"

@@ -154,7 +154,8 @@ export interface OrganismsRecruitmentType extends Schema.Component {
 export interface OrganismsRelocationHelpItem extends Schema.Component {
   collectionName: 'components_organisms_relocation_help_items';
   info: {
-    displayName: 'Relocation help item';
+    displayName: 'Features section item';
+    description: '';
   };
   attributes: {
     text: Attribute.String;
@@ -282,6 +283,7 @@ export interface SectionsExamplesOfBestPractices extends Schema.Component {
     displayName: 'Examples of best practices';
   };
   attributes: {
+    title: Attribute.String & Attribute.Required;
     items: Attribute.Component<'organisms.best-practice-item', true>;
     contactBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
   };
@@ -442,13 +444,14 @@ export interface SectionsProposal extends Schema.Component {
 export interface SectionsRelocationHelpHero extends Schema.Component {
   collectionName: 'components_sections_relocation_help_heroes';
   info: {
-    displayName: 'Relocation help hero';
+    displayName: 'Section with features';
     description: '';
   };
   attributes: {
-    title: Attribute.RichText;
-    description: Attribute.RichText;
+    title: Attribute.RichText & Attribute.Required;
+    description: Attribute.RichText & Attribute.Required;
     items: Attribute.Component<'organisms.relocation-help-item', true> &
+      Attribute.Required &
       Attribute.SetMinMax<
         {
           min: 1;
