@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_split_recruitments",
+  "info": {
+    "singularName": "page-split-recruitment",
+    "pluralName": "page-split-recruitments",
+    "displayName": "[Page] Split recruitment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "AnimatedHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.animated-hero",
+      "required": true
+    },
+    "Proposal": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.proposal",
+      "required": true
+    },
+    "TreeSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.tree",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_organisms_sectors_grid_items",
+  "info": {
+    "displayName": "Sectors grid item"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

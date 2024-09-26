@@ -12,14 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "siteName": {
-      "type": "string",
-      "required": true
-    },
-    "siteDescription": {
-      "type": "text",
-      "required": true
-    },
     "address": {
       "type": "text",
       "required": true

@@ -875,8 +875,6 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
     draftAndPublish: false;
   };
   attributes: {
-    siteName: Attribute.String & Attribute.Required;
-    siteDescription: Attribute.Text & Attribute.Required;
     address: Attribute.Text & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1067,6 +1065,43 @@ export interface ApiPageHomePageHome extends Schema.SingleType {
   };
 }
 
+export interface ApiPageIndustriesPageIndustries extends Schema.SingleType {
+  collectionName: 'page_industriess';
+  info: {
+    singularName: 'page-industries';
+    pluralName: 'page-industriess';
+    displayName: '[Page] Industries';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    AnimatedHero: Attribute.Component<'sections.animated-hero'> &
+      Attribute.Required;
+    SectorsGrid: Attribute.Component<'sections.sectors-grid'> &
+      Attribute.Required;
+    TreeSection: Attribute.Component<'sections.tree'> & Attribute.Required;
+    SectionWithIndustriesImage: Attribute.Component<'sections.section-with-industries-image'> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-industries.page-industries',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-industries.page-industries',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPageRecruitmentPageRecruitment extends Schema.SingleType {
   collectionName: 'page_recruitments';
   info: {
@@ -1102,6 +1137,41 @@ export interface ApiPageRecruitmentPageRecruitment extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::page-recruitment.page-recruitment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPageSplitRecruitmentPageSplitRecruitment
+  extends Schema.SingleType {
+  collectionName: 'page_split_recruitments';
+  info: {
+    singularName: 'page-split-recruitment';
+    pluralName: 'page-split-recruitments';
+    displayName: '[Page] Split recruitment';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    AnimatedHero: Attribute.Component<'sections.animated-hero'> &
+      Attribute.Required;
+    Proposal: Attribute.Component<'sections.proposal'> & Attribute.Required;
+    TreeSection: Attribute.Component<'sections.tree'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-split-recruitment.page-split-recruitment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-split-recruitment.page-split-recruitment',
       'oneToOne',
       'admin::user'
     > &
@@ -1324,6 +1394,7 @@ export interface ApiSphereSphere extends Schema.CollectionType {
       'manyToMany',
       'api::feedback.feedback'
     >;
+    name: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1368,7 +1439,9 @@ declare module '@strapi/types' {
       'api::page-earn-with-us.page-earn-with-us': ApiPageEarnWithUsPageEarnWithUs;
       'api::page-feedbacks.page-feedbacks': ApiPageFeedbacksPageFeedbacks;
       'api::page-home.page-home': ApiPageHomePageHome;
+      'api::page-industries.page-industries': ApiPageIndustriesPageIndustries;
       'api::page-recruitment.page-recruitment': ApiPageRecruitmentPageRecruitment;
+      'api::page-split-recruitment.page-split-recruitment': ApiPageSplitRecruitmentPageSplitRecruitment;
       'api::section-about-personalinvest.section-about-personalinvest': ApiSectionAboutPersonalinvestSectionAboutPersonalinvest;
       'api::section-payment-terms.section-payment-terms': ApiSectionPaymentTermsSectionPaymentTerms;
       'api::section-trusted-map.section-trusted-map': ApiSectionTrustedMapSectionTrustedMap;

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_sectors_grids",
+  "info": {
+    "displayName": "Sectors grid"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "richtext",
+      "required": true
+    },
+    "sectors": {
+      "displayName": "Sectors grid item",
+      "type": "component",
+      "repeatable": true,
+      "component": "organisms.sectors-grid-item",
+      "min": 6,
+      "max": 6
+    }
+  }
+}

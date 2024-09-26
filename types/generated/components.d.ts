@@ -105,6 +105,16 @@ export interface OrganismsRecruitmentType extends Schema.Component {
   };
 }
 
+export interface OrganismsSectorsGridItem extends Schema.Component {
+  collectionName: 'components_organisms_sectors_grid_items';
+  info: {
+    displayName: 'Sectors grid item';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface OrganismsTeamMember extends Schema.Component {
   collectionName: 'components_organisms_team_members';
   info: {
@@ -293,6 +303,21 @@ export interface SectionsPricing extends Schema.Component {
   };
 }
 
+export interface SectionsProposal extends Schema.Component {
+  collectionName: 'components_sections_proposals';
+  info: {
+    displayName: 'Proposal';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    consultationBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+    twoDirectionsTitle: Attribute.String & Attribute.Required;
+    firstDirection: Attribute.RichText & Attribute.Required;
+    secondDirection: Attribute.RichText & Attribute.Required;
+  };
+}
+
 export interface SectionsSectionWithIndustriesImage extends Schema.Component {
   collectionName: 'components_sections_section_with_industries_images';
   info: {
@@ -303,6 +328,24 @@ export interface SectionsSectionWithIndustriesImage extends Schema.Component {
     title: Attribute.RichText & Attribute.Required;
     description: Attribute.RichText & Attribute.Required;
     moreInfo: Attribute.Component<'atoms.button'> & Attribute.Required;
+  };
+}
+
+export interface SectionsSectorsGrid extends Schema.Component {
+  collectionName: 'components_sections_sectors_grids';
+  info: {
+    displayName: 'Sectors grid';
+  };
+  attributes: {
+    title: Attribute.RichText & Attribute.Required;
+    sectors: Attribute.Component<'organisms.sectors-grid-item', true> &
+      Attribute.SetMinMax<
+        {
+          min: 6;
+          max: 6;
+        },
+        number
+      >;
   };
 }
 
@@ -450,6 +493,7 @@ declare module '@strapi/types' {
       'organisms.customer-feedback': OrganismsCustomerFeedback;
       'organisms.pricing-item': OrganismsPricingItem;
       'organisms.recruitment-type': OrganismsRecruitmentType;
+      'organisms.sectors-grid-item': OrganismsSectorsGridItem;
       'organisms.team-member': OrganismsTeamMember;
       'sections.advantages': SectionsAdvantages;
       'sections.animated-hero': SectionsAnimatedHero;
@@ -462,7 +506,9 @@ declare module '@strapi/types' {
       'sections.our-process-of-interaction': SectionsOurProcessOfInteraction;
       'sections.our-team': SectionsOurTeam;
       'sections.pricing': SectionsPricing;
+      'sections.proposal': SectionsProposal;
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;
+      'sections.sectors-grid': SectionsSectorsGrid;
       'sections.start-conversation-form': SectionsStartConversationForm;
       'sections.tree': SectionsTree;
       'sections.types-of-recruitment': SectionsTypesOfRecruitment;

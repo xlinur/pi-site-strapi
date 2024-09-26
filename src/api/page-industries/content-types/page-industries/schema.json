@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_industriess",
+  "info": {
+    "singularName": "page-industries",
+    "pluralName": "page-industriess",
+    "displayName": "[Page] Industries",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "AnimatedHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.animated-hero",
+      "required": true
+    },
+    "SectorsGrid": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.sectors-grid",
+      "required": true
+    },
+    "TreeSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.tree",
+      "required": true
+    },
+    "SectionWithIndustriesImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.section-with-industries-image",
+      "required": true
+    }
+  }
+}

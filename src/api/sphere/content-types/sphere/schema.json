@@ -21,6 +21,10 @@
       "relation": "manyToMany",
       "target": "api::feedback.feedback",
       "mappedBy": "tags"
+    },
+    "name": {
+      "type": "string",
+      "required": true
     }
   }
 }
