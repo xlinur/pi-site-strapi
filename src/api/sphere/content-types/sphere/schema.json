@@ -25,6 +25,35 @@
     "name": {
       "type": "string",
       "required": true
+    },
+    "AnimatedHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.animated-hero",
+      "required": true
+    },
+    "InfoWithCards": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.info-with-cards",
+      "required": true
+    },
+    "SectorsGrid": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.sectors-grid",
+      "required": true
+    },
+    "SectionWithIndustriesImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.section-with-industries-image",
+      "required": true
+    },
+    "Seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }

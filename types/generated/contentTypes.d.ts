@@ -1395,6 +1395,15 @@ export interface ApiSphereSphere extends Schema.CollectionType {
       'api::feedback.feedback'
     >;
     name: Attribute.String & Attribute.Required;
+    AnimatedHero: Attribute.Component<'sections.animated-hero'> &
+      Attribute.Required;
+    InfoWithCards: Attribute.Component<'sections.info-with-cards'> &
+      Attribute.Required;
+    SectorsGrid: Attribute.Component<'sections.sectors-grid'> &
+      Attribute.Required;
+    SectionWithIndustriesImage: Attribute.Component<'sections.section-with-industries-image'> &
+      Attribute.Required;
+    Seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
