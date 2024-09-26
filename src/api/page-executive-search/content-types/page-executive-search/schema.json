@@ -4,7 +4,8 @@
   "info": {
     "singularName": "page-executive-search",
     "pluralName": "page-executive-searches",
-    "displayName": "[Page] Executive search"
+    "displayName": "[Page] Executive search",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -45,6 +46,12 @@
       "type": "component",
       "repeatable": false,
       "component": "sections.section-with-industries-image",
+      "required": true
+    },
+    "Pricing": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.pricing",
       "required": true
     }
   }

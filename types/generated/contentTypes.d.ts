@@ -1037,6 +1037,7 @@ export interface ApiPageExecutiveSearchPageExecutiveSearch
     singularName: 'page-executive-search';
     pluralName: 'page-executive-searches';
     displayName: '[Page] Executive search';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1053,6 +1054,7 @@ export interface ApiPageExecutiveSearchPageExecutiveSearch
       Attribute.Required;
     SectionWithIndustriesImage: Attribute.Component<'sections.section-with-industries-image'> &
       Attribute.Required;
+    Pricing: Attribute.Component<'sections.pricing'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
