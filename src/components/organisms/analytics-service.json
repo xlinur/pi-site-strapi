@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_organisms_analytics_services",
+  "info": {
+    "displayName": "Analytics service item",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "details": {
+      "type": "richtext",
+      "required": true
+    },
+    "sendRequest": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
+    }
+  }
+}

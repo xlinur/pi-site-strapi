@@ -929,6 +929,42 @@ export interface ApiPageAboutUsPageAboutUs extends Schema.SingleType {
   };
 }
 
+export interface ApiPageAnalyticsPageAnalytics extends Schema.SingleType {
+  collectionName: 'page_analyticss';
+  info: {
+    singularName: 'page-analytics';
+    pluralName: 'page-analyticss';
+    displayName: '[Page] Analytics';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    AnimatedHero: Attribute.Component<'sections.animated-hero'> &
+      Attribute.Required;
+    AnalyticsServices: Attribute.Component<'sections.analytics-services'> &
+      Attribute.Required;
+    WhyInfoSection: Attribute.Component<'sections.why-info-section'> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-analytics.page-analytics',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-analytics.page-analytics',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPageContactUsPageContactUs extends Schema.SingleType {
   collectionName: 'page_contact_uses';
   info: {
@@ -1517,6 +1553,7 @@ declare module '@strapi/types' {
       'api::feedback.feedback': ApiFeedbackFeedback;
       'api::global.global': ApiGlobalGlobal;
       'api::page-about-us.page-about-us': ApiPageAboutUsPageAboutUs;
+      'api::page-analytics.page-analytics': ApiPageAnalyticsPageAnalytics;
       'api::page-contact-us.page-contact-us': ApiPageContactUsPageContactUs;
       'api::page-earn-with-us.page-earn-with-us': ApiPageEarnWithUsPageEarnWithUs;
       'api::page-executive-search.page-executive-search': ApiPageExecutiveSearchPageExecutiveSearch;

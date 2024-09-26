@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_analytics_services",
+  "info": {
+    "displayName": "Analytics services",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "organisms.analytics-service",
+      "required": true,
+      "max": 3,
+      "min": 3
+    }
+  }
+}

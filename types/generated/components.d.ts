@@ -51,7 +51,7 @@ export interface MoleculesTitleWithDescription extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.RichText & Attribute.Required;
+    description: Attribute.RichText;
   };
 }
 
@@ -62,6 +62,19 @@ export interface OrganismsAdvantage extends Schema.Component {
   };
   attributes: {
     content: Attribute.RichText & Attribute.Required;
+  };
+}
+
+export interface OrganismsAnalyticsService extends Schema.Component {
+  collectionName: 'components_organisms_analytics_services';
+  info: {
+    displayName: 'Analytics service item';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    details: Attribute.RichText & Attribute.Required;
+    sendRequest: Attribute.Component<'atoms.button'> & Attribute.Required;
   };
 }
 
@@ -159,6 +172,26 @@ export interface SectionsAdvantages extends Schema.Component {
         {
           min: 4;
           max: 4;
+        },
+        number
+      >;
+  };
+}
+
+export interface SectionsAnalyticsServices extends Schema.Component {
+  collectionName: 'components_sections_analytics_services';
+  info: {
+    displayName: 'Analytics services';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    services: Attribute.Component<'organisms.analytics-service', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 3;
+          max: 3;
         },
         number
       >;
@@ -544,6 +577,7 @@ declare module '@strapi/types' {
       'molecules.count-with-description': MoleculesCountWithDescription;
       'molecules.title-with-description': MoleculesTitleWithDescription;
       'organisms.advantage': OrganismsAdvantage;
+      'organisms.analytics-service': OrganismsAnalyticsService;
       'organisms.block-step': OrganismsBlockStep;
       'organisms.customer-feedback': OrganismsCustomerFeedback;
       'organisms.pricing-item': OrganismsPricingItem;
@@ -552,6 +586,7 @@ declare module '@strapi/types' {
       'organisms.sectors-grid-item': OrganismsSectorsGridItem;
       'organisms.team-member': OrganismsTeamMember;
       'sections.advantages': SectionsAdvantages;
+      'sections.analytics-services': SectionsAnalyticsServices;
       'sections.animated-hero': SectionsAnimatedHero;
       'sections.block-steps-plan': SectionsBlockStepsPlan;
       'sections.exclusive-process': SectionsExclusiveProcess;
