@@ -7,8 +7,11 @@
   "options": {},
   "attributes": {
     "advantage": {
-      "type": "richtext",
-      "required": true
+      "type": "component",
+      "repeatable": true,
+      "component": "organisms.advantage",
+      "max": 4,
+      "min": 4
     }
   }
 }

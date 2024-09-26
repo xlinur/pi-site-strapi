@@ -967,6 +967,7 @@ export interface ApiPageEarnWithUsPageEarnWithUs extends Schema.SingleType {
     singularName: 'page-earn-with-us';
     pluralName: 'page-earn-with-uses';
     displayName: '[Page] Earn with us';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -975,6 +976,8 @@ export interface ApiPageEarnWithUsPageEarnWithUs extends Schema.SingleType {
     AnimatedHero: Attribute.Component<'sections.animated-hero'> &
       Attribute.Required;
     Advantages: Attribute.Component<'sections.advantages'> & Attribute.Required;
+    OurProcessOfInteraction: Attribute.Component<'sections.our-process-of-interaction'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

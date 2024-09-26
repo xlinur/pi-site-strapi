@@ -55,6 +55,16 @@ export interface MoleculesTitleWithDescription extends Schema.Component {
   };
 }
 
+export interface OrganismsAdvantage extends Schema.Component {
+  collectionName: 'components_organisms_advantages';
+  info: {
+    displayName: 'Advantage';
+  };
+  attributes: {
+    content: Attribute.RichText & Attribute.Required;
+  };
+}
+
 export interface OrganismsCustomerFeedback extends Schema.Component {
   collectionName: 'components_organisms_customer_feedbacks';
   info: {
@@ -114,7 +124,14 @@ export interface SectionsAdvantages extends Schema.Component {
     description: '';
   };
   attributes: {
-    advantage: Attribute.RichText & Attribute.Required;
+    advantage: Attribute.Component<'organisms.advantage', true> &
+      Attribute.SetMinMax<
+        {
+          min: 4;
+          max: 4;
+        },
+        number
+      >;
   };
 }
 
@@ -429,6 +446,7 @@ declare module '@strapi/types' {
       'atoms.button': AtomsButton;
       'molecules.count-with-description': MoleculesCountWithDescription;
       'molecules.title-with-description': MoleculesTitleWithDescription;
+      'organisms.advantage': OrganismsAdvantage;
       'organisms.customer-feedback': OrganismsCustomerFeedback;
       'organisms.pricing-item': OrganismsPricingItem;
       'organisms.recruitment-type': OrganismsRecruitmentType;

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_organisms_advantages",
+  "info": {
+    "displayName": "Advantage"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

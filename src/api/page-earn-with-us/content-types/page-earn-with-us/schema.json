@@ -4,7 +4,8 @@
   "info": {
     "singularName": "page-earn-with-us",
     "pluralName": "page-earn-with-uses",
-    "displayName": "[Page] Earn with us"
+    "displayName": "[Page] Earn with us",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,6 +22,12 @@
       "type": "component",
       "repeatable": false,
       "component": "sections.advantages",
+      "required": true
+    },
+    "OurProcessOfInteraction": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.our-process-of-interaction",
       "required": true
     }
   }
