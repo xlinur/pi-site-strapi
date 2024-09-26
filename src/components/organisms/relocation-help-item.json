@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_organisms_relocation_help_items",
+  "info": {
+    "displayName": "Relocation help item"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  }
+}

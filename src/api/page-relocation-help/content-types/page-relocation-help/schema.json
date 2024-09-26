@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_relocation_helps",
+  "info": {
+    "singularName": "page-relocation-help",
+    "pluralName": "page-relocation-helps",
+    "displayName": "[Page] Relocation help"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "RelocationHelpHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.relocation-help-hero"
+    },
+    "BlockStepsPlan": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.block-steps-plan"
+    }
+  }
+}

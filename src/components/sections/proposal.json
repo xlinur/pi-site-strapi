@@ -6,11 +6,11 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "string",
+      "type": "richtext",
       "required": true
     },
     "description": {
-      "type": "text",
+      "type": "richtext",
       "required": true
     },
     "consultationBtn": {

@@ -65,6 +65,16 @@ export interface OrganismsAdvantage extends Schema.Component {
   };
 }
 
+export interface OrganismsBlockStep extends Schema.Component {
+  collectionName: 'components_organisms_block_steps';
+  info: {
+    displayName: 'Block step';
+  };
+  attributes: {
+    text: Attribute.RichText & Attribute.Required;
+  };
+}
+
 export interface OrganismsCustomerFeedback extends Schema.Component {
   collectionName: 'components_organisms_customer_feedbacks';
   info: {
@@ -102,6 +112,16 @@ export interface OrganismsRecruitmentType extends Schema.Component {
     subtitle: Attribute.String & Attribute.Required;
     description: Attribute.RichText & Attribute.Required;
     hireNowBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+  };
+}
+
+export interface OrganismsRelocationHelpItem extends Schema.Component {
+  collectionName: 'components_organisms_relocation_help_items';
+  info: {
+    displayName: 'Relocation help item';
+  };
+  attributes: {
+    text: Attribute.String;
   };
 }
 
@@ -155,6 +175,26 @@ export interface SectionsAnimatedHero extends Schema.Component {
     description: Attribute.RichText & Attribute.Required;
     hireNowBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
     candidateBtn: Attribute.Component<'atoms.button'>;
+  };
+}
+
+export interface SectionsBlockStepsPlan extends Schema.Component {
+  collectionName: 'components_sections_block_steps_plans';
+  info: {
+    displayName: 'Block steps plan';
+  };
+  attributes: {
+    title: Attribute.String;
+    steps: Attribute.Component<'organisms.block-step', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 5;
+          max: 5;
+        },
+        number
+      >;
+    contactBtn: Attribute.Component<'atoms.button'>;
   };
 }
 
@@ -301,12 +341,34 @@ export interface SectionsProposal extends Schema.Component {
     displayName: 'Proposal';
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
+    title: Attribute.RichText & Attribute.Required;
+    description: Attribute.RichText & Attribute.Required;
     consultationBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
     twoDirectionsTitle: Attribute.String & Attribute.Required;
     firstDirection: Attribute.RichText & Attribute.Required;
     secondDirection: Attribute.RichText & Attribute.Required;
+  };
+}
+
+export interface SectionsRelocationHelpHero extends Schema.Component {
+  collectionName: 'components_sections_relocation_help_heroes';
+  info: {
+    displayName: 'Relocation help hero';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.RichText;
+    description: Attribute.RichText;
+    items: Attribute.Component<'organisms.relocation-help-item', true> &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 5;
+        },
+        number
+      >;
+    bottomText: Attribute.String;
+    contactUsBtn: Attribute.Component<'atoms.button'>;
   };
 }
 
@@ -482,13 +544,16 @@ declare module '@strapi/types' {
       'molecules.count-with-description': MoleculesCountWithDescription;
       'molecules.title-with-description': MoleculesTitleWithDescription;
       'organisms.advantage': OrganismsAdvantage;
+      'organisms.block-step': OrganismsBlockStep;
       'organisms.customer-feedback': OrganismsCustomerFeedback;
       'organisms.pricing-item': OrganismsPricingItem;
       'organisms.recruitment-type': OrganismsRecruitmentType;
+      'organisms.relocation-help-item': OrganismsRelocationHelpItem;
       'organisms.sectors-grid-item': OrganismsSectorsGridItem;
       'organisms.team-member': OrganismsTeamMember;
       'sections.advantages': SectionsAdvantages;
       'sections.animated-hero': SectionsAnimatedHero;
+      'sections.block-steps-plan': SectionsBlockStepsPlan;
       'sections.exclusive-process': SectionsExclusiveProcess;
       'sections.hero-main': SectionsHeroMain;
       'sections.info-with-cards': SectionsInfoWithCards;
@@ -499,6 +564,7 @@ declare module '@strapi/types' {
       'sections.our-team': SectionsOurTeam;
       'sections.pricing': SectionsPricing;
       'sections.proposal': SectionsProposal;
+      'sections.relocation-help-hero': SectionsRelocationHelpHero;
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;
       'sections.sectors-grid': SectionsSectorsGrid;
       'sections.start-conversation-form': SectionsStartConversationForm;

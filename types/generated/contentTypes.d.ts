@@ -1185,6 +1185,38 @@ export interface ApiPageRecruitmentPageRecruitment extends Schema.SingleType {
   };
 }
 
+export interface ApiPageRelocationHelpPageRelocationHelp
+  extends Schema.SingleType {
+  collectionName: 'page_relocation_helps';
+  info: {
+    singularName: 'page-relocation-help';
+    pluralName: 'page-relocation-helps';
+    displayName: '[Page] Relocation help';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    RelocationHelpHero: Attribute.Component<'sections.relocation-help-hero'>;
+    BlockStepsPlan: Attribute.Component<'sections.block-steps-plan'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-relocation-help.page-relocation-help',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-relocation-help.page-relocation-help',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPageSplitRecruitmentPageSplitRecruitment
   extends Schema.SingleType {
   collectionName: 'page_split_recruitments';
@@ -1492,6 +1524,7 @@ declare module '@strapi/types' {
       'api::page-home.page-home': ApiPageHomePageHome;
       'api::page-industries.page-industries': ApiPageIndustriesPageIndustries;
       'api::page-recruitment.page-recruitment': ApiPageRecruitmentPageRecruitment;
+      'api::page-relocation-help.page-relocation-help': ApiPageRelocationHelpPageRelocationHelp;
       'api::page-split-recruitment.page-split-recruitment': ApiPageSplitRecruitmentPageSplitRecruitment;
       'api::section-about-personalinvest.section-about-personalinvest': ApiSectionAboutPersonalinvestSectionAboutPersonalinvest;
       'api::section-payment-terms.section-payment-terms': ApiSectionPaymentTermsSectionPaymentTerms;

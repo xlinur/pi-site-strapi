@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_organisms_block_steps",
+  "info": {
+    "displayName": "Block step"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

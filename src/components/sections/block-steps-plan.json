@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_block_steps_plans",
+  "info": {
+    "displayName": "Block steps plan"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "steps": {
+      "displayName": "Block step",
+      "type": "component",
+      "repeatable": true,
+      "component": "organisms.block-step",
+      "min": 5,
+      "max": 5,
+      "required": true
+    },
+    "contactBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": false
+    }
+  }
+}
