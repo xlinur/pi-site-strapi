@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "section_success_storiess",
+  "info": {
+    "singularName": "section-success-stories",
+    "pluralName": "section-success-storiess",
+    "displayName": "[Section] Success stories"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "viewAllCasesBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
+    },
+    "contactBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
+    }
+  }
+}

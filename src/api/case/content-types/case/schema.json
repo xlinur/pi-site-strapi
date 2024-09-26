@@ -28,6 +28,12 @@
     "date": {
       "type": "date",
       "required": true
+    },
+    "sphere": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sphere.sphere",
+      "inversedBy": "cases"
     }
   }
 }

@@ -804,6 +804,11 @@ export interface ApiCaseCase extends Schema.CollectionType {
     slug: Attribute.UID<'api::case.case', 'title'> & Attribute.Required;
     subtitle: Attribute.String & Attribute.Required;
     date: Attribute.Date & Attribute.Required;
+    sphere: Attribute.Relation<
+      'api::case.case',
+      'manyToOne',
+      'api::sphere.sphere'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1295,12 +1300,13 @@ export interface ApiPageRelocationHelpPageRelocationHelp
     singularName: 'page-relocation-help';
     pluralName: 'page-relocation-helps';
     displayName: '[Page] Relocation help';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    RelocationHelpHero: Attribute.Component<'sections.relocation-help-hero'>;
+    SectionWithFeatures: Attribute.Component<'sections.relocation-help-hero'>;
     BlockStepsPlan: Attribute.Component<'sections.block-steps-plan'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1446,6 +1452,39 @@ export interface ApiSectionPaymentTermsSectionPaymentTerms
   };
 }
 
+export interface ApiSectionSuccessStoriesSectionSuccessStories
+  extends Schema.SingleType {
+  collectionName: 'section_success_storiess';
+  info: {
+    singularName: 'section-success-stories';
+    pluralName: 'section-success-storiess';
+    displayName: '[Section] Success stories';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    viewAllCasesBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+    contactBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::section-success-stories.section-success-stories',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::section-success-stories.section-success-stories',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSectionTrustedMapSectionTrustedMap
   extends Schema.SingleType {
   collectionName: 'section_trusted_maps';
@@ -1564,7 +1603,7 @@ export interface ApiSphereSphere extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    slug: Attribute.UID & Attribute.Required;
+    slug: Attribute.UID<'api::sphere.sphere', 'name'> & Attribute.Required;
     feedbacks: Attribute.Relation<
       'api::sphere.sphere',
       'manyToMany',
@@ -1580,6 +1619,11 @@ export interface ApiSphereSphere extends Schema.CollectionType {
     SectionWithIndustriesImage: Attribute.Component<'sections.section-with-industries-image'> &
       Attribute.Required;
     Seo: Attribute.Component<'shared.seo'>;
+    cases: Attribute.Relation<
+      'api::sphere.sphere',
+      'oneToMany',
+      'api::case.case'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1634,6 +1678,7 @@ declare module '@strapi/types' {
       'api::page-split-recruitment.page-split-recruitment': ApiPageSplitRecruitmentPageSplitRecruitment;
       'api::section-about-personalinvest.section-about-personalinvest': ApiSectionAboutPersonalinvestSectionAboutPersonalinvest;
       'api::section-payment-terms.section-payment-terms': ApiSectionPaymentTermsSectionPaymentTerms;
+      'api::section-success-stories.section-success-stories': ApiSectionSuccessStoriesSectionSuccessStories;
       'api::section-trusted-map.section-trusted-map': ApiSectionTrustedMapSectionTrustedMap;
       'api::section-what-our-cliens-say.section-what-our-cliens-say': ApiSectionWhatOurCliensSaySectionWhatOurCliensSay;
       'api::shared-we-can-help-you-with.shared-we-can-help-you-with': ApiSharedWeCanHelpYouWithSharedWeCanHelpYouWith;

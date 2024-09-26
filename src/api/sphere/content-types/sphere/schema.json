@@ -14,7 +14,8 @@
   "attributes": {
     "slug": {
       "type": "uid",
-      "required": true
+      "required": true,
+      "targetField": "name"
     },
     "feedbacks": {
       "type": "relation",
@@ -54,6 +55,12 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
+    },
+    "cases": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::case.case",
+      "mappedBy": "sphere"
     }
   }
 }

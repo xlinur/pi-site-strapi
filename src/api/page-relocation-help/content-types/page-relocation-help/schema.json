@@ -4,14 +4,15 @@
   "info": {
     "singularName": "page-relocation-help",
     "pluralName": "page-relocation-helps",
-    "displayName": "[Page] Relocation help"
+    "displayName": "[Page] Relocation help",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "RelocationHelpHero": {
+    "SectionWithFeatures": {
       "type": "component",
       "repeatable": false,
       "component": "sections.relocation-help-hero"
