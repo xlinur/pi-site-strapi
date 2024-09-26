@@ -78,6 +78,19 @@ export interface OrganismsAnalyticsService extends Schema.Component {
   };
 }
 
+export interface OrganismsBestPracticeItem extends Schema.Component {
+  collectionName: 'components_organisms_best_practice_items';
+  info: {
+    displayName: 'Best practice item';
+  };
+  attributes: {
+    label: Attribute.String & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    items: Attribute.Component<'molecules.title-with-description', true> &
+      Attribute.Required;
+  };
+}
+
 export interface OrganismsBlockStep extends Schema.Component {
   collectionName: 'components_organisms_block_steps';
   info: {
@@ -85,6 +98,16 @@ export interface OrganismsBlockStep extends Schema.Component {
   };
   attributes: {
     text: Attribute.RichText & Attribute.Required;
+  };
+}
+
+export interface OrganismsConsultingServiceItem extends Schema.Component {
+  collectionName: 'components_organisms_consulting_service_items';
+  info: {
+    displayName: 'Consulting service item';
+  };
+  attributes: {
+    details: Attribute.RichText & Attribute.Required;
   };
 }
 
@@ -228,6 +251,39 @@ export interface SectionsBlockStepsPlan extends Schema.Component {
         number
       >;
     contactBtn: Attribute.Component<'atoms.button'>;
+  };
+}
+
+export interface SectionsConsultingServices extends Schema.Component {
+  collectionName: 'components_sections_consulting_services';
+  info: {
+    displayName: 'Consulting services';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    services: Attribute.Component<'organisms.consulting-service-item', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 6;
+          max: 6;
+        },
+        number
+      >;
+    otherConsultationBtn: Attribute.Component<'atoms.button'> &
+      Attribute.Required;
+  };
+}
+
+export interface SectionsExamplesOfBestPractices extends Schema.Component {
+  collectionName: 'components_sections_examples_of_best_practices';
+  info: {
+    displayName: 'Examples of best practices';
+  };
+  attributes: {
+    items: Attribute.Component<'organisms.best-practice-item', true>;
+    contactBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
   };
 }
 
@@ -578,7 +634,9 @@ declare module '@strapi/types' {
       'molecules.title-with-description': MoleculesTitleWithDescription;
       'organisms.advantage': OrganismsAdvantage;
       'organisms.analytics-service': OrganismsAnalyticsService;
+      'organisms.best-practice-item': OrganismsBestPracticeItem;
       'organisms.block-step': OrganismsBlockStep;
+      'organisms.consulting-service-item': OrganismsConsultingServiceItem;
       'organisms.customer-feedback': OrganismsCustomerFeedback;
       'organisms.pricing-item': OrganismsPricingItem;
       'organisms.recruitment-type': OrganismsRecruitmentType;
@@ -589,6 +647,8 @@ declare module '@strapi/types' {
       'sections.analytics-services': SectionsAnalyticsServices;
       'sections.animated-hero': SectionsAnimatedHero;
       'sections.block-steps-plan': SectionsBlockStepsPlan;
+      'sections.consulting-services': SectionsConsultingServices;
+      'sections.examples-of-best-practices': SectionsExamplesOfBestPractices;
       'sections.exclusive-process': SectionsExclusiveProcess;
       'sections.hero-main': SectionsHeroMain;
       'sections.info-with-cards': SectionsInfoWithCards;

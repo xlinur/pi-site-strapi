@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_organisms_consulting_service_items",
+  "info": {
+    "displayName": "Consulting service item"
+  },
+  "options": {},
+  "attributes": {
+    "details": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

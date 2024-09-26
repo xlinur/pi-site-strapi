@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_examples_of_best_practices",
+  "info": {
+    "displayName": "Examples of best practices"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "displayName": "Best practice item",
+      "type": "component",
+      "repeatable": true,
+      "component": "organisms.best-practice-item"
+    },
+    "contactBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
+    }
+  }
+}

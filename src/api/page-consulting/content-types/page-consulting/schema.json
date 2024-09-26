@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "page_analyticss",
+  "collectionName": "page_consultings",
   "info": {
-    "singularName": "page-analytics",
-    "pluralName": "page-analyticss",
-    "displayName": "[Page] Analytics",
+    "singularName": "page-consulting",
+    "pluralName": "page-consultings",
+    "displayName": "[Page] Consulting",
     "description": ""
   },
   "options": {
@@ -18,10 +18,10 @@
       "component": "sections.animated-hero",
       "required": true
     },
-    "AnalyticsServices": {
+    "ConsultingServices": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.analytics-services",
+      "component": "sections.consulting-services",
       "required": true
     },
     "WhyInfoSection": {
@@ -30,10 +30,10 @@
       "component": "sections.why-info-section",
       "required": true
     },
-    "Pricing": {
+    "ExamplesOfBestPractices": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.pricing",
+      "component": "sections.examples-of-best-practices",
       "required": true
     }
   }

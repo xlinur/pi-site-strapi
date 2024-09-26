@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_organisms_best_practice_items",
+  "info": {
+    "displayName": "Best practice item"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "molecules.title-with-description",
+      "required": true
+    }
+  }
+}

@@ -947,6 +947,7 @@ export interface ApiPageAnalyticsPageAnalytics extends Schema.SingleType {
       Attribute.Required;
     WhyInfoSection: Attribute.Component<'sections.why-info-section'> &
       Attribute.Required;
+    Pricing: Attribute.Component<'sections.pricing'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -958,6 +959,44 @@ export interface ApiPageAnalyticsPageAnalytics extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::page-analytics.page-analytics',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPageConsultingPageConsulting extends Schema.SingleType {
+  collectionName: 'page_consultings';
+  info: {
+    singularName: 'page-consulting';
+    pluralName: 'page-consultings';
+    displayName: '[Page] Consulting';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    AnimatedHero: Attribute.Component<'sections.animated-hero'> &
+      Attribute.Required;
+    ConsultingServices: Attribute.Component<'sections.consulting-services'> &
+      Attribute.Required;
+    WhyInfoSection: Attribute.Component<'sections.why-info-section'> &
+      Attribute.Required;
+    ExamplesOfBestPractices: Attribute.Component<'sections.examples-of-best-practices'> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-consulting.page-consulting',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-consulting.page-consulting',
       'oneToOne',
       'admin::user'
     > &
@@ -1556,6 +1595,7 @@ declare module '@strapi/types' {
       'api::global.global': ApiGlobalGlobal;
       'api::page-about-us.page-about-us': ApiPageAboutUsPageAboutUs;
       'api::page-analytics.page-analytics': ApiPageAnalyticsPageAnalytics;
+      'api::page-consulting.page-consulting': ApiPageConsultingPageConsulting;
       'api::page-contact-us.page-contact-us': ApiPageContactUsPageContactUs;
       'api::page-earn-with-us.page-earn-with-us': ApiPageEarnWithUsPageEarnWithUs;
       'api::page-executive-search.page-executive-search': ApiPageExecutiveSearchPageExecutiveSearch;

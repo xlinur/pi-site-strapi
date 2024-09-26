@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_consulting_services",
+  "info": {
+    "displayName": "Consulting services",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "organisms.consulting-service-item",
+      "required": true,
+      "max": 6,
+      "min": 6
+    },
+    "otherConsultationBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
+    }
+  }
+}
