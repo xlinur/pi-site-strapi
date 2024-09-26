@@ -182,16 +182,8 @@ export interface SectionsHeroMain extends Schema.Component {
     description: Attribute.RichText;
     hireNowBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
     candidateBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+    advantages: Attribute.Component<'sections.advantages'> & Attribute.Required;
     recordWord: Attribute.String;
-    advantages: Attribute.Component<'sections.advantages', true> &
-      Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          min: 4;
-          max: 4;
-        },
-        number
-      >;
   };
 }
 

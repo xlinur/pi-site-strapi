@@ -994,6 +994,47 @@ export interface ApiPageEarnWithUsPageEarnWithUs extends Schema.SingleType {
   };
 }
 
+export interface ApiPageExecutiveSearchPageExecutiveSearch
+  extends Schema.SingleType {
+  collectionName: 'page_executive_searches';
+  info: {
+    singularName: 'page-executive-search';
+    pluralName: 'page-executive-searches';
+    displayName: '[Page] Executive search';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    AnimatedHero: Attribute.Component<'sections.animated-hero'> &
+      Attribute.Required;
+    InfoWithCards: Attribute.Component<'sections.info-with-cards'> &
+      Attribute.Required;
+    TreeSection: Attribute.Component<'sections.tree'> & Attribute.Required;
+    TypesOfRecruitment: Attribute.Component<'sections.types-of-recruitment'> &
+      Attribute.Required;
+    NeedHelpSection: Attribute.Component<'sections.need-help'> &
+      Attribute.Required;
+    SectionWithIndustriesImage: Attribute.Component<'sections.section-with-industries-image'> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-executive-search.page-executive-search',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-executive-search.page-executive-search',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPageFeedbacksPageFeedbacks extends Schema.SingleType {
   collectionName: 'page_feedbackss';
   info: {
@@ -1446,6 +1487,7 @@ declare module '@strapi/types' {
       'api::page-about-us.page-about-us': ApiPageAboutUsPageAboutUs;
       'api::page-contact-us.page-contact-us': ApiPageContactUsPageContactUs;
       'api::page-earn-with-us.page-earn-with-us': ApiPageEarnWithUsPageEarnWithUs;
+      'api::page-executive-search.page-executive-search': ApiPageExecutiveSearchPageExecutiveSearch;
       'api::page-feedbacks.page-feedbacks': ApiPageFeedbacksPageFeedbacks;
       'api::page-home.page-home': ApiPageHomePageHome;
       'api::page-industries.page-industries': ApiPageIndustriesPageIndustries;

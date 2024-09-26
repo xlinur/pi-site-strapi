@@ -24,16 +24,14 @@
       "component": "atoms.button",
       "required": true
     },
-    "recordWord": {
-      "type": "string"
-    },
     "advantages": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "sections.advantages",
-      "required": true,
-      "max": 4,
-      "min": 4
+      "required": true
+    },
+    "recordWord": {
+      "type": "string"
     }
   }
 }

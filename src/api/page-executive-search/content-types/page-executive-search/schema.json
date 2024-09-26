@@ -1,0 +1,51 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_executive_searches",
+  "info": {
+    "singularName": "page-executive-search",
+    "pluralName": "page-executive-searches",
+    "displayName": "[Page] Executive search"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "AnimatedHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.animated-hero",
+      "required": true
+    },
+    "InfoWithCards": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.info-with-cards",
+      "required": true
+    },
+    "TreeSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.tree",
+      "required": true
+    },
+    "TypesOfRecruitment": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.types-of-recruitment",
+      "required": true
+    },
+    "NeedHelpSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.need-help",
+      "required": true
+    },
+    "SectionWithIndustriesImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.section-with-industries-image",
+      "required": true
+    }
+  }
+}
