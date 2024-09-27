@@ -178,10 +178,11 @@ export interface OrganismsSectionRecruitmentSummaryItem
   collectionName: 'components_organisms_section_recruitment_summary_items';
   info: {
     displayName: 'Section Recruitment Summary Item';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.String;
+    description: Attribute.Text;
   };
 }
 
