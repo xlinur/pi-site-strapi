@@ -574,8 +574,8 @@ export interface SectionsSectionTalentMatch extends Schema.Component {
     description: '';
   };
   attributes: {
-    content: Attribute.Text;
     hireNowBtn: Attribute.Component<'atoms.button'>;
+    content: Attribute.RichText;
   };
 }
 

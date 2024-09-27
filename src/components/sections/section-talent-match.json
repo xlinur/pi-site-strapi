@@ -6,13 +6,13 @@
   },
   "options": {},
   "attributes": {
-    "content": {
-      "type": "text"
-    },
     "hireNowBtn": {
       "type": "component",
       "repeatable": false,
       "component": "atoms.button"
+    },
+    "content": {
+      "type": "richtext"
     }
   }
 }
