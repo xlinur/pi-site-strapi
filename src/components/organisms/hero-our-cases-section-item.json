@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_organisms_hero_our_cases_section_items",
+  "info": {
+    "displayName": "Hero Our Cases Section Item"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  }
+}

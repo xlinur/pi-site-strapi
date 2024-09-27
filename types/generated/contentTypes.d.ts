@@ -1001,6 +1001,36 @@ export interface ApiPageAnalyticsPageAnalytics extends Schema.SingleType {
   };
 }
 
+export interface ApiPageCasePageCase extends Schema.SingleType {
+  collectionName: 'page_cases';
+  info: {
+    singularName: 'page-case';
+    pluralName: 'page-cases';
+    displayName: '[Page] Case';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    HeroOurCasesSection: Attribute.Component<'sections.hero-our-cases-section'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-case.page-case',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-case.page-case',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPageConsultingPageConsulting extends Schema.SingleType {
   collectionName: 'page_consultings';
   info: {
@@ -1670,6 +1700,7 @@ declare module '@strapi/types' {
       'api::global.global': ApiGlobalGlobal;
       'api::page-about-us.page-about-us': ApiPageAboutUsPageAboutUs;
       'api::page-analytics.page-analytics': ApiPageAnalyticsPageAnalytics;
+      'api::page-case.page-case': ApiPageCasePageCase;
       'api::page-consulting.page-consulting': ApiPageConsultingPageConsulting;
       'api::page-contact-us.page-contact-us': ApiPageContactUsPageContactUs;
       'api::page-earn-with-us.page-earn-with-us': ApiPageEarnWithUsPageEarnWithUs;

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_sections_hero_our_cases_sections",
+  "info": {
+    "displayName": "Hero Our Cases Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "richtext"
+    },
+    "subtitle": {
+      "type": "richtext"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "organisms.hero-our-cases-section-item"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "hireNowBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button"
+    },
+    "candidateBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button"
+    }
+  }
+}

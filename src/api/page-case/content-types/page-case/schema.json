@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_cases",
+  "info": {
+    "singularName": "page-case",
+    "pluralName": "page-cases",
+    "displayName": "[Page] Case"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "HeroOurCasesSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.hero-our-cases-section"
+    }
+  }
+}

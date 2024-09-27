@@ -125,6 +125,16 @@ export interface OrganismsCustomerFeedback extends Schema.Component {
   };
 }
 
+export interface OrganismsHeroOurCasesSectionItem extends Schema.Component {
+  collectionName: 'components_organisms_hero_our_cases_section_items';
+  info: {
+    displayName: 'Hero Our Cases Section Item';
+  };
+  attributes: {
+    text: Attribute.Text;
+  };
+}
+
 export interface OrganismsPricingItem extends Schema.Component {
   collectionName: 'components_organisms_pricing_items';
   info: {
@@ -339,6 +349,21 @@ export interface SectionsHeroMain extends Schema.Component {
     candidateBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
     advantages: Attribute.Component<'sections.advantages'> & Attribute.Required;
     recordWord: Attribute.String;
+  };
+}
+
+export interface SectionsHeroOurCasesSection extends Schema.Component {
+  collectionName: 'components_sections_hero_our_cases_sections';
+  info: {
+    displayName: 'Hero Our Cases Section';
+  };
+  attributes: {
+    title: Attribute.RichText;
+    subtitle: Attribute.RichText;
+    items: Attribute.Component<'organisms.hero-our-cases-section-item', true>;
+    description: Attribute.RichText;
+    hireNowBtn: Attribute.Component<'atoms.button'>;
+    candidateBtn: Attribute.Component<'atoms.button'>;
   };
 }
 
@@ -719,6 +744,7 @@ declare module '@strapi/types' {
       'organisms.block-step': OrganismsBlockStep;
       'organisms.consulting-service-item': OrganismsConsultingServiceItem;
       'organisms.customer-feedback': OrganismsCustomerFeedback;
+      'organisms.hero-our-cases-section-item': OrganismsHeroOurCasesSectionItem;
       'organisms.pricing-item': OrganismsPricingItem;
       'organisms.recruitment-type': OrganismsRecruitmentType;
       'organisms.relocation-help-item': OrganismsRelocationHelpItem;
@@ -734,6 +760,7 @@ declare module '@strapi/types' {
       'sections.examples-of-best-practices': SectionsExamplesOfBestPractices;
       'sections.exclusive-process': SectionsExclusiveProcess;
       'sections.hero-main': SectionsHeroMain;
+      'sections.hero-our-cases-section': SectionsHeroOurCasesSection;
       'sections.info-with-cards': SectionsInfoWithCards;
       'sections.meet-our-team': SectionsMeetOurTeam;
       'sections.need-help': SectionsNeedHelp;
