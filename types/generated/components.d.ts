@@ -464,6 +464,19 @@ export interface SectionsRelocationHelpHero extends Schema.Component {
   };
 }
 
+export interface SectionsSectionCaseHero extends Schema.Component {
+  collectionName: 'components_sections_section_case_heroes';
+  info: {
+    displayName: 'Section Case Hero';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.RichText;
+    subtitle: Attribute.Text;
+    description: Attribute.Text;
+  };
+}
+
 export interface SectionsSectionWithIndustriesImage extends Schema.Component {
   collectionName: 'components_sections_section_with_industries_images';
   info: {
@@ -663,6 +676,7 @@ declare module '@strapi/types' {
       'sections.pricing': SectionsPricing;
       'sections.proposal': SectionsProposal;
       'sections.relocation-help-hero': SectionsRelocationHelpHero;
+      'sections.section-case-hero': SectionsSectionCaseHero;
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;
       'sections.sectors-grid': SectionsSectorsGrid;
       'sections.start-conversation-form': SectionsStartConversationForm;

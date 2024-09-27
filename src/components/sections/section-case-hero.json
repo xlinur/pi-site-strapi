@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_section_case_heroes",
+  "info": {
+    "displayName": "Section Case Hero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "richtext"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

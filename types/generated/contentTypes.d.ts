@@ -809,6 +809,7 @@ export interface ApiCaseCase extends Schema.CollectionType {
       'manyToOne',
       'api::sphere.sphere'
     >;
+    SectionCaseHero: Attribute.Component<'sections.section-case-hero'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
