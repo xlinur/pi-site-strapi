@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_organisms_section_recruitment_summary_items",
+  "info": {
+    "displayName": "Section Recruitment Summary Item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

@@ -39,6 +39,11 @@
       "type": "component",
       "repeatable": false,
       "component": "sections.section-case-hero"
+    },
+    "SectionRecruitmentSummary": {
+      "type": "component",
+      "repeatable": false,
+      "component": "organisms.section-recruitment-summary-item"
     }
   }
 }

@@ -162,6 +162,18 @@ export interface OrganismsRelocationHelpItem extends Schema.Component {
   };
 }
 
+export interface OrganismsSectionRecruitmentSummaryItem
+  extends Schema.Component {
+  collectionName: 'components_organisms_section_recruitment_summary_items';
+  info: {
+    displayName: 'Section Recruitment Summary Item';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.String;
+  };
+}
+
 export interface OrganismsSectorsGridItem extends Schema.Component {
   collectionName: 'components_organisms_sectors_grid_items';
   info: {
@@ -477,6 +489,24 @@ export interface SectionsSectionCaseHero extends Schema.Component {
   };
 }
 
+export interface SectionsSectionRecruitmentSummary extends Schema.Component {
+  collectionName: 'components_sections_section_recruitment_summaries';
+  info: {
+    displayName: 'Section Recruitment Summary';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.RichText;
+    subtitle: Attribute.String;
+    companyOffered: Attribute.Text;
+    companyOfferedText: Attribute.Text;
+    items: Attribute.Component<
+      'organisms.section-recruitment-summary-item',
+      true
+    >;
+  };
+}
+
 export interface SectionsSectionWithIndustriesImage extends Schema.Component {
   collectionName: 'components_sections_section_with_industries_images';
   info: {
@@ -657,6 +687,7 @@ declare module '@strapi/types' {
       'organisms.pricing-item': OrganismsPricingItem;
       'organisms.recruitment-type': OrganismsRecruitmentType;
       'organisms.relocation-help-item': OrganismsRelocationHelpItem;
+      'organisms.section-recruitment-summary-item': OrganismsSectionRecruitmentSummaryItem;
       'organisms.sectors-grid-item': OrganismsSectorsGridItem;
       'organisms.team-member': OrganismsTeamMember;
       'sections.advantages': SectionsAdvantages;
@@ -677,6 +708,7 @@ declare module '@strapi/types' {
       'sections.proposal': SectionsProposal;
       'sections.relocation-help-hero': SectionsRelocationHelpHero;
       'sections.section-case-hero': SectionsSectionCaseHero;
+      'sections.section-recruitment-summary': SectionsSectionRecruitmentSummary;
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;
       'sections.sectors-grid': SectionsSectorsGrid;
       'sections.start-conversation-form': SectionsStartConversationForm;

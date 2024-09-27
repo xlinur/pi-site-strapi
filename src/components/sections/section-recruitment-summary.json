@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_section_recruitment_summaries",
+  "info": {
+    "displayName": "Section Recruitment Summary",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "richtext"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "companyOffered": {
+      "type": "text"
+    },
+    "companyOfferedText": {
+      "type": "text"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "organisms.section-recruitment-summary-item"
+    }
+  }
+}

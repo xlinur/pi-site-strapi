@@ -810,6 +810,7 @@ export interface ApiCaseCase extends Schema.CollectionType {
       'api::sphere.sphere'
     >;
     SectionCaseHero: Attribute.Component<'sections.section-case-hero'>;
+    SectionRecruitmentSummary: Attribute.Component<'organisms.section-recruitment-summary-item'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
