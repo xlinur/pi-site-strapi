@@ -162,6 +162,17 @@ export interface OrganismsRelocationHelpItem extends Schema.Component {
   };
 }
 
+export interface OrganismsSectionCompleteTaskItem extends Schema.Component {
+  collectionName: 'components_organisms_section_complete_task_items';
+  info: {
+    displayName: 'Section Complete Task Item';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface OrganismsSectionRecruitmentSummaryItem
   extends Schema.Component {
   collectionName: 'components_organisms_section_recruitment_summary_items';
@@ -489,6 +500,18 @@ export interface SectionsSectionCaseHero extends Schema.Component {
   };
 }
 
+export interface SectionsSectionCompleteTask extends Schema.Component {
+  collectionName: 'components_sections_section_complete_tasks';
+  info: {
+    displayName: 'Section Complete Task';
+  };
+  attributes: {
+    title: Attribute.String;
+    subtitle: Attribute.Text;
+    items: Attribute.Component<'organisms.section-complete-task-item', true>;
+  };
+}
+
 export interface SectionsSectionRecruitmentSummary extends Schema.Component {
   collectionName: 'components_sections_section_recruitment_summaries';
   info: {
@@ -687,6 +710,7 @@ declare module '@strapi/types' {
       'organisms.pricing-item': OrganismsPricingItem;
       'organisms.recruitment-type': OrganismsRecruitmentType;
       'organisms.relocation-help-item': OrganismsRelocationHelpItem;
+      'organisms.section-complete-task-item': OrganismsSectionCompleteTaskItem;
       'organisms.section-recruitment-summary-item': OrganismsSectionRecruitmentSummaryItem;
       'organisms.sectors-grid-item': OrganismsSectorsGridItem;
       'organisms.team-member': OrganismsTeamMember;
@@ -708,6 +732,7 @@ declare module '@strapi/types' {
       'sections.proposal': SectionsProposal;
       'sections.relocation-help-hero': SectionsRelocationHelpHero;
       'sections.section-case-hero': SectionsSectionCaseHero;
+      'sections.section-complete-task': SectionsSectionCompleteTask;
       'sections.section-recruitment-summary': SectionsSectionRecruitmentSummary;
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;
       'sections.sectors-grid': SectionsSectorsGrid;

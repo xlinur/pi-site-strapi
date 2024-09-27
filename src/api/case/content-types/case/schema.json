@@ -40,10 +40,15 @@
       "repeatable": false,
       "component": "sections.section-case-hero"
     },
+    "SectionCompleteTask": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.section-complete-task"
+    },
     "SectionRecruitmentSummary": {
       "type": "component",
       "repeatable": false,
-      "component": "organisms.section-recruitment-summary-item"
+      "component": "sections.section-recruitment-summary"
     }
   }
 }

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_organisms_section_complete_task_items",
+  "info": {
+    "displayName": "Section Complete Task Item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
