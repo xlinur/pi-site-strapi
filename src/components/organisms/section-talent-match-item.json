@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_organisms_section_talent_match_items",
+  "info": {
+    "displayName": "Section Talent Match Item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

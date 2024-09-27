@@ -196,6 +196,17 @@ export interface OrganismsSectionRecruitmentSummaryItem
   };
 }
 
+export interface OrganismsSectionTalentMatchItem extends Schema.Component {
+  collectionName: 'components_organisms_section_talent_match_items';
+  info: {
+    displayName: 'Section Talent Match Item';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface OrganismsSectorsGridItem extends Schema.Component {
   collectionName: 'components_organisms_sectors_grid_items';
   info: {
@@ -560,10 +571,12 @@ export interface SectionsSectionTalentMatch extends Schema.Component {
   collectionName: 'components_sections_section_talent_matches';
   info: {
     displayName: 'Section Talent Match';
+    description: '';
   };
   attributes: {
     content: Attribute.Text;
     hireNowBtn: Attribute.Component<'atoms.button'>;
+    items: Attribute.Component<'organisms.section-talent-match-item', true>;
   };
 }
 
@@ -750,6 +763,7 @@ declare module '@strapi/types' {
       'organisms.relocation-help-item': OrganismsRelocationHelpItem;
       'organisms.section-complete-task-item': OrganismsSectionCompleteTaskItem;
       'organisms.section-recruitment-summary-item': OrganismsSectionRecruitmentSummaryItem;
+      'organisms.section-talent-match-item': OrganismsSectionTalentMatchItem;
       'organisms.sectors-grid-item': OrganismsSectorsGridItem;
       'organisms.team-member': OrganismsTeamMember;
       'sections.advantages': SectionsAdvantages;
