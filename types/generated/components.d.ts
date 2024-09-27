@@ -576,7 +576,6 @@ export interface SectionsSectionTalentMatch extends Schema.Component {
   attributes: {
     content: Attribute.Text;
     hireNowBtn: Attribute.Component<'atoms.button'>;
-    items: Attribute.Component<'organisms.section-talent-match-item', true>;
   };
 }
 
