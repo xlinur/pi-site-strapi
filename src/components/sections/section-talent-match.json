@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_sections_section_talent_matches",
+  "info": {
+    "displayName": "Section Talent Match"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    },
+    "hireNowBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button"
+    }
+  }
+}

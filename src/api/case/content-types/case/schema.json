@@ -49,6 +49,11 @@
       "type": "component",
       "repeatable": false,
       "component": "sections.section-recruitment-summary"
+    },
+    "SectionTalentMatch": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.section-talent-match"
     }
   }
 }

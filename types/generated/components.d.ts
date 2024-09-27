@@ -531,6 +531,17 @@ export interface SectionsSectionRecruitmentSummary extends Schema.Component {
   };
 }
 
+export interface SectionsSectionTalentMatch extends Schema.Component {
+  collectionName: 'components_sections_section_talent_matches';
+  info: {
+    displayName: 'Section Talent Match';
+  };
+  attributes: {
+    content: Attribute.Text;
+    hireNowBtn: Attribute.Component<'atoms.button'>;
+  };
+}
+
 export interface SectionsSectionWithIndustriesImage extends Schema.Component {
   collectionName: 'components_sections_section_with_industries_images';
   info: {
@@ -735,6 +746,7 @@ declare module '@strapi/types' {
       'sections.section-case-hero': SectionsSectionCaseHero;
       'sections.section-complete-task': SectionsSectionCompleteTask;
       'sections.section-recruitment-summary': SectionsSectionRecruitmentSummary;
+      'sections.section-talent-match': SectionsSectionTalentMatch;
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;
       'sections.sectors-grid': SectionsSectorsGrid;
       'sections.start-conversation-form': SectionsStartConversationForm;
