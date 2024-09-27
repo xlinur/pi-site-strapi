@@ -813,6 +813,7 @@ export interface ApiCaseCase extends Schema.CollectionType {
     SectionCompleteTask: Attribute.Component<'sections.section-complete-task'>;
     SectionRecruitmentSummary: Attribute.Component<'sections.section-recruitment-summary'>;
     SectionTalentMatch: Attribute.Component<'sections.section-talent-match'>;
+    SectionWithFeatures: Attribute.Component<'sections.relocation-help-hero'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -54,6 +54,11 @@
       "type": "component",
       "repeatable": false,
       "component": "sections.section-talent-match"
+    },
+    "SectionWithFeatures": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.relocation-help-hero"
     }
   }
 }
