@@ -15,6 +15,16 @@
     "address": {
       "type": "text",
       "required": true
+    },
+    "contacts": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.contacts",
+      "required": true
+    },
+    "workingHours": {
+      "type": "string",
+      "required": true
     }
   }
 }

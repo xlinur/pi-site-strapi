@@ -411,30 +411,6 @@ export interface SectionsMeetOurTeam extends Schema.Component {
   };
 }
 
-export interface SectionsMenu extends Schema.Component {
-  collectionName: 'components_sections_menus';
-  info: {
-    displayName: 'Menu';
-    description: '';
-  };
-  attributes: {
-    aboutUs: Attribute.String & Attribute.Required;
-    services: Attribute.String & Attribute.Required;
-    industries: Attribute.String & Attribute.Required;
-    vacancies: Attribute.String & Attribute.Required;
-    earnWithUs: Attribute.String & Attribute.Required;
-    contacts: Attribute.String & Attribute.Required;
-    reviews: Attribute.String & Attribute.Required;
-    splitRecruitment: Attribute.String & Attribute.Required;
-    cases: Attribute.String & Attribute.Required;
-    recruitment: Attribute.String & Attribute.Required;
-    executiveSearch: Attribute.String & Attribute.Required;
-    consulting: Attribute.String & Attribute.Required;
-    analytics: Attribute.String & Attribute.Required;
-    relocation: Attribute.String & Attribute.Required;
-  };
-}
-
 export interface SectionsNeedHelp extends Schema.Component {
   collectionName: 'components_sections_need_helps';
   info: {
@@ -687,6 +663,47 @@ export interface SectionsWhyInfoSection extends Schema.Component {
   };
 }
 
+export interface SharedContacts extends Schema.Component {
+  collectionName: 'components_shared_contacts';
+  info: {
+    displayName: 'Contacts';
+    description: '';
+  };
+  attributes: {
+    phone: Attribute.String & Attribute.Required;
+    linkedin: Attribute.String & Attribute.Required;
+    instagram: Attribute.String & Attribute.Required;
+    facebook: Attribute.String & Attribute.Required;
+    email: Attribute.String & Attribute.Required;
+    telegram: Attribute.String & Attribute.Required;
+    whatsapp: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface SharedMenu extends Schema.Component {
+  collectionName: 'components_sections_menus';
+  info: {
+    displayName: 'Menu';
+    description: '';
+  };
+  attributes: {
+    aboutUs: Attribute.String & Attribute.Required;
+    services: Attribute.String & Attribute.Required;
+    industries: Attribute.String & Attribute.Required;
+    vacancies: Attribute.String & Attribute.Required;
+    earnWithUs: Attribute.String & Attribute.Required;
+    contacts: Attribute.String & Attribute.Required;
+    reviews: Attribute.String & Attribute.Required;
+    splitRecruitment: Attribute.String & Attribute.Required;
+    cases: Attribute.String & Attribute.Required;
+    recruitment: Attribute.String & Attribute.Required;
+    executiveSearch: Attribute.String & Attribute.Required;
+    consulting: Attribute.String & Attribute.Required;
+    analytics: Attribute.String & Attribute.Required;
+    relocation: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface SharedSeo extends Schema.Component {
   collectionName: 'components_shared_seos';
   info: {
@@ -734,7 +751,6 @@ declare module '@strapi/types' {
       'sections.hero-our-cases-section': SectionsHeroOurCasesSection;
       'sections.info-with-cards': SectionsInfoWithCards;
       'sections.meet-our-team': SectionsMeetOurTeam;
-      'sections.menu': SectionsMenu;
       'sections.need-help': SectionsNeedHelp;
       'sections.our-founder': SectionsOurFounder;
       'sections.our-process-of-interaction': SectionsOurProcessOfInteraction;
@@ -751,6 +767,8 @@ declare module '@strapi/types' {
       'sections.tree': SectionsTree;
       'sections.types-of-recruitment': SectionsTypesOfRecruitment;
       'sections.why-info-section': SectionsWhyInfoSection;
+      'shared.contacts': SharedContacts;
+      'shared.menu': SharedMenu;
       'shared.seo': SharedSeo;
     }
   }

@@ -912,6 +912,8 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
   };
   attributes: {
     address: Attribute.Text & Attribute.Required;
+    contacts: Attribute.Component<'shared.contacts'> & Attribute.Required;
+    workingHours: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -935,12 +937,15 @@ export interface ApiGlobalDictionaryGlobalDictionary extends Schema.SingleType {
     singularName: 'global-dictionary';
     pluralName: 'global-dictionaries';
     displayName: '[Global] Dictionary';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    menu: Attribute.Component<'sections.menu'> & Attribute.Required;
+    menu: Attribute.Component<'shared.menu'> & Attribute.Required;
+    supportBlockTitle: Attribute.String & Attribute.Required;
+    contactsBlockTitle: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
