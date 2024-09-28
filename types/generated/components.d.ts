@@ -415,6 +415,7 @@ export interface SectionsMenu extends Schema.Component {
   collectionName: 'components_sections_menus';
   info: {
     displayName: 'Menu';
+    description: '';
   };
   attributes: {
     aboutUs: Attribute.String & Attribute.Required;
@@ -426,6 +427,11 @@ export interface SectionsMenu extends Schema.Component {
     reviews: Attribute.String & Attribute.Required;
     splitRecruitment: Attribute.String & Attribute.Required;
     cases: Attribute.String & Attribute.Required;
+    recruitment: Attribute.String & Attribute.Required;
+    executiveSearch: Attribute.String & Attribute.Required;
+    consulting: Attribute.String & Attribute.Required;
+    analytics: Attribute.String & Attribute.Required;
+    relocation: Attribute.String & Attribute.Required;
   };
 }
 

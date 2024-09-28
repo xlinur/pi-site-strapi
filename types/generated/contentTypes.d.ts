@@ -1037,13 +1037,15 @@ export interface ApiPageCasePageCase extends Schema.SingleType {
   info: {
     singularName: 'page-case';
     pluralName: 'page-cases';
-    displayName: '[Page] Case';
+    displayName: '[Page] Cases';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     HeroOurCasesSection: Attribute.Component<'sections.hero-our-cases-section'>;
+    spheresFilterTitle: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

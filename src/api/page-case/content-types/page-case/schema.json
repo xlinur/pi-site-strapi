@@ -4,7 +4,8 @@
   "info": {
     "singularName": "page-case",
     "pluralName": "page-cases",
-    "displayName": "[Page] Case"
+    "displayName": "[Page] Cases",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,10 @@
       "type": "component",
       "repeatable": false,
       "component": "sections.hero-our-cases-section"
+    },
+    "spheresFilterTitle": {
+      "type": "string",
+      "required": true
     }
   }
 }
