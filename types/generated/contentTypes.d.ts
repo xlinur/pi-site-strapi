@@ -929,6 +929,36 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
   };
 }
 
+export interface ApiGlobalDictionaryGlobalDictionary extends Schema.SingleType {
+  collectionName: 'global_dictionaries';
+  info: {
+    singularName: 'global-dictionary';
+    pluralName: 'global-dictionaries';
+    displayName: '[Global] Dictionary';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    menu: Attribute.Component<'sections.menu'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::global-dictionary.global-dictionary',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::global-dictionary.global-dictionary',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPageAboutUsPageAboutUs extends Schema.SingleType {
   collectionName: 'page_about_uses';
   info: {
@@ -1699,6 +1729,7 @@ declare module '@strapi/types' {
       'api::companies-logo-section.companies-logo-section': ApiCompaniesLogoSectionCompaniesLogoSection;
       'api::feedback.feedback': ApiFeedbackFeedback;
       'api::global.global': ApiGlobalGlobal;
+      'api::global-dictionary.global-dictionary': ApiGlobalDictionaryGlobalDictionary;
       'api::page-about-us.page-about-us': ApiPageAboutUsPageAboutUs;
       'api::page-analytics.page-analytics': ApiPageAnalyticsPageAnalytics;
       'api::page-case.page-case': ApiPageCasePageCase;

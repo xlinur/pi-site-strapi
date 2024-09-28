@@ -411,6 +411,24 @@ export interface SectionsMeetOurTeam extends Schema.Component {
   };
 }
 
+export interface SectionsMenu extends Schema.Component {
+  collectionName: 'components_sections_menus';
+  info: {
+    displayName: 'Menu';
+  };
+  attributes: {
+    aboutUs: Attribute.String & Attribute.Required;
+    services: Attribute.String & Attribute.Required;
+    industries: Attribute.String & Attribute.Required;
+    vacancies: Attribute.String & Attribute.Required;
+    earnWithUs: Attribute.String & Attribute.Required;
+    contacts: Attribute.String & Attribute.Required;
+    reviews: Attribute.String & Attribute.Required;
+    splitRecruitment: Attribute.String & Attribute.Required;
+    cases: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface SectionsNeedHelp extends Schema.Component {
   collectionName: 'components_sections_need_helps';
   info: {
@@ -610,24 +628,6 @@ export interface SectionsSectorsGrid extends Schema.Component {
   };
 }
 
-export interface SectionsStartConversationForm extends Schema.Component {
-  collectionName: 'components_shared_start_conversation_forms';
-  info: {
-    displayName: 'Start conversation form';
-    description: '';
-  };
-  attributes: {
-    servicesLabel: Attribute.String;
-    subTitle: Attribute.String;
-    info: Attribute.String;
-    nameLabel: Attribute.String;
-    companyLabel: Attribute.String;
-    contacts: Attribute.Component<'shared.contact-label-item', true>;
-    descriptionLabel: Attribute.String;
-    legalCheckboxText: Attribute.String;
-  };
-}
-
 export interface SectionsTree extends Schema.Component {
   collectionName: 'components_sections_trees';
   info: {
@@ -681,42 +681,6 @@ export interface SectionsWhyInfoSection extends Schema.Component {
   };
 }
 
-export interface SharedContactLabelItem extends Schema.Component {
-  collectionName: 'components_shared_contact_label_items';
-  info: {
-    displayName: 'contactLabelItem';
-  };
-  attributes: {
-    typeLabel: Attribute.String;
-    valueLabel: Attribute.String;
-  };
-}
-
-export interface SharedFooter extends Schema.Component {
-  collectionName: 'components_shared_footers';
-  info: {
-    displayName: 'Footer';
-  };
-  attributes: {
-    socialMediaTitle: Attribute.RichText;
-    supportTitle: Attribute.String;
-    ContactsTitle: Attribute.String;
-    copywritig: Attribute.String;
-    privacyAndPolicy: Attribute.String;
-  };
-}
-
-export interface SharedMedia extends Schema.Component {
-  collectionName: 'components_shared_media';
-  info: {
-    displayName: 'Media';
-    icon: 'file-video';
-  };
-  attributes: {
-    file: Attribute.Media;
-  };
-}
-
 export interface SharedSeo extends Schema.Component {
   collectionName: 'components_shared_seos';
   info: {
@@ -728,18 +692,6 @@ export interface SharedSeo extends Schema.Component {
   attributes: {
     metaTitle: Attribute.String & Attribute.Required;
     metaDescription: Attribute.Text & Attribute.Required;
-  };
-}
-
-export interface SharedSlider extends Schema.Component {
-  collectionName: 'components_shared_sliders';
-  info: {
-    displayName: 'Slider';
-    icon: 'address-book';
-    description: '';
-  };
-  attributes: {
-    files: Attribute.Media;
   };
 }
 
@@ -776,6 +728,7 @@ declare module '@strapi/types' {
       'sections.hero-our-cases-section': SectionsHeroOurCasesSection;
       'sections.info-with-cards': SectionsInfoWithCards;
       'sections.meet-our-team': SectionsMeetOurTeam;
+      'sections.menu': SectionsMenu;
       'sections.need-help': SectionsNeedHelp;
       'sections.our-founder': SectionsOurFounder;
       'sections.our-process-of-interaction': SectionsOurProcessOfInteraction;
@@ -789,15 +742,10 @@ declare module '@strapi/types' {
       'sections.section-talent-match': SectionsSectionTalentMatch;
       'sections.section-with-industries-image': SectionsSectionWithIndustriesImage;
       'sections.sectors-grid': SectionsSectorsGrid;
-      'sections.start-conversation-form': SectionsStartConversationForm;
       'sections.tree': SectionsTree;
       'sections.types-of-recruitment': SectionsTypesOfRecruitment;
       'sections.why-info-section': SectionsWhyInfoSection;
-      'shared.contact-label-item': SharedContactLabelItem;
-      'shared.footer': SharedFooter;
-      'shared.media': SharedMedia;
       'shared.seo': SharedSeo;
-      'shared.slider': SharedSlider;
     }
   }
 }

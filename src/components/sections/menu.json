@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_sections_menus",
+  "info": {
+    "displayName": "Menu"
+  },
+  "options": {},
+  "attributes": {
+    "aboutUs": {
+      "type": "string",
+      "required": true
+    },
+    "services": {
+      "type": "string",
+      "required": true
+    },
+    "industries": {
+      "type": "string",
+      "required": true
+    },
+    "vacancies": {
+      "type": "string",
+      "required": true
+    },
+    "earnWithUs": {
+      "type": "string",
+      "required": true
+    },
+    "contacts": {
+      "type": "string",
+      "required": true
+    },
+    "reviews": {
+      "type": "string",
+      "required": true
+    },
+    "splitRecruitment": {
+      "type": "string",
+      "required": true
+    },
+    "cases": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
