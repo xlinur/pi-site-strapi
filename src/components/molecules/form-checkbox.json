@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_molecules_form_checkboxes",
+  "info": {
+    "displayName": "Form checkbox"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

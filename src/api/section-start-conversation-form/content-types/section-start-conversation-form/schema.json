@@ -1,0 +1,75 @@
+{
+  "kind": "singleType",
+  "collectionName": "section_start_conversation_forms",
+  "info": {
+    "singularName": "section-start-conversation-form",
+    "pluralName": "section-start-conversation-forms",
+    "displayName": "[Section] Start conversation form",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "info": {
+      "type": "string",
+      "required": true
+    },
+    "submitBtn": {
+      "type": "string",
+      "required": true
+    },
+    "inputName": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-input",
+      "required": true
+    },
+    "inputEmail": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-input",
+      "required": true
+    },
+    "selectServices": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-select",
+      "required": true
+    },
+    "selectContact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-select",
+      "required": true
+    },
+    "inputContact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-input",
+      "required": true
+    },
+    "textareaComment": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-input",
+      "required": true
+    },
+    "legals": {
+      "type": "component",
+      "repeatable": true,
+      "component": "molecules.form-checkbox",
+      "required": true,
+      "min": 1
+    }
+  }
+}

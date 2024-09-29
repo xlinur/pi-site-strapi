@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_molecules_form_selects",
+  "info": {
+    "displayName": "Form select",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atoms.form-select-option",
+      "required": true
+    }
+  }
+}

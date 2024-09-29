@@ -25,6 +25,22 @@
     "workingHours": {
       "type": "string",
       "required": true
+    },
+    "copyright": {
+      "type": "text",
+      "required": true
+    },
+    "registration": {
+      "type": "text",
+      "required": true
+    },
+    "privacyPolicy": {
+      "type": "richtext",
+      "required": true
+    },
+    "candidatePolicy": {
+      "type": "richtext",
+      "required": true
     }
   }
 }

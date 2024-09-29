@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_molecules_form_inputs",
+  "info": {
+    "displayName": "Form input",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

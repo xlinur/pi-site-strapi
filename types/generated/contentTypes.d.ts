@@ -916,6 +916,10 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
     address: Attribute.Text & Attribute.Required;
     contacts: Attribute.Component<'shared.contacts'> & Attribute.Required;
     workingHours: Attribute.String & Attribute.Required;
+    copyright: Attribute.Text & Attribute.Required;
+    registration: Attribute.Text & Attribute.Required;
+    privacyPolicy: Attribute.RichText & Attribute.Required;
+    candidatePolicy: Attribute.RichText & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1540,6 +1544,60 @@ export interface ApiSectionPaymentTermsSectionPaymentTerms
   };
 }
 
+export interface ApiSectionStartConversationFormSectionStartConversationForm
+  extends Schema.SingleType {
+  collectionName: 'section_start_conversation_forms';
+  info: {
+    singularName: 'section-start-conversation-form';
+    pluralName: 'section-start-conversation-forms';
+    displayName: '[Section] Start conversation form';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    subtitle: Attribute.String & Attribute.Required;
+    info: Attribute.String & Attribute.Required;
+    submitBtn: Attribute.String & Attribute.Required;
+    inputName: Attribute.Component<'molecules.form-input'> & Attribute.Required;
+    inputEmail: Attribute.Component<'molecules.form-input'> &
+      Attribute.Required;
+    selectServices: Attribute.Component<'molecules.form-select'> &
+      Attribute.Required;
+    selectContact: Attribute.Component<'molecules.form-select'> &
+      Attribute.Required;
+    inputContact: Attribute.Component<'molecules.form-input'> &
+      Attribute.Required;
+    textareaComment: Attribute.Component<'molecules.form-input'> &
+      Attribute.Required;
+    legals: Attribute.Component<'molecules.form-checkbox', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::section-start-conversation-form.section-start-conversation-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::section-start-conversation-form.section-start-conversation-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSectionSuccessStoriesSectionSuccessStories
   extends Schema.SingleType {
   collectionName: 'section_success_storiess';
@@ -1769,6 +1827,7 @@ declare module '@strapi/types' {
       'api::page-split-recruitment.page-split-recruitment': ApiPageSplitRecruitmentPageSplitRecruitment;
       'api::section-about-personalinvest.section-about-personalinvest': ApiSectionAboutPersonalinvestSectionAboutPersonalinvest;
       'api::section-payment-terms.section-payment-terms': ApiSectionPaymentTermsSectionPaymentTerms;
+      'api::section-start-conversation-form.section-start-conversation-form': ApiSectionStartConversationFormSectionStartConversationForm;
       'api::section-success-stories.section-success-stories': ApiSectionSuccessStoriesSectionSuccessStories;
       'api::section-trusted-map.section-trusted-map': ApiSectionTrustedMapSectionTrustedMap;
       'api::section-what-our-cliens-say.section-what-our-cliens-say': ApiSectionWhatOurCliensSaySectionWhatOurCliensSay;

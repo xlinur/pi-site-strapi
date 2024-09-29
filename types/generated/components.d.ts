@@ -31,6 +31,17 @@ export interface AtomsButton extends Schema.Component {
   };
 }
 
+export interface AtomsFormSelectOption extends Schema.Component {
+  collectionName: 'components_molecules_form_select_options';
+  info: {
+    displayName: 'Form select option';
+    description: '';
+  };
+  attributes: {
+    label: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface MoleculesCountWithDescription extends Schema.Component {
   collectionName: 'components_molecules_count_with_descriptions';
   info: {
@@ -40,6 +51,40 @@ export interface MoleculesCountWithDescription extends Schema.Component {
   attributes: {
     count: Attribute.Integer & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
+  };
+}
+
+export interface MoleculesFormCheckbox extends Schema.Component {
+  collectionName: 'components_molecules_form_checkboxes';
+  info: {
+    displayName: 'Form checkbox';
+  };
+  attributes: {
+    label: Attribute.RichText & Attribute.Required;
+  };
+}
+
+export interface MoleculesFormInput extends Schema.Component {
+  collectionName: 'components_molecules_form_inputs';
+  info: {
+    displayName: 'Form input';
+    description: '';
+  };
+  attributes: {
+    label: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface MoleculesFormSelect extends Schema.Component {
+  collectionName: 'components_molecules_form_selects';
+  info: {
+    displayName: 'Form select';
+    description: '';
+  };
+  attributes: {
+    label: Attribute.String & Attribute.Required;
+    options: Attribute.Component<'atoms.form-select-option', true> &
+      Attribute.Required;
   };
 }
 
@@ -723,7 +768,11 @@ declare module '@strapi/types' {
     export interface Components {
       'atoms.button-link': AtomsButtonLink;
       'atoms.button': AtomsButton;
+      'atoms.form-select-option': AtomsFormSelectOption;
       'molecules.count-with-description': MoleculesCountWithDescription;
+      'molecules.form-checkbox': MoleculesFormCheckbox;
+      'molecules.form-input': MoleculesFormInput;
+      'molecules.form-select': MoleculesFormSelect;
       'molecules.title-with-description': MoleculesTitleWithDescription;
       'organisms.advantage': OrganismsAdvantage;
       'organisms.analytics-service': OrganismsAnalyticsService;
