@@ -34,7 +34,7 @@
       "component": "molecules.form-input",
       "required": true
     },
-    "inputEmail": {
+    "inputCompany": {
       "type": "component",
       "repeatable": false,
       "component": "molecules.form-input",

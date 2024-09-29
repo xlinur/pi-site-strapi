@@ -1562,7 +1562,7 @@ export interface ApiSectionStartConversationFormSectionStartConversationForm
     info: Attribute.String & Attribute.Required;
     submitBtn: Attribute.String & Attribute.Required;
     inputName: Attribute.Component<'molecules.form-input'> & Attribute.Required;
-    inputEmail: Attribute.Component<'molecules.form-input'> &
+    inputCompany: Attribute.Component<'molecules.form-input'> &
       Attribute.Required;
     selectServices: Attribute.Component<'molecules.form-select'> &
       Attribute.Required;
