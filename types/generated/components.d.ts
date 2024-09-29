@@ -713,8 +713,8 @@ export interface SharedSeo extends Schema.Component {
     description: '';
   };
   attributes: {
-    metaTitle: Attribute.String & Attribute.Required;
-    metaDescription: Attribute.Text & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
   };
 }
 

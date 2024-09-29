@@ -25,6 +25,10 @@
     "contactsBlockTitle": {
       "type": "string",
       "required": true
+    },
+    "followSocialMediaTitle": {
+      "type": "richtext",
+      "required": true
     }
   }
 }

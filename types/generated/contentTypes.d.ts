@@ -814,6 +814,7 @@ export interface ApiCaseCase extends Schema.CollectionType {
     SectionRecruitmentSummary: Attribute.Component<'sections.section-recruitment-summary'>;
     SectionTalentMatch: Attribute.Component<'sections.section-talent-match'>;
     SectionWithFeatures: Attribute.Component<'sections.relocation-help-hero'>;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -881,6 +882,7 @@ export interface ApiFeedbackFeedback extends Schema.CollectionType {
       'api::sphere.sphere'
     >;
     title: Attribute.String & Attribute.Required;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -946,6 +948,7 @@ export interface ApiGlobalDictionaryGlobalDictionary extends Schema.SingleType {
     menu: Attribute.Component<'shared.menu'> & Attribute.Required;
     supportBlockTitle: Attribute.String & Attribute.Required;
     contactsBlockTitle: Attribute.String & Attribute.Required;
+    followSocialMediaTitle: Attribute.RichText & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -982,6 +985,7 @@ export interface ApiPageAboutUsPageAboutUs extends Schema.SingleType {
     OurFounder: Attribute.Component<'sections.our-founder'> &
       Attribute.Required;
     OurTeam: Attribute.Component<'sections.our-team'> & Attribute.Required;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1019,6 +1023,7 @@ export interface ApiPageAnalyticsPageAnalytics extends Schema.SingleType {
     WhyInfoSection: Attribute.Component<'sections.why-info-section'> &
       Attribute.Required;
     Pricing: Attribute.Component<'sections.pricing'> & Attribute.Required;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1051,6 +1056,7 @@ export interface ApiPageCasePageCase extends Schema.SingleType {
   attributes: {
     HeroOurCasesSection: Attribute.Component<'sections.hero-our-cases-section'>;
     spheresFilterTitle: Attribute.String & Attribute.Required;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1089,6 +1095,7 @@ export interface ApiPageConsultingPageConsulting extends Schema.SingleType {
       Attribute.Required;
     ExamplesOfBestPractices: Attribute.Component<'sections.examples-of-best-practices'> &
       Attribute.Required;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1119,6 +1126,7 @@ export interface ApiPageContactUsPageContactUs extends Schema.SingleType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1154,6 +1162,7 @@ export interface ApiPageEarnWithUsPageEarnWithUs extends Schema.SingleType {
     Advantages: Attribute.Component<'sections.advantages'> & Attribute.Required;
     OurProcessOfInteraction: Attribute.Component<'sections.our-process-of-interaction'> &
       Attribute.Required;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1197,6 +1206,7 @@ export interface ApiPageExecutiveSearchPageExecutiveSearch
     SectionWithIndustriesImage: Attribute.Component<'sections.section-with-industries-image'> &
       Attribute.Required;
     Pricing: Attribute.Component<'sections.pricing'> & Attribute.Required;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1229,6 +1239,7 @@ export interface ApiPageFeedbacksPageFeedbacks extends Schema.SingleType {
   attributes: {
     title: Attribute.String & Attribute.Required;
     moreReviewsBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1268,6 +1279,7 @@ export interface ApiPageHomePageHome extends Schema.SingleType {
       Attribute.Required;
     MeetOurTeam: Attribute.Component<'sections.meet-our-team'> &
       Attribute.Required;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1305,6 +1317,7 @@ export interface ApiPageIndustriesPageIndustries extends Schema.SingleType {
     TreeSection: Attribute.Component<'sections.tree'> & Attribute.Required;
     SectionWithIndustriesImage: Attribute.Component<'sections.section-with-industries-image'> &
       Attribute.Required;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1347,6 +1360,7 @@ export interface ApiPageRecruitmentPageRecruitment extends Schema.SingleType {
     Pricing: Attribute.Component<'sections.pricing'> & Attribute.Required;
     SectionWithIndustriesImage: Attribute.Component<'sections.section-with-industries-image'> &
       Attribute.Required;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1380,6 +1394,7 @@ export interface ApiPageRelocationHelpPageRelocationHelp
   attributes: {
     SectionWithFeatures: Attribute.Component<'sections.relocation-help-hero'>;
     BlockStepsPlan: Attribute.Component<'sections.block-steps-plan'>;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1415,6 +1430,7 @@ export interface ApiPageSplitRecruitmentPageSplitRecruitment
       Attribute.Required;
     Proposal: Attribute.Component<'sections.proposal'> & Attribute.Required;
     TreeSection: Attribute.Component<'sections.tree'> & Attribute.Required;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1696,6 +1712,7 @@ export interface ApiSphereSphere extends Schema.CollectionType {
       'oneToMany',
       'api::case.case'
     >;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

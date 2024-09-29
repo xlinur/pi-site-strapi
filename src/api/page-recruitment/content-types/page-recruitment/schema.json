@@ -54,6 +54,12 @@
       "repeatable": false,
       "component": "sections.section-with-industries-image",
       "required": true
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo",
+      "required": true
     }
   }
 }

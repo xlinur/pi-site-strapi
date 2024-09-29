@@ -41,6 +41,12 @@
       "repeatable": false,
       "component": "sections.meet-our-team",
       "required": true
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo",
+      "required": true
     }
   }
 }
