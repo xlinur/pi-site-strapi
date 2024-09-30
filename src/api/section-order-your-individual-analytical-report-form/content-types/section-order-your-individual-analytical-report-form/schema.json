@@ -21,15 +21,10 @@
     "info": {
       "type": "text"
     },
-    "inputName": {
+    "button": {
       "type": "component",
       "repeatable": false,
-      "component": "molecules.form-input"
-    },
-    "inputCompany": {
-      "type": "component",
-      "repeatable": false,
-      "component": "molecules.form-input"
+      "component": "atoms.button"
     }
   }
 }

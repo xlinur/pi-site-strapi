@@ -1519,8 +1519,7 @@ export interface ApiSectionOrderYourIndividualAnalyticalReportFormSectionOrderYo
     title: Attribute.String;
     subTitle: Attribute.String;
     info: Attribute.Text;
-    inputName: Attribute.Component<'molecules.form-input'>;
-    inputCompany: Attribute.Component<'molecules.form-input'>;
+    button: Attribute.Component<'atoms.button'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
