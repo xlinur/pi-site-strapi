@@ -1503,6 +1503,38 @@ export interface ApiSectionAboutPersonalinvestSectionAboutPersonalinvest
   };
 }
 
+export interface ApiSectionOrderYourIndividualAnalyticalReportFormSectionOrderYourIndividualAnalyticalReportForm
+  extends Schema.SingleType {
+  collectionName: 'section_order_your_individual_analytical_report_forms';
+  info: {
+    singularName: 'section-order-your-individual-analytical-report-form';
+    pluralName: 'section-order-your-individual-analytical-report-forms';
+    displayName: '[Section] Order your individual analytical report form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    subTitle: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::section-order-your-individual-analytical-report-form.section-order-your-individual-analytical-report-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::section-order-your-individual-analytical-report-form.section-order-your-individual-analytical-report-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSectionPaymentTermsSectionPaymentTerms
   extends Schema.SingleType {
   collectionName: 'section_payment_termss';
@@ -1826,6 +1858,7 @@ declare module '@strapi/types' {
       'api::page-relocation-help.page-relocation-help': ApiPageRelocationHelpPageRelocationHelp;
       'api::page-split-recruitment.page-split-recruitment': ApiPageSplitRecruitmentPageSplitRecruitment;
       'api::section-about-personalinvest.section-about-personalinvest': ApiSectionAboutPersonalinvestSectionAboutPersonalinvest;
+      'api::section-order-your-individual-analytical-report-form.section-order-your-individual-analytical-report-form': ApiSectionOrderYourIndividualAnalyticalReportFormSectionOrderYourIndividualAnalyticalReportForm;
       'api::section-payment-terms.section-payment-terms': ApiSectionPaymentTermsSectionPaymentTerms;
       'api::section-start-conversation-form.section-start-conversation-form': ApiSectionStartConversationFormSectionStartConversationForm;
       'api::section-success-stories.section-success-stories': ApiSectionSuccessStoriesSectionSuccessStories;
