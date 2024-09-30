@@ -4,7 +4,8 @@
   "info": {
     "singularName": "section-order-your-report",
     "pluralName": "section-order-your-reports",
-    "displayName": "[Section] Order your report"
+    "displayName": "[Section] Order your report",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,25 @@
       "type": "component",
       "repeatable": false,
       "component": "molecules.form-input"
+    },
+    "subTitle": {
+      "type": "string"
+    },
+    "info": {
+      "type": "text"
+    },
+    "contactsTitle": {
+      "type": "string"
+    },
+    "inputCompany": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-input"
+    },
+    "selectServices": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-select"
     }
   }
 }

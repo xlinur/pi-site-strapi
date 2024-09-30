@@ -1510,6 +1510,7 @@ export interface ApiSectionOrderYourReportSectionOrderYourReport
     singularName: 'section-order-your-report';
     pluralName: 'section-order-your-reports';
     displayName: '[Section] Order your report';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1517,6 +1518,11 @@ export interface ApiSectionOrderYourReportSectionOrderYourReport
   attributes: {
     title: Attribute.String;
     inputName: Attribute.Component<'molecules.form-input'>;
+    subTitle: Attribute.String;
+    info: Attribute.Text;
+    contactsTitle: Attribute.String;
+    inputCompany: Attribute.Component<'molecules.form-input'>;
+    selectServices: Attribute.Component<'molecules.form-select'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
