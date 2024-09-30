@@ -1523,6 +1523,12 @@ export interface ApiSectionOrderYourReportSectionOrderYourReport
     contactsTitle: Attribute.String;
     inputCompany: Attribute.Component<'molecules.form-input'>;
     selectServices: Attribute.Component<'molecules.form-select'>;
+    inputContact: Attribute.Component<'molecules.form-input'>;
+    legalCheckboxes: Attribute.Component<'molecules.form-checkbox', true>;
+    purposeOfResearch: Attribute.Component<'atoms.short-text', true>;
+    otherPurpose: Attribute.Component<'molecules.form-input'>;
+    submitBtn: Attribute.String;
+    textareaComment: Attribute.Component<'molecules.form-input'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

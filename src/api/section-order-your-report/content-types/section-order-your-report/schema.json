@@ -38,6 +38,34 @@
       "type": "component",
       "repeatable": false,
       "component": "molecules.form-select"
+    },
+    "inputContact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-input"
+    },
+    "legalCheckboxes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "molecules.form-checkbox"
+    },
+    "purposeOfResearch": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atoms.short-text"
+    },
+    "otherPurpose": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-input"
+    },
+    "submitBtn": {
+      "type": "string"
+    },
+    "textareaComment": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-input"
     }
   }
 }

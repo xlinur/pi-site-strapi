@@ -42,6 +42,16 @@ export interface AtomsFormSelectOption extends Schema.Component {
   };
 }
 
+export interface AtomsShortText extends Schema.Component {
+  collectionName: 'components_atoms_short_texts';
+  info: {
+    displayName: 'Short Text';
+  };
+  attributes: {
+    title: Attribute.String;
+  };
+}
+
 export interface MoleculesCountWithDescription extends Schema.Component {
   collectionName: 'components_molecules_count_with_descriptions';
   info: {
@@ -769,6 +779,7 @@ declare module '@strapi/types' {
       'atoms.button-link': AtomsButtonLink;
       'atoms.button': AtomsButton;
       'atoms.form-select-option': AtomsFormSelectOption;
+      'atoms.short-text': AtomsShortText;
       'molecules.count-with-description': MoleculesCountWithDescription;
       'molecules.form-checkbox': MoleculesFormCheckbox;
       'molecules.form-input': MoleculesFormInput;
