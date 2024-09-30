@@ -29,6 +29,16 @@
     "followSocialMediaTitle": {
       "type": "richtext",
       "required": true
+    },
+    "gdprMessage": {
+      "type": "richtext",
+      "required": true
+    },
+    "gdprAcceptBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
     }
   }
 }

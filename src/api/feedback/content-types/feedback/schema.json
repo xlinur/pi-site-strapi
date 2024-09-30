@@ -45,7 +45,7 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.seo",
-      "required": true
+      "required": false
     }
   }
 }

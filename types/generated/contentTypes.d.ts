@@ -882,7 +882,7 @@ export interface ApiFeedbackFeedback extends Schema.CollectionType {
       'api::sphere.sphere'
     >;
     title: Attribute.String & Attribute.Required;
-    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
+    SEO: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -953,6 +953,8 @@ export interface ApiGlobalDictionaryGlobalDictionary extends Schema.SingleType {
     supportBlockTitle: Attribute.String & Attribute.Required;
     contactsBlockTitle: Attribute.String & Attribute.Required;
     followSocialMediaTitle: Attribute.RichText & Attribute.Required;
+    gdprMessage: Attribute.RichText & Attribute.Required;
+    gdprAcceptBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
