@@ -1503,33 +1503,31 @@ export interface ApiSectionAboutPersonalinvestSectionAboutPersonalinvest
   };
 }
 
-export interface ApiSectionOrderYourIndividualAnalyticalReportFormSectionOrderYourIndividualAnalyticalReportForm
+export interface ApiSectionOrderYourReportSectionOrderYourReport
   extends Schema.SingleType {
-  collectionName: 'section_order_your_individual_analytical_report_forms';
+  collectionName: 'section_order_your_reports';
   info: {
-    singularName: 'section-order-your-individual-analytical-report-form';
-    pluralName: 'section-order-your-individual-analytical-report-forms';
-    displayName: '[Section] Order your individual analytical report form';
-    description: '';
+    singularName: 'section-order-your-report';
+    pluralName: 'section-order-your-reports';
+    displayName: '[Section] Order your report';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
-    subTitle: Attribute.String;
-    info: Attribute.Text;
+    inputName: Attribute.Component<'molecules.form-input'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::section-order-your-individual-analytical-report-form.section-order-your-individual-analytical-report-form',
+      'api::section-order-your-report.section-order-your-report',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::section-order-your-individual-analytical-report-form.section-order-your-individual-analytical-report-form',
+      'api::section-order-your-report.section-order-your-report',
       'oneToOne',
       'admin::user'
     > &
@@ -1860,7 +1858,7 @@ declare module '@strapi/types' {
       'api::page-relocation-help.page-relocation-help': ApiPageRelocationHelpPageRelocationHelp;
       'api::page-split-recruitment.page-split-recruitment': ApiPageSplitRecruitmentPageSplitRecruitment;
       'api::section-about-personalinvest.section-about-personalinvest': ApiSectionAboutPersonalinvestSectionAboutPersonalinvest;
-      'api::section-order-your-individual-analytical-report-form.section-order-your-individual-analytical-report-form': ApiSectionOrderYourIndividualAnalyticalReportFormSectionOrderYourIndividualAnalyticalReportForm;
+      'api::section-order-your-report.section-order-your-report': ApiSectionOrderYourReportSectionOrderYourReport;
       'api::section-payment-terms.section-payment-terms': ApiSectionPaymentTermsSectionPaymentTerms;
       'api::section-start-conversation-form.section-start-conversation-form': ApiSectionStartConversationFormSectionStartConversationForm;
       'api::section-success-stories.section-success-stories': ApiSectionSuccessStoriesSectionSuccessStories;

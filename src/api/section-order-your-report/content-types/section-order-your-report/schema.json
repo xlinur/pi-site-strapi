@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "section_order_your_reports",
+  "info": {
+    "singularName": "section-order-your-report",
+    "pluralName": "section-order-your-reports",
+    "displayName": "[Section] Order your report"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "inputName": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-input"
+    }
+  }
+}
