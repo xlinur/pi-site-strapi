@@ -4,7 +4,8 @@
   "info": {
     "singularName": "section-order-your-individual-analytical-report-form",
     "pluralName": "section-order-your-individual-analytical-report-forms",
-    "displayName": "[Section] Order your individual analytical report form"
+    "displayName": "[Section] Order your individual analytical report form",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +17,19 @@
     },
     "subTitle": {
       "type": "string"
+    },
+    "info": {
+      "type": "text"
+    },
+    "inputName": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-input"
+    },
+    "inputCompany": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-input"
     }
   }
 }

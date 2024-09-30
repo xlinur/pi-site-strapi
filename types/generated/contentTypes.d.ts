@@ -1510,6 +1510,7 @@ export interface ApiSectionOrderYourIndividualAnalyticalReportFormSectionOrderYo
     singularName: 'section-order-your-individual-analytical-report-form';
     pluralName: 'section-order-your-individual-analytical-report-forms';
     displayName: '[Section] Order your individual analytical report form';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1517,6 +1518,9 @@ export interface ApiSectionOrderYourIndividualAnalyticalReportFormSectionOrderYo
   attributes: {
     title: Attribute.String;
     subTitle: Attribute.String;
+    info: Attribute.Text;
+    inputName: Attribute.Component<'molecules.form-input'>;
+    inputCompany: Attribute.Component<'molecules.form-input'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
