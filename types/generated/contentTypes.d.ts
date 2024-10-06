@@ -1455,6 +1455,46 @@ export interface ApiPageSplitRecruitmentPageSplitRecruitment
   };
 }
 
+export interface ApiPageVacanciesPageVacancies extends Schema.SingleType {
+  collectionName: 'page_vacanciess';
+  info: {
+    singularName: 'page-vacancies';
+    pluralName: 'page-vacanciess';
+    displayName: '[Page] Vacancies';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
+    title: Attribute.RichText & Attribute.Required;
+    description: Attribute.RichText & Attribute.Required;
+    hireNowBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+    contentTitle: Attribute.String & Attribute.Required;
+    itemsCountLabel: Attribute.String & Attribute.Required;
+    filterFindBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+    filterResetBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+    filterNoResults: Attribute.String & Attribute.Required;
+    CVForm: Attribute.Component<'sections.cv-form'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-vacancies.page-vacancies',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-vacancies.page-vacancies',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSectionAboutPersonalinvestSectionAboutPersonalinvest
   extends Schema.SingleType {
   collectionName: 'section_about_personalinvests';
@@ -1871,6 +1911,7 @@ declare module '@strapi/types' {
       'api::page-recruitment.page-recruitment': ApiPageRecruitmentPageRecruitment;
       'api::page-relocation-help.page-relocation-help': ApiPageRelocationHelpPageRelocationHelp;
       'api::page-split-recruitment.page-split-recruitment': ApiPageSplitRecruitmentPageSplitRecruitment;
+      'api::page-vacancies.page-vacancies': ApiPageVacanciesPageVacancies;
       'api::section-about-personalinvest.section-about-personalinvest': ApiSectionAboutPersonalinvestSectionAboutPersonalinvest;
       'api::section-order-your-report.section-order-your-report': ApiSectionOrderYourReportSectionOrderYourReport;
       'api::section-payment-terms.section-payment-terms': ApiSectionPaymentTermsSectionPaymentTerms;

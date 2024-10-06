@@ -1,0 +1,66 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_vacanciess",
+  "info": {
+    "singularName": "page-vacancies",
+    "pluralName": "page-vacanciess",
+    "displayName": "[Page] Vacancies",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo",
+      "required": true
+    },
+    "title": {
+      "type": "richtext",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "hireNowBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
+    },
+    "contentTitle": {
+      "type": "string",
+      "required": true
+    },
+    "itemsCountLabel": {
+      "type": "string",
+      "required": true
+    },
+    "filterFindBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
+    },
+    "filterResetBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
+    },
+    "filterNoResults": {
+      "type": "string",
+      "required": true
+    },
+    "CVForm": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.cv-form",
+      "required": true
+    }
+  }
+}

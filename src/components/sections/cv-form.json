@@ -1,0 +1,58 @@
+{
+  "collectionName": "components_sections_cv_forms",
+  "info": {
+    "displayName": "CV form",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text",
+      "required": true
+    },
+    "formTitle": {
+      "type": "string",
+      "required": true
+    },
+    "uploadBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
+    },
+    "inputName": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-input",
+      "required": true
+    },
+    "inputPosition": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-input",
+      "required": true
+    },
+    "inputEmail": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-input",
+      "required": true
+    },
+    "inputSkills": {
+      "type": "component",
+      "repeatable": false,
+      "component": "molecules.form-input",
+      "required": true
+    },
+    "legals": {
+      "type": "component",
+      "repeatable": true,
+      "component": "molecules.form-checkbox",
+      "required": true
+    }
+  }
+}
