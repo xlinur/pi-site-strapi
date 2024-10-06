@@ -70,6 +70,12 @@
       "component": "molecules.form-checkbox",
       "required": true,
       "min": 1
+    },
+    "successMessage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "organisms.form-success-message",
+      "required": true
     }
   }
 }

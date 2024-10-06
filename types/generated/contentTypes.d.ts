@@ -1426,6 +1426,7 @@ export interface ApiPageSingleVacancyPageSingleVacancy
     singularName: 'page-single-vacancy';
     pluralName: 'page-single-vacancies';
     displayName: '[Page] Single vacancy';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1433,6 +1434,7 @@ export interface ApiPageSingleVacancyPageSingleVacancy
   attributes: {
     descriptionTitle: Attribute.String & Attribute.Required;
     replyBtn: Attribute.Component<'atoms.button'>;
+    SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1601,6 +1603,8 @@ export interface ApiSectionCvFormSectionCvForm extends Schema.SingleType {
       Attribute.Required;
     legals: Attribute.Component<'molecules.form-checkbox', true> &
       Attribute.Required;
+    successMessage: Attribute.Component<'organisms.form-success-message'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1740,6 +1744,8 @@ export interface ApiSectionStartConversationFormSectionStartConversationForm
         },
         number
       >;
+    successMessage: Attribute.Component<'organisms.form-success-message'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

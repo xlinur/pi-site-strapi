@@ -180,6 +180,17 @@ export interface OrganismsCustomerFeedback extends Schema.Component {
   };
 }
 
+export interface OrganismsFormSuccessMessage extends Schema.Component {
+  collectionName: 'components_organisms_form_success_messages';
+  info: {
+    displayName: 'Form success message';
+  };
+  attributes: {
+    title: Attribute.RichText & Attribute.Required;
+    message: Attribute.RichText & Attribute.Required;
+  };
+}
+
 export interface OrganismsHeroOurCasesSectionItem extends Schema.Component {
   collectionName: 'components_organisms_hero_our_cases_section_items';
   info: {
@@ -791,6 +802,7 @@ declare module '@strapi/types' {
       'organisms.block-step': OrganismsBlockStep;
       'organisms.consulting-service-item': OrganismsConsultingServiceItem;
       'organisms.customer-feedback': OrganismsCustomerFeedback;
+      'organisms.form-success-message': OrganismsFormSuccessMessage;
       'organisms.hero-our-cases-section-item': OrganismsHeroOurCasesSectionItem;
       'organisms.pricing-item': OrganismsPricingItem;
       'organisms.recruitment-type': OrganismsRecruitmentType;

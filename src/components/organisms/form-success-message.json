@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_organisms_form_success_messages",
+  "info": {
+    "displayName": "Form success message"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "richtext",
+      "required": true
+    },
+    "message": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
