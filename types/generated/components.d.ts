@@ -377,29 +377,6 @@ export interface SectionsConsultingServices extends Schema.Component {
   };
 }
 
-export interface SectionsCvForm extends Schema.Component {
-  collectionName: 'components_sections_cv_forms';
-  info: {
-    displayName: 'CV form';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    subtitle: Attribute.Text & Attribute.Required;
-    formTitle: Attribute.String & Attribute.Required;
-    uploadBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
-    inputName: Attribute.Component<'molecules.form-input'> & Attribute.Required;
-    inputPosition: Attribute.Component<'molecules.form-input'> &
-      Attribute.Required;
-    inputEmail: Attribute.Component<'molecules.form-input'> &
-      Attribute.Required;
-    inputSkills: Attribute.Component<'molecules.form-input'> &
-      Attribute.Required;
-    legals: Attribute.Component<'molecules.form-checkbox', true> &
-      Attribute.Required;
-  };
-}
-
 export interface SectionsExamplesOfBestPractices extends Schema.Component {
   collectionName: 'components_sections_examples_of_best_practices';
   info: {
@@ -828,7 +805,6 @@ declare module '@strapi/types' {
       'sections.animated-hero': SectionsAnimatedHero;
       'sections.block-steps-plan': SectionsBlockStepsPlan;
       'sections.consulting-services': SectionsConsultingServices;
-      'sections.cv-form': SectionsCvForm;
       'sections.examples-of-best-practices': SectionsExamplesOfBestPractices;
       'sections.exclusive-process': SectionsExclusiveProcess;
       'sections.hero-main': SectionsHeroMain;

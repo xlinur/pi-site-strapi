@@ -1419,6 +1419,38 @@ export interface ApiPageRelocationHelpPageRelocationHelp
   };
 }
 
+export interface ApiPageSingleVacancyPageSingleVacancy
+  extends Schema.SingleType {
+  collectionName: 'page_single_vacancies';
+  info: {
+    singularName: 'page-single-vacancy';
+    pluralName: 'page-single-vacancies';
+    displayName: '[Page] Single vacancy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    descriptionTitle: Attribute.String & Attribute.Required;
+    replyBtn: Attribute.Component<'atoms.button'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::page-single-vacancy.page-single-vacancy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::page-single-vacancy.page-single-vacancy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPageSplitRecruitmentPageSplitRecruitment
   extends Schema.SingleType {
   collectionName: 'page_split_recruitments';
@@ -1476,7 +1508,6 @@ export interface ApiPageVacanciesPageVacancies extends Schema.SingleType {
     filterFindBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
     filterResetBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
     filterNoResults: Attribute.String & Attribute.Required;
-    CVForm: Attribute.Component<'sections.cv-form'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1538,6 +1569,49 @@ export interface ApiSectionAboutPersonalinvestSectionAboutPersonalinvest
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::section-about-personalinvest.section-about-personalinvest',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSectionCvFormSectionCvForm extends Schema.SingleType {
+  collectionName: 'section_cv_forms';
+  info: {
+    singularName: 'section-cv-form';
+    pluralName: 'section-cv-forms';
+    displayName: '[Section] CV form';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    subtitle: Attribute.Text & Attribute.Required;
+    formTitle: Attribute.String & Attribute.Required;
+    uploadBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+    inputName: Attribute.Component<'molecules.form-input'> & Attribute.Required;
+    inputPosition: Attribute.Component<'molecules.form-input'> &
+      Attribute.Required;
+    inputEmail: Attribute.Component<'molecules.form-input'> &
+      Attribute.Required;
+    inputSkills: Attribute.Component<'molecules.form-input'> &
+      Attribute.Required;
+    legals: Attribute.Component<'molecules.form-checkbox', true> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::section-cv-form.section-cv-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::section-cv-form.section-cv-form',
       'oneToOne',
       'admin::user'
     > &
@@ -1910,9 +1984,11 @@ declare module '@strapi/types' {
       'api::page-industries.page-industries': ApiPageIndustriesPageIndustries;
       'api::page-recruitment.page-recruitment': ApiPageRecruitmentPageRecruitment;
       'api::page-relocation-help.page-relocation-help': ApiPageRelocationHelpPageRelocationHelp;
+      'api::page-single-vacancy.page-single-vacancy': ApiPageSingleVacancyPageSingleVacancy;
       'api::page-split-recruitment.page-split-recruitment': ApiPageSplitRecruitmentPageSplitRecruitment;
       'api::page-vacancies.page-vacancies': ApiPageVacanciesPageVacancies;
       'api::section-about-personalinvest.section-about-personalinvest': ApiSectionAboutPersonalinvestSectionAboutPersonalinvest;
+      'api::section-cv-form.section-cv-form': ApiSectionCvFormSectionCvForm;
       'api::section-order-your-report.section-order-your-report': ApiSectionOrderYourReportSectionOrderYourReport;
       'api::section-payment-terms.section-payment-terms': ApiSectionPaymentTermsSectionPaymentTerms;
       'api::section-start-conversation-form.section-start-conversation-form': ApiSectionStartConversationFormSectionStartConversationForm;

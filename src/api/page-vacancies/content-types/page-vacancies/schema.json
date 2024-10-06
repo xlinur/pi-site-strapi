@@ -55,12 +55,6 @@
     "filterNoResults": {
       "type": "string",
       "required": true
-    },
-    "CVForm": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sections.cv-form",
-      "required": true
     }
   }
 }

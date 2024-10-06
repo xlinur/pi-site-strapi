@@ -1,10 +1,16 @@
 {
-  "collectionName": "components_sections_cv_forms",
+  "kind": "singleType",
+  "collectionName": "section_cv_forms",
   "info": {
-    "displayName": "CV form",
+    "singularName": "section-cv-form",
+    "pluralName": "section-cv-forms",
+    "displayName": "[Section] CV form",
     "description": ""
   },
-  "options": {},
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
   "attributes": {
     "title": {
       "type": "string",
