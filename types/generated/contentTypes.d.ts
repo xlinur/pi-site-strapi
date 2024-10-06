@@ -920,6 +920,9 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
     registration: Attribute.Text & Attribute.Required;
     privacyPolicy: Attribute.RichText & Attribute.Required;
     candidatePolicy: Attribute.RichText & Attribute.Required;
+    locale: Attribute.Enumeration<['ru', 'en']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'ru'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1605,6 +1608,7 @@ export interface ApiSectionCvFormSectionCvForm extends Schema.SingleType {
       Attribute.Required;
     successMessage: Attribute.Component<'organisms.form-success-message'> &
       Attribute.Required;
+    submitBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -65,6 +65,12 @@
       "repeatable": false,
       "component": "organisms.form-success-message",
       "required": true
+    },
+    "submitBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
     }
   }
 }

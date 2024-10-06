@@ -41,6 +41,15 @@
     "candidatePolicy": {
       "type": "richtext",
       "required": true
+    },
+    "locale": {
+      "type": "enumeration",
+      "enum": [
+        "ru",
+        "en"
+      ],
+      "required": true,
+      "default": "ru"
     }
   }
 }
