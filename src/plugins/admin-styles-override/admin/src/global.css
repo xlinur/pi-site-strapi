@@ -1,0 +1,22 @@
+/* This styles is a hack to remove forbiden settings in Rich text editor */
+
+/* dropdown with tag selcetion (p, h1, h2...) */
+div[data-plugin-rich-text-editor] > div > div > div > div > div:nth-of-type(1) {
+  display: none;
+}
+
+/* underline */
+div[data-plugin-rich-text-editor] > div > div > div > div > div:nth-of-type(2) > span:nth-of-type(3) {
+  display: none;
+}
+
+/* strike */
+div[data-plugin-rich-text-editor] > div > div > div > div > div:nth-of-type(2) > span:nth-of-type(4) {
+  display: none;
+}
+
+
+/* divider and youtube section */
+div[data-plugin-rich-text-editor] > div > div > div > div > div:nth-of-type(3) {
+  display: none;
+}
