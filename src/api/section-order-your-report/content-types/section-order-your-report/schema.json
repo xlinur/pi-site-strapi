@@ -66,6 +66,12 @@
       "type": "component",
       "repeatable": false,
       "component": "molecules.form-input"
+    },
+    "successMessage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "organisms.form-success-message",
+      "required": true
     }
   }
 }

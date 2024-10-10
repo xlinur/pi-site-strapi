@@ -1653,6 +1653,8 @@ export interface ApiSectionOrderYourReportSectionOrderYourReport
     otherPurpose: Attribute.Component<'molecules.form-input'>;
     submitBtn: Attribute.String;
     textareaComment: Attribute.Component<'molecules.form-input'>;
+    successMessage: Attribute.Component<'organisms.form-success-message'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
