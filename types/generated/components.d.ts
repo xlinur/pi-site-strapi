@@ -42,6 +42,26 @@ export interface AtomsFormSelectOption extends Schema.Component {
   };
 }
 
+export interface AtomsImage extends Schema.Component {
+  collectionName: 'components_atoms_images';
+  info: {
+    displayName: 'Image';
+  };
+  attributes: {
+    image: Attribute.Media & Attribute.Required;
+  };
+}
+
+export interface AtomsMedia extends Schema.Component {
+  collectionName: 'components_atoms_media';
+  info: {
+    displayName: 'Media';
+  };
+  attributes: {
+    image: Attribute.Media & Attribute.Required;
+  };
+}
+
 export interface AtomsShortText extends Schema.Component {
   collectionName: 'components_atoms_short_texts';
   info: {
@@ -474,6 +494,15 @@ export interface SectionsMeetOurTeam extends Schema.Component {
   attributes: {
     title: Attribute.String & Attribute.Required;
     text: Attribute.Text & Attribute.Required;
+    images: Attribute.Component<'atoms.image', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 6;
+          max: 6;
+        },
+        number
+      >;
   };
 }
 
@@ -790,6 +819,8 @@ declare module '@strapi/types' {
       'atoms.button-link': AtomsButtonLink;
       'atoms.button': AtomsButton;
       'atoms.form-select-option': AtomsFormSelectOption;
+      'atoms.image': AtomsImage;
+      'atoms.media': AtomsMedia;
       'atoms.short-text': AtomsShortText;
       'molecules.count-with-description': MoleculesCountWithDescription;
       'molecules.form-checkbox': MoleculesFormCheckbox;

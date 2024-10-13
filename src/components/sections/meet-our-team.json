@@ -13,6 +13,14 @@
     "text": {
       "type": "text",
       "required": true
+    },
+    "images": {
+      "type": "component",
+      "repeatable": true,
+      "component": "atoms.image",
+      "required": true,
+      "max": 6,
+      "min": 6
     }
   }
 }
