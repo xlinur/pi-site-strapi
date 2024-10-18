@@ -920,9 +920,9 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
     registration: Attribute.Text & Attribute.Required;
     privacyPolicy: Attribute.RichText & Attribute.Required;
     candidatePolicy: Attribute.RichText & Attribute.Required;
-    locale: Attribute.Enumeration<['ru', 'en']> &
+    locale: Attribute.Enumeration<['eu', 'by']> &
       Attribute.Required &
-      Attribute.DefaultTo<'ru'>;
+      Attribute.DefaultTo<'by'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

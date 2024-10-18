@@ -45,11 +45,11 @@
     "locale": {
       "type": "enumeration",
       "enum": [
-        "ru",
-        "en"
+        "eu",
+        "by"
       ],
       "required": true,
-      "default": "ru"
+      "default": "by"
     }
   }
 }
