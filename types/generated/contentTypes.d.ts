@@ -1513,6 +1513,9 @@ export interface ApiPageVacanciesPageVacancies extends Schema.SingleType {
     filterFindBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
     filterResetBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
     filterNoResults: Attribute.String & Attribute.Required;
+    filterSkillsTitle: Attribute.String & Attribute.Required;
+    filterLocationsTitle: Attribute.String & Attribute.Required;
+    filterTypesTitle: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

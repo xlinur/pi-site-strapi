@@ -55,6 +55,18 @@
     "filterNoResults": {
       "type": "string",
       "required": true
+    },
+    "filterSkillsTitle": {
+      "type": "string",
+      "required": true
+    },
+    "filterLocationsTitle": {
+      "type": "string",
+      "required": true
+    },
+    "filterTypesTitle": {
+      "type": "string",
+      "required": true
     }
   }
 }
