@@ -1,7 +1,8 @@
 {
   "collectionName": "components_sections_pricings",
   "info": {
-    "displayName": "Pricing"
+    "displayName": "Pricing",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -21,6 +22,10 @@
       "type": "component",
       "repeatable": false,
       "component": "organisms.pricing-item",
+      "required": true
+    },
+    "title": {
+      "type": "string",
       "required": true
     }
   }

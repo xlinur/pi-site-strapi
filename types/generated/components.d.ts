@@ -570,6 +570,7 @@ export interface SectionsPricing extends Schema.Component {
   collectionName: 'components_sections_pricings';
   info: {
     displayName: 'Pricing';
+    description: '';
   };
   attributes: {
     feeSection: Attribute.Component<'organisms.pricing-item'> &
@@ -578,6 +579,7 @@ export interface SectionsPricing extends Schema.Component {
       Attribute.Required;
     subscriptionModel: Attribute.Component<'organisms.pricing-item'> &
       Attribute.Required;
+    title: Attribute.String & Attribute.Required;
   };
 }
 
