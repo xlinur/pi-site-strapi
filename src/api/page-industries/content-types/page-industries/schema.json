@@ -18,10 +18,10 @@
       "component": "sections.animated-hero",
       "required": true
     },
-    "SectorsGrid": {
+    "IndustriesWeWork": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.sectors-grid",
+      "component": "sections.industries-we-work",
       "required": true
     },
     "TreeSection": {

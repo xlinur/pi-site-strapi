@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_industries_we_works",
+  "info": {
+    "displayName": "Industries we work"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "richtext",
+      "required": true
+    },
+    "spheres": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sphere.sphere"
+    }
+  }
+}

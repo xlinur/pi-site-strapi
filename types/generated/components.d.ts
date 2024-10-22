@@ -464,6 +464,21 @@ export interface SectionsHeroOurCasesSection extends Schema.Component {
   };
 }
 
+export interface SectionsIndustriesWeWork extends Schema.Component {
+  collectionName: 'components_sections_industries_we_works';
+  info: {
+    displayName: 'Industries we work';
+  };
+  attributes: {
+    title: Attribute.RichText & Attribute.Required;
+    spheres: Attribute.Relation<
+      'sections.industries-we-work',
+      'oneToMany',
+      'api::sphere.sphere'
+    >;
+  };
+}
+
 export interface SectionsInfoWithCards extends Schema.Component {
   collectionName: 'components_sections_info_with_cards';
   info: {
@@ -798,6 +813,7 @@ export interface SharedMenu extends Schema.Component {
     consulting: Attribute.String & Attribute.Required;
     analytics: Attribute.String & Attribute.Required;
     relocation: Attribute.String & Attribute.Required;
+    referalProgram: Attribute.String & Attribute.Required;
   };
 }
 
@@ -854,6 +870,7 @@ declare module '@strapi/types' {
       'sections.exclusive-process': SectionsExclusiveProcess;
       'sections.hero-main': SectionsHeroMain;
       'sections.hero-our-cases-section': SectionsHeroOurCasesSection;
+      'sections.industries-we-work': SectionsIndustriesWeWork;
       'sections.info-with-cards': SectionsInfoWithCards;
       'sections.meet-our-team': SectionsMeetOurTeam;
       'sections.need-help': SectionsNeedHelp;

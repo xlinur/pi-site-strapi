@@ -61,6 +61,10 @@
     "relocation": {
       "type": "string",
       "required": true
+    },
+    "referalProgram": {
+      "type": "string",
+      "required": true
     }
   }
 }

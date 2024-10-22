@@ -1321,7 +1321,7 @@ export interface ApiPageIndustriesPageIndustries extends Schema.SingleType {
   attributes: {
     AnimatedHero: Attribute.Component<'sections.animated-hero'> &
       Attribute.Required;
-    SectorsGrid: Attribute.Component<'sections.sectors-grid'> &
+    IndustriesWeWork: Attribute.Component<'sections.industries-we-work'> &
       Attribute.Required;
     TreeSection: Attribute.Component<'sections.tree'> & Attribute.Required;
     SectionWithIndustriesImage: Attribute.Component<'sections.section-with-industries-image'> &
@@ -1623,6 +1623,48 @@ export interface ApiSectionCvFormSectionCvForm extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::section-cv-form.section-cv-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSectionMeetOurTeamSectionMeetOurTeam
+  extends Schema.SingleType {
+  collectionName: 'section_meet_our_teams';
+  info: {
+    singularName: 'section-meet-our-team';
+    pluralName: 'section-meet-our-teams';
+    displayName: '[Section] Meet our team';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    text: Attribute.RichText & Attribute.Required;
+    images: Attribute.Component<'atoms.image', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 6;
+          max: 6;
+        },
+        number
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::section-meet-our-team.section-meet-our-team',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::section-meet-our-team.section-meet-our-team',
       'oneToOne',
       'admin::user'
     > &
@@ -2004,6 +2046,7 @@ declare module '@strapi/types' {
       'api::page-vacancies.page-vacancies': ApiPageVacanciesPageVacancies;
       'api::section-about-personalinvest.section-about-personalinvest': ApiSectionAboutPersonalinvestSectionAboutPersonalinvest;
       'api::section-cv-form.section-cv-form': ApiSectionCvFormSectionCvForm;
+      'api::section-meet-our-team.section-meet-our-team': ApiSectionMeetOurTeamSectionMeetOurTeam;
       'api::section-order-your-report.section-order-your-report': ApiSectionOrderYourReportSectionOrderYourReport;
       'api::section-payment-terms.section-payment-terms': ApiSectionPaymentTermsSectionPaymentTerms;
       'api::section-start-conversation-form.section-start-conversation-form': ApiSectionStartConversationFormSectionStartConversationForm;
