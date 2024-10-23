@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_atoms_t_est_4s",
+  "info": {
+    "displayName": "TEst 4"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
