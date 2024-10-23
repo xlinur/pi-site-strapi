@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_atoms_test3_do_not_touch_s",
+  "info": {
+    "displayName": "Test3(DO NOT TOUCH)"
+  },
+  "options": {},
+  "attributes": {
+    "Jane": {
+      "type": "string"
+    }
+  }
+}

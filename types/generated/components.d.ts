@@ -72,13 +72,13 @@ export interface AtomsShortText extends Schema.Component {
   };
 }
 
-export interface AtomsTest2DoNotTouch extends Schema.Component {
-  collectionName: 'components_atoms_test2_do_not_touch_s';
+export interface AtomsTest3DoNotTouch extends Schema.Component {
+  collectionName: 'components_atoms_test3_do_not_touch_s';
   info: {
-    displayName: 'Test2 (DO NOT TOUCH)';
+    displayName: 'Test3(DO NOT TOUCH)';
   };
   attributes: {
-    test: Attribute.String;
+    Jane: Attribute.String;
   };
 }
 
@@ -850,7 +850,7 @@ declare module '@strapi/types' {
       'atoms.image': AtomsImage;
       'atoms.media': AtomsMedia;
       'atoms.short-text': AtomsShortText;
-      'atoms.test2-do-not-touch': AtomsTest2DoNotTouch;
+      'atoms.test3-do-not-touch': AtomsTest3DoNotTouch;
       'molecules.count-with-description': MoleculesCountWithDescription;
       'molecules.form-checkbox': MoleculesFormCheckbox;
       'molecules.form-input': MoleculesFormInput;
