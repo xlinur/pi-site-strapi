@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_atoms_test2_do_not_touch_s",
+  "info": {
+    "displayName": "Test2 (DO NOT TOUCH)"
+  },
+  "options": {},
+  "attributes": {
+    "test": {
+      "type": "string"
+    }
+  }
+}
