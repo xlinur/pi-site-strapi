@@ -11,12 +11,12 @@ module.exports = () => ({
   'media-prefix': {
     enabled: true,
   },
-  // upload: {
-  //   provider: 'local',
-  //   providerOptions: {
-  //     // путь для хранения файлов на сервере
-  //     sizeLimit: 10000000,
-  //     publicPath: '/uploads',
-  //   },
-  // },
+  upload: {
+    provider: 'local',
+    providerOptions: {
+      // путь для хранения файлов на сервере
+      sizeLimit: 10000000,
+      publicPath: '/uploads',
+    },
+  },
 });
