@@ -13,7 +13,7 @@
     "description": {
       "type": "richtext",
       "required": false,
-      "minLength": 200
+      "maxLength": 200
     }
   }
 }

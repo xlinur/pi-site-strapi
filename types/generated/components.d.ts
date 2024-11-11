@@ -148,7 +148,7 @@ export interface MoleculesTitleWithDescription extends Schema.Component {
     title: Attribute.String;
     description: Attribute.RichText &
       Attribute.SetMinMaxLength<{
-        minLength: 200;
+        maxLength: 200;
       }>;
   };
 }

@@ -1722,47 +1722,6 @@ export interface ApiSectionOrderYourReportSectionOrderYourReport
   };
 }
 
-export interface ApiSectionPaymentTermsSectionPaymentTerms
-  extends Schema.SingleType {
-  collectionName: 'section_payment_termss';
-  info: {
-    singularName: 'section-payment-terms';
-    pluralName: 'section-payment-termss';
-    displayName: '[Section] Payment terms';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    items: Attribute.Component<'molecules.title-with-description', true> &
-      Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          min: 2;
-          max: 2;
-        },
-        number
-      >;
-    contactBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::section-payment-terms.section-payment-terms',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::section-payment-terms.section-payment-terms',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiSectionStartConversationFormSectionStartConversationForm
   extends Schema.SingleType {
   collectionName: 'section_start_conversation_forms';
@@ -2051,7 +2010,6 @@ declare module '@strapi/types' {
       'api::section-cv-form.section-cv-form': ApiSectionCvFormSectionCvForm;
       'api::section-meet-our-team.section-meet-our-team': ApiSectionMeetOurTeamSectionMeetOurTeam;
       'api::section-order-your-report.section-order-your-report': ApiSectionOrderYourReportSectionOrderYourReport;
-      'api::section-payment-terms.section-payment-terms': ApiSectionPaymentTermsSectionPaymentTerms;
       'api::section-start-conversation-form.section-start-conversation-form': ApiSectionStartConversationFormSectionStartConversationForm;
       'api::section-success-stories.section-success-stories': ApiSectionSuccessStoriesSectionSuccessStories;
       'api::section-trusted-map.section-trusted-map': ApiSectionTrustedMapSectionTrustedMap;
