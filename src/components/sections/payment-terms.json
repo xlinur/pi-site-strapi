@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_sections_payment_terms",
+  "info": {
+    "displayName": "Payment terms"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "molecules.title-with-description",
+      "required": true,
+      "max": 2,
+      "min": 2
+    },
+    "contactBtn": {
+      "type": "component",
+      "repeatable": false,
+      "component": "atoms.button",
+      "required": true
+    }
+  }
+}

@@ -146,7 +146,10 @@ export interface MoleculesTitleWithDescription extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.RichText;
+    description: Attribute.RichText &
+      Attribute.SetMinMaxLength<{
+        minLength: 200;
+      }>;
   };
 }
 
@@ -601,6 +604,26 @@ export interface SectionsOurTeam extends Schema.Component {
   };
 }
 
+export interface SectionsPaymentTerms extends Schema.Component {
+  collectionName: 'components_sections_payment_terms';
+  info: {
+    displayName: 'Payment terms';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    items: Attribute.Component<'molecules.title-with-description', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 2;
+          max: 2;
+        },
+        number
+      >;
+    contactBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+  };
+}
+
 export interface SectionsPricing extends Schema.Component {
   collectionName: 'components_sections_pricings';
   info: {
@@ -899,6 +922,7 @@ declare module '@strapi/types' {
       'sections.our-founder': SectionsOurFounder;
       'sections.our-process-of-interaction': SectionsOurProcessOfInteraction;
       'sections.our-team': SectionsOurTeam;
+      'sections.payment-terms': SectionsPaymentTerms;
       'sections.pricing': SectionsPricing;
       'sections.proposal': SectionsProposal;
       'sections.relocation-help-hero': SectionsRelocationHelpHero;

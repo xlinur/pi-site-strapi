@@ -1172,6 +1172,8 @@ export interface ApiPageEarnWithUsPageEarnWithUs extends Schema.SingleType {
     OurProcessOfInteraction: Attribute.Component<'sections.our-process-of-interaction'> &
       Attribute.Required;
     SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
+    PaymentTerms: Attribute.Component<'sections.payment-terms'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1474,6 +1476,8 @@ export interface ApiPageSplitRecruitmentPageSplitRecruitment
     Proposal: Attribute.Component<'sections.proposal'> & Attribute.Required;
     TreeSection: Attribute.Component<'sections.tree'> & Attribute.Required;
     SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
+    PaymentTerms: Attribute.Component<'sections.payment-terms'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1981,7 +1985,6 @@ export interface ApiSphereSphere extends Schema.CollectionType {
       Attribute.Required;
     SectionWithIndustriesImage: Attribute.Component<'sections.section-with-industries-image'> &
       Attribute.Required;
-    Seo: Attribute.Component<'shared.seo'>;
     cases: Attribute.Relation<
       'api::sphere.sphere',
       'oneToMany',

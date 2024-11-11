@@ -12,7 +12,8 @@
     },
     "description": {
       "type": "richtext",
-      "required": false
+      "required": false,
+      "minLength": 200
     }
   }
 }
