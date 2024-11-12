@@ -993,7 +993,6 @@ export interface ApiPageAboutUsPageAboutUs extends Schema.SingleType {
     TreeSection: Attribute.Component<'sections.tree'> & Attribute.Required;
     OurFounder: Attribute.Component<'sections.our-founder'> &
       Attribute.Required;
-    OurTeam: Attribute.Component<'sections.our-team'> & Attribute.Required;
     SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1288,8 +1287,6 @@ export interface ApiPageHomePageHome extends Schema.SingleType {
       Attribute.Required;
     ExclusiveProcess: Attribute.Component<'sections.exclusive-process'> &
       Attribute.Required;
-    MeetOurTeam: Attribute.Component<'sections.meet-our-team'> &
-      Attribute.Required;
     SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1551,7 +1548,6 @@ export interface ApiSectionAboutPersonalinvestSectionAboutPersonalinvest
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.Text & Attribute.Required;
     info: Attribute.Component<'molecules.title-with-description', true> &
       Attribute.Required &
       Attribute.SetMinMax<

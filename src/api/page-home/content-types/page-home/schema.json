@@ -36,12 +36,6 @@
       "component": "sections.exclusive-process",
       "required": true
     },
-    "MeetOurTeam": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sections.meet-our-team",
-      "required": true
-    },
     "SEO": {
       "type": "component",
       "repeatable": false,
