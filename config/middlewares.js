@@ -9,7 +9,7 @@ module.exports = [
       enabled: true,
       // TODO: change to more secure origin
       headers: '*',
-      origin: ['*']
+      origin: ['*', 'http://localhost:1337']
     }
   },
   'strapi::query',
