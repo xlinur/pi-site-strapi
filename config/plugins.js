@@ -8,9 +8,9 @@ module.exports = () => ({
     enabled: true,
     resolve: './src/plugins/admin-styles-override'
   },
-  // 'media-prefix': {
-  //   enabled: true,
-  // },
+  'media-prefix': {
+    enabled: false,
+  },
   upload: {
     provider: 'local',
     providerOptions: {
