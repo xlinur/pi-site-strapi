@@ -9,6 +9,14 @@ module.exports = () => ({
     resolve: './src/plugins/admin-styles-override'
   },
   'media-prefix': {
-    enabled: true,
+    enabled: false,
+  },
+  upload: {
+    provider: 'local',
+    providerOptions: {
+      // путь для хранения файлов на сервере
+      sizeLimit: 10000000,
+      publicPath: '/uploads',
+    },
   },
 });
