@@ -1,20 +1,24 @@
 {
   "collectionName": "components_sections_section_complete_tasks",
   "info": {
-    "displayName": "Section Complete Task"
+    "displayName": "Section Complete Task",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "subtitle": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "items": {
       "type": "component",
       "repeatable": true,
-      "component": "organisms.section-complete-task-item"
+      "component": "organisms.section-complete-task-item",
+      "required": true
     }
   }
 }

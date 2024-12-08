@@ -672,7 +672,7 @@ export interface SectionsRelocationHelpHero extends Schema.Component {
         number
       >;
     bottomText: Attribute.String;
-    contactUsBtn: Attribute.Component<'atoms.button'>;
+    contactUsBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
   };
 }
 
@@ -683,9 +683,9 @@ export interface SectionsSectionCaseHero extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.RichText;
-    subtitle: Attribute.Text;
-    description: Attribute.Text;
+    title: Attribute.RichText & Attribute.Required;
+    subtitle: Attribute.Text & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
   };
 }
 
@@ -693,11 +693,13 @@ export interface SectionsSectionCompleteTask extends Schema.Component {
   collectionName: 'components_sections_section_complete_tasks';
   info: {
     displayName: 'Section Complete Task';
+    description: '';
   };
   attributes: {
-    title: Attribute.String;
-    subtitle: Attribute.Text;
-    items: Attribute.Component<'organisms.section-complete-task-item', true>;
+    title: Attribute.String & Attribute.Required;
+    subtitle: Attribute.Text & Attribute.Required;
+    items: Attribute.Component<'organisms.section-complete-task-item', true> &
+      Attribute.Required;
   };
 }
 
@@ -708,14 +710,15 @@ export interface SectionsSectionRecruitmentSummary extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.RichText;
-    subtitle: Attribute.String;
-    companyOffered: Attribute.Text;
-    companyOfferedText: Attribute.Text;
+    title: Attribute.RichText & Attribute.Required;
+    subtitle: Attribute.String & Attribute.Required;
+    companyOffered: Attribute.Text & Attribute.Required;
+    companyOfferedText: Attribute.Text & Attribute.Required;
     items: Attribute.Component<
       'organisms.section-recruitment-summary-item',
       true
-    >;
+    > &
+      Attribute.Required;
   };
 }
 
@@ -726,8 +729,8 @@ export interface SectionsSectionTalentMatch extends Schema.Component {
     description: '';
   };
   attributes: {
-    hireNowBtn: Attribute.Component<'atoms.button'>;
-    content: Attribute.RichText;
+    hireNowBtn: Attribute.Component<'atoms.button'> & Attribute.Required;
+    content: Attribute.RichText & Attribute.Required;
   };
 }
 

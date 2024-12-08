@@ -9,10 +9,12 @@
     "hireNowBtn": {
       "type": "component",
       "repeatable": false,
-      "component": "atoms.button"
+      "component": "atoms.button",
+      "required": true
     },
     "content": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     }
   }
 }

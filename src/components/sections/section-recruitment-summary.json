@@ -7,21 +7,26 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "subtitle": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "companyOffered": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "companyOfferedText": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "items": {
       "type": "component",
       "repeatable": true,
-      "component": "organisms.section-recruitment-summary-item"
+      "component": "organisms.section-recruitment-summary-item",
+      "required": true
     }
   }
 }
