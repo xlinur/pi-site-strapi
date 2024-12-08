@@ -38,27 +38,32 @@
     "SectionCaseHero": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.section-case-hero"
+      "component": "sections.section-case-hero",
+      "required": true
     },
     "SectionCompleteTask": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.section-complete-task"
+      "component": "sections.section-complete-task",
+      "required": true
     },
     "SectionRecruitmentSummary": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.section-recruitment-summary"
+      "component": "sections.section-recruitment-summary",
+      "required": true
     },
     "SectionTalentMatch": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.section-talent-match"
+      "component": "sections.section-talent-match",
+      "required": true
     },
     "SectionWithFeatures": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.relocation-help-hero"
+      "component": "sections.relocation-help-hero",
+      "required": true
     },
     "SEO": {
       "type": "component",

@@ -7,13 +7,16 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "subtitle": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "required": true
     }
   }
 }

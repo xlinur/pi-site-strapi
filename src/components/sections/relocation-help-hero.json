@@ -28,7 +28,8 @@
     "contactUsBtn": {
       "type": "component",
       "repeatable": false,
-      "component": "atoms.button"
+      "component": "atoms.button",
+      "required": true
     }
   }
 }

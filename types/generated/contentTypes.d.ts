@@ -809,11 +809,16 @@ export interface ApiCaseCase extends Schema.CollectionType {
       'manyToOne',
       'api::sphere.sphere'
     >;
-    SectionCaseHero: Attribute.Component<'sections.section-case-hero'>;
-    SectionCompleteTask: Attribute.Component<'sections.section-complete-task'>;
-    SectionRecruitmentSummary: Attribute.Component<'sections.section-recruitment-summary'>;
-    SectionTalentMatch: Attribute.Component<'sections.section-talent-match'>;
-    SectionWithFeatures: Attribute.Component<'sections.relocation-help-hero'>;
+    SectionCaseHero: Attribute.Component<'sections.section-case-hero'> &
+      Attribute.Required;
+    SectionCompleteTask: Attribute.Component<'sections.section-complete-task'> &
+      Attribute.Required;
+    SectionRecruitmentSummary: Attribute.Component<'sections.section-recruitment-summary'> &
+      Attribute.Required;
+    SectionTalentMatch: Attribute.Component<'sections.section-talent-match'> &
+      Attribute.Required;
+    SectionWithFeatures: Attribute.Component<'sections.relocation-help-hero'> &
+      Attribute.Required;
     SEO: Attribute.Component<'shared.seo'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
